@@ -3,7 +3,7 @@
 //  TemperatureProject
 //
 //  Created by admin on 2020/6/12.
-//  Copyright © 2020 admin. All rights reserved.
+//  Copyright © 2020 admin. All rights reserved. 
 //
 
 #import "LXPeripheralCollectionViewCell.h"
