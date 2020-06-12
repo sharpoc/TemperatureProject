@@ -1,0 +1,16 @@
+//
+//  LXTemperature.pch
+//  TemperatureProject
+//
+//  Created by admin on 2020/6/12.
+//  Copyright © 2020 admin. All rights reserved.
+//
+
+#ifndef LXTemperature_pch
+#define LXTemperature_pch
+
+#import "LXConstant.h"
+#import "LXMacro.h"
+#import "Masonry.h"
+
+#endif /* LXTemperature_pch */
