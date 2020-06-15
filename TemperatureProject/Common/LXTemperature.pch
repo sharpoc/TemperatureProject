@@ -12,5 +12,6 @@
 #import "LXConstant.h"
 #import "LXMacro.h"
 #import "Masonry.h"
+#import "UIImageView+WebCache.h"
 
 #endif /* LXTemperature_pch */

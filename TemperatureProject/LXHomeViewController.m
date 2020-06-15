@@ -9,20 +9,18 @@
 #import "LXHomeViewController.h"
 #import "LXBluetoothManager.h"
 #import "LXPeripheralListView.h"
+#import "FLAnimatedImageView+WebCache.h"
 
 
 @interface LXHomeViewController ()<LXBluetoothManagerDelegate,LXPeripheralListViewDelegate>
 
 @property (nonatomic,strong) UIImageView *bgImageView;
-@property (nonatomic,strong) UIImageView *loadImageView;
+@property (nonatomic,strong) FLAnimatedImageView *loadImageView;//gif图
+@property (nonatomic,strong) UILabel *tipLabel;//正在寻找设备请稍等
 @property (nonatomic,strong) LXBluetoothManager *bluetoothManager;
 @property (nonatomic,copy) NSArray *peripheralArray;
 @property (nonatomic,strong) LXPeripheralListView *peripheralListView;
 
-//@property (nonatomic,strong) CBCentralManager *centralManager;
-//@property (nonatomic,copy) NSMutableDictionary *deviceDic;
-//@property (nonatomic,strong) CBPeripheral *peripheral;
-//@property (nonatomic,strong) CBCharacteristic *characteristic;
 
 @end
 
@@ -33,13 +31,13 @@
     [super viewDidLoad];
     [self createUI];
     [self createLayout];
-//    self.centralManager = [[CBCentralManager alloc] initWithDelegate:self queue:nil];
 }
 
 - (void)createUI {
     
     [self.view addSubview:self.bgImageView];
     [self.view addSubview:self.loadImageView];
+    [self.view addSubview:self.tipLabel];
     [self.view addSubview:self.peripheralListView];
     
 }
@@ -59,6 +57,13 @@
         make.width.mas_equalTo(97);
         make.height.mas_equalTo(97);
         make.top.mas_equalTo(30);
+        make.centerX.mas_equalTo(self.view.mas_centerX);
+    }];
+    
+    [self.tipLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+        make.top.mas_equalTo(self.loadImageView.mas_bottom).offset(15);
+        make.height.mas_equalTo(35);
         make.centerX.mas_equalTo(self.view.mas_centerX);
     }];
     
@@ -94,14 +99,6 @@
 - (void)dataWithBluetoothDic:(NSMutableDictionary *)dict {
     
     self.peripheralArray = [dict allValues];
-
-//    NSMutableArray *tempArray= [NSMutableArray array];
-//    [tempArray addObjectsFromArray:self.peripheralArray];
-//    [tempArray addObjectsFromArray:self.peripheralArray];
-//    [tempArray addObjectsFromArray:self.peripheralArray];
-//    [tempArray addObjectsFromArray:self.peripheralArray];
-    
-    
     self.peripheralListView.peripheralArray = self.peripheralArray;
 }
 
@@ -111,12 +108,33 @@
     
 }
 
-- (UIImageView *)loadImageView {
+- (UILabel *)tipLabel {
+    
+    if (!_tipLabel) {
+        
+        _tipLabel = [[UILabel alloc] init];
+        _tipLabel.font = [UIFont systemFontOfSize:18];
+        _tipLabel.textColor = KSQColor(255, 255, 255);
+        _tipLabel.text = @"  正在寻找设备请稍等  ";
+        _tipLabel.backgroundColor = KSQColor(94, 219, 189);
+        _tipLabel.layer.cornerRadius = 10;
+        _tipLabel.layer.masksToBounds = YES;
+    }
+    
+    return _tipLabel;
+}
+
+- (FLAnimatedImageView *)loadImageView {
     
     if (!_loadImageView) {
         
-        _loadImageView = [[UIImageView alloc] init];
+        _loadImageView = [[FLAnimatedImageView alloc] init];
         _loadImageView.backgroundColor = KSQRandomColor;
+        NSString *pathFile = [[NSBundle mainBundle] pathForResource:@"load" ofType:@"gif"];
+        NSData *imagedata = [NSData dataWithContentsOfFile:pathFile];
+        _loadImageView.backgroundColor = [UIColor clearColor];
+        _loadImageView.animatedImage = [FLAnimatedImage animatedImageWithGIFData:imagedata];
+        
     }
     
     return _loadImageView;
@@ -154,8 +172,5 @@
     
     return _bluetoothManager;
 }
-
-
-
 
 @end

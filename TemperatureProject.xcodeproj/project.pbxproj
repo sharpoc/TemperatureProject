@@ -15,6 +15,7 @@
 		84E6120824931CA00019B6BA /* LXBluetoothManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E6120724931CA00019B6BA /* LXBluetoothManager.m */; };
 		84E6120F24934DD80019B6BA /* LXPeripheralListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E6120E24934DD80019B6BA /* LXPeripheralListView.m */; };
 		84E6121624935DF60019B6BA /* LXPeripheralCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E6121524935DF60019B6BA /* LXPeripheralCollectionViewCell.m */; };
+		84E6121924975BA90019B6BA /* load.gif in Resources */ = {isa = PBXBuildFile; fileRef = 84E6121824975BA80019B6BA /* load.gif */; };
 		97A232560325C2D0BBA4FF5C /* libPods-TemperatureProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 425AF8C8F268A312023961ED /* libPods-TemperatureProject.a */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 		84E61213249358540019B6BA /* LXTemperature.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXTemperature.pch; sourceTree = "<group>"; };
 		84E6121424935DF60019B6BA /* LXPeripheralCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXPeripheralCollectionViewCell.h; sourceTree = "<group>"; };
 		84E6121524935DF60019B6BA /* LXPeripheralCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXPeripheralCollectionViewCell.m; sourceTree = "<group>"; };
+		84E6121824975BA80019B6BA /* load.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = load.gif; sourceTree = "<group>"; };
 		9000B6F833968DAECE5BCAE9 /* Pods-TemperatureProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TemperatureProject.debug.xcconfig"; path = "Target Support Files/Pods-TemperatureProject/Pods-TemperatureProject.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,6 +85,7 @@
 		84E6107F24921AEC0019B6BA /* TemperatureProject */ = {
 			isa = PBXGroup;
 			children = (
+				84E6121724975B330019B6BA /* Resource */,
 				84E6120924934D420019B6BA /* View */,
 				84E61201249319040019B6BA /* Common */,
 				84E6108024921AEC0019B6BA /* AppDelegate.h */,
@@ -118,6 +121,14 @@
 				84E6121524935DF60019B6BA /* LXPeripheralCollectionViewCell.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		84E6121724975B330019B6BA /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				84E6121824975BA80019B6BA /* load.gif */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 		CC99E4C990F2F50ADEEB33CF /* Pods */ = {
@@ -187,6 +198,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84E6121924975BA90019B6BA /* load.gif in Resources */,
 				84E6108D24921AF20019B6BA /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
