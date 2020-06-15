@@ -23,7 +23,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         
-        self.backgroundColor = KSQRandomColor;
+        self.backgroundColor = [UIColor clearColor];
         [self createUI];
         [self createLayout];
         
@@ -97,6 +97,7 @@
         flowLayout.minimumLineSpacing = 0;
         flowLayout.itemSize = CGSizeMake(KScreenWidth/2, 100);
         _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flowLayout];
+        _collectionView.backgroundColor = [UIColor clearColor];
         _collectionView.dataSource = self;
         _collectionView.delegate = self;
         [_collectionView registerClass:[LXPeripheralCollectionViewCell class] forCellWithReuseIdentifier:collectinViewCellID];

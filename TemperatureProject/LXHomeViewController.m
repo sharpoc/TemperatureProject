@@ -13,6 +13,8 @@
 
 @interface LXHomeViewController ()<LXBluetoothManagerDelegate,LXPeripheralListViewDelegate>
 
+@property (nonatomic,strong) UIImageView *bgImageView;
+@property (nonatomic,strong) UIImageView *loadImageView;
 @property (nonatomic,strong) LXBluetoothManager *bluetoothManager;
 @property (nonatomic,copy) NSArray *peripheralArray;
 @property (nonatomic,strong) LXPeripheralListView *peripheralListView;
@@ -36,10 +38,29 @@
 
 - (void)createUI {
     
+    [self.view addSubview:self.bgImageView];
+    [self.view addSubview:self.loadImageView];
     [self.view addSubview:self.peripheralListView];
+    
 }
 
 - (void)createLayout {
+    
+    [self.bgImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+       
+        make.left.mas_equalTo(0);
+        make.right.mas_equalTo(0);
+        make.top.mas_equalTo(0);
+        make.bottom.mas_equalTo(0);
+    }];
+    
+    [self.loadImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+       
+        make.width.mas_equalTo(97);
+        make.height.mas_equalTo(97);
+        make.top.mas_equalTo(30);
+        make.centerX.mas_equalTo(self.view.mas_centerX);
+    }];
     
     [self.peripheralListView mas_makeConstraints:^(MASConstraintMaker *make) {
        
@@ -88,6 +109,28 @@
 - (void)didConnectBlue {
     
     
+}
+
+- (UIImageView *)loadImageView {
+    
+    if (!_loadImageView) {
+        
+        _loadImageView = [[UIImageView alloc] init];
+        _loadImageView.backgroundColor = KSQRandomColor;
+    }
+    
+    return _loadImageView;
+}
+
+- (UIImageView *)bgImageView {
+    
+    if (!_bgImageView) {
+        
+        _bgImageView = [[UIImageView alloc] init];
+        _bgImageView.image = [UIImage imageNamed:@"home"];
+    }
+    
+    return _bgImageView;
 }
 
 - (LXPeripheralListView *)peripheralListView {
