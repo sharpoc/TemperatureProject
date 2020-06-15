@@ -31,6 +31,8 @@
     [super viewDidLoad];
     [self createUI];
     [self createLayout];
+    
+    [self.bluetoothManager start];
 }
 
 - (void)createUI {
@@ -77,14 +79,7 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     
-    [self.bluetoothManager start];
-//    NSArray *array = [self.deviceDic allValues];
-//    if (array.count > 0) {
-//
-//        CBPeripheral *peripheral = [array objectAtIndex:0];
-//        [self.centralManager connectPeripheral:peripheral options:nil];
-//    }
-   
+
 }
 
 #pragma mark LXPeripheralListViewDelegate

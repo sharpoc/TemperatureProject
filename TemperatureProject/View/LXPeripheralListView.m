@@ -93,9 +93,9 @@
     if (!_collectionView) {
         
         UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
-        flowLayout.minimumInteritemSpacing = 0;
-        flowLayout.minimumLineSpacing = 0;
-        flowLayout.itemSize = CGSizeMake(KScreenWidth/2, 100);
+        flowLayout.minimumInteritemSpacing = 5;
+        flowLayout.minimumLineSpacing = 100;
+        flowLayout.itemSize = CGSizeMake((KScreenWidth - 40)/2, 60);
         _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flowLayout];
         _collectionView.backgroundColor = [UIColor clearColor];
         _collectionView.dataSource = self;
