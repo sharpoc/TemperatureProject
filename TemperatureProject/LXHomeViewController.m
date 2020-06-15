@@ -148,7 +148,7 @@
     if (!_loadImageView) {
         
         _loadImageView = [[FLAnimatedImageView alloc] init];
-        _loadImageView.backgroundColor = KSQRandomColor;
+        _loadImageView.backgroundColor = [UIColor clearColor];
         NSString *pathFile = [[NSBundle mainBundle] pathForResource:@"load" ofType:@"gif"];
         NSData *imagedata = [NSData dataWithContentsOfFile:pathFile];
         _loadImageView.backgroundColor = [UIColor clearColor];
