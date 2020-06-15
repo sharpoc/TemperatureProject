@@ -71,6 +71,11 @@
     
 }
 
+-(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
+{
+    return UIEdgeInsetsMake(10, 10, 10, 10);//分别为上、左、下、右
+}
+
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     
     NSInteger row = indexPath.row;
@@ -93,7 +98,7 @@
     if (!_collectionView) {
         
         UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
-        flowLayout.minimumInteritemSpacing = 5;
+        flowLayout.minimumInteritemSpacing = 20;
         flowLayout.minimumLineSpacing = 100;
         flowLayout.itemSize = CGSizeMake((KScreenWidth - 40)/2, 60);
         _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flowLayout];

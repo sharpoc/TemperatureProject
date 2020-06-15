@@ -10,6 +10,7 @@
 #import "LXBluetoothManager.h"
 #import "LXPeripheralListView.h"
 #import "FLAnimatedImageView+WebCache.h"
+#import "LXShowDetailViewController.h"
 
 
 @interface LXHomeViewController ()<LXBluetoothManagerDelegate,LXPeripheralListViewDelegate>
@@ -35,12 +36,32 @@
     [self.bluetoothManager start];
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    
+    //设置导航栏背景图片为一个空的image，这样就透明了
+    [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
+    
+    //去掉透明后导航栏下边的黑边
+    [self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]];
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    
+    //    如果不想让其他页面的导航栏变为透明 需要重置
+    [self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setShadowImage:nil];
+}
+
 - (void)createUI {
     
     [self.view addSubview:self.bgImageView];
     [self.view addSubview:self.loadImageView];
     [self.view addSubview:self.tipLabel];
     [self.view addSubview:self.peripheralListView];
+    
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:nil action:nil];
+    [self.navigationItem setBackBarButtonItem:backItem];
     
 }
 
@@ -58,7 +79,7 @@
        
         make.width.mas_equalTo(97);
         make.height.mas_equalTo(97);
-        make.top.mas_equalTo(30);
+        make.top.mas_equalTo(kNavigationBarHeight + 20);
         make.centerX.mas_equalTo(self.view.mas_centerX);
     }];
     
@@ -86,7 +107,10 @@
 
 - (void)didItem:(CBPeripheral *)peripheral {
     
-    [self.bluetoothManager connect:peripheral];
+    //
+    LXShowDetailViewController *detailVc = [[LXShowDetailViewController alloc] init];
+    [self.navigationController pushViewController:detailVc animated:YES];
+//    [self.bluetoothManager connect:peripheral];
 }
 
 

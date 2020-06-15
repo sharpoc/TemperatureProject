@@ -182,17 +182,13 @@
         
         doubleValue += ([byteArr[i] integerValue] & 0xff) << (8*(1-i));
     }
-    int b = [self signedDataTointWithData:characteristic.value Location:0 Offset:2];
+//    int b = [self signedDataTointWithData:characteristic.value Location:0 Offset:2];
     doubleValue = (doubleValue / 65536) * (85.0 - (-40))+(-40);
 
-    
-    
-    
-    NSLog(@"%@", peripheral);
-    // characteristic.value就是蓝牙给我们的值(我这里是json格式字符串)
-//    NSData *jsonData = [characteristic.value dataUsingEncoding:NSUTF8StringEncoding];
-//        NSDictionary *dataDic = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:nil];
-    // 将字典传出去就可以使用了
+    if ([self.delegate respondsToSelector:@selector(temperatureComplete:)]) {
+        
+        [self.delegate temperatureComplete:doubleValue];
+    }
 }
 
 #pragma mark 连接外设——失败

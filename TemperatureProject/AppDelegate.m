@@ -24,10 +24,12 @@
 
     //创建控制器
     LXHomeViewController *controller=[[LXHomeViewController alloc]init];
+
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:controller];
     //设置控制器View的背景颜色
-    controller.view.backgroundColor=[UIColor brownColor];
+    controller.view.backgroundColor = [UIColor brownColor];
     //设置该控制器为Window的根控制器
-    self.window.rootViewController=controller;
+    self.window.rootViewController = nav;
     [self.window makeKeyAndVisible];
     return YES;
 }
