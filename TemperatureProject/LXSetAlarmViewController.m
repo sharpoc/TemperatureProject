@@ -18,6 +18,10 @@
 @property (nonatomic,copy) NSArray *secondNumArray;
 @property (nonatomic,assign) NSInteger firstRow;
 @property (nonatomic,assign) NSInteger secondRow;
+@property (nonatomic,copy) NSString *firstValue;
+@property (nonatomic,copy) NSString *secondValue;
+
+
 @property (nonatomic,strong) UIButton *okButton;
 @property (nonatomic,strong) UILabel *dianLabel;
 @property (nonatomic,strong) UILabel *duLabel;//度Label
@@ -124,6 +128,13 @@
     [self.navigationController.navigationBar setShadowImage:nil];
 }
 
+- (void)okButtonClick {
+    
+    float wendu = [[NSString stringWithFormat:@"%@.%@",self.firstValue,self.secondValue] floatValue];
+    [[LXCacheManager shareInstance] setFloatValueWithUserDefaultKey:@"wendu" withFloatValue:wendu];
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 #pragma mark UIPickerViewDelegate
 //数据源方法，返回需要显示的数据一共有几列
 -(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
@@ -189,9 +200,11 @@
     
     if (component == 0) {
         
+        self.firstValue = [self.firstNumArray[row] stringValue];
         self.firstRow = row;
     } else {
         
+        self.secondValue = [self.secondNumArray[row] stringValue];
         self.secondRow = row;
     }
     
@@ -234,6 +247,7 @@
         _okButton = [[UIButton alloc] init];
         [_okButton setBackgroundImage:[UIImage imageNamed:@"disconnectBtn"] forState:UIControlStateNormal];
         [_okButton setTitle:@"确定" forState:UIControlStateNormal];
+        [_okButton addTarget:self action:@selector(okButtonClick) forControlEvents:UIControlEventTouchUpInside];
     }
     
     return _okButton;

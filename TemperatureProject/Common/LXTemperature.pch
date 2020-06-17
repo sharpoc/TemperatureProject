@@ -14,5 +14,6 @@
 #import "Masonry.h"
 #import "UIImageView+WebCache.h"
 #import "Tool.h"
+#import "LXCacheManager.h"
 
 #endif /* LXTemperature_pch */

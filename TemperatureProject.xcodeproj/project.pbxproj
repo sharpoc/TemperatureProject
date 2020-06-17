@@ -118,9 +118,9 @@
 		84E61201249319040019B6BA /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				84E61213249358540019B6BA /* LXTemperature.pch */,
 				84E6125F249A47DA0019B6BA /* LXCacheManager.h */,
 				84E61260249A47DA0019B6BA /* LXCacheManager.m */,
-				84E61213249358540019B6BA /* LXTemperature.pch */,
 				84E61205249319BF0019B6BA /* LXConstant.h */,
 				84E612032493199F0019B6BA /* LXConstant.m */,
 				84E6120624931CA00019B6BA /* LXBluetoothManager.h */,
