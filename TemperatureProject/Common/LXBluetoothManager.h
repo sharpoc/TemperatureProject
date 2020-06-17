@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)didConnectBlue;
 
 //测量温度完成
-- (void)temperatureComplete:(double)value;
+- (void)temperatureComplete:(double)numValue;
 
 @end
 

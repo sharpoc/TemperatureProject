@@ -7,6 +7,7 @@
 //
 
 #import "LXShowDetailViewController.h"
+#import "LXSetAlarmViewController.h"
 
 @interface LXShowDetailViewController ()
 
@@ -14,6 +15,9 @@
 @property (nonatomic,strong) UIView *bgView;
 @property (nonatomic,strong) UIButton *titleButton;
 @property (nonatomic,strong) UILabel *numLabel;
+@property (nonatomic,strong) UILabel *timeTitleLabel;
+@property (nonatomic,strong) UILabel *timeLabel;
+@property (nonatomic,strong) UIButton *disconnectBtn;
 
 @end
 
@@ -25,8 +29,14 @@
     self.view.backgroundColor = [UIColor whiteColor];
     [self createUI];
     [self createLayout];
-    
 
+    UIButton *settingButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    [settingButton setImage:[UIImage imageNamed:@"titleButton"] forState:UIControlStateNormal];
+    [settingButton setTitleColor:KSQRandomColor forState:UIControlStateNormal];
+    [settingButton addTarget:self action:@selector(settingButtonClicked) forControlEvents:UIControlEventTouchUpInside];
+        
+    UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithCustomView:settingButton];
+    self.navigationItem.rightBarButtonItem = rightItem;
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -50,6 +60,10 @@
     [self.view addSubview:self.bgImageView];
     [self.view addSubview:self.bgView];
     [self.view addSubview:self.titleButton];
+    [self.bgView addSubview:self.numLabel];
+    [self.bgView addSubview:self.timeTitleLabel];
+    [self.bgView addSubview:self.timeLabel];
+    [self.bgView addSubview:self.disconnectBtn];
     
 }
 
@@ -79,6 +93,96 @@
         make.height.mas_equalTo(48);
         make.centerX.mas_equalTo(self.view.mas_centerX);
     }];
+    
+    [self.numLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+       
+        make.left.mas_equalTo(0);
+        make.right.mas_equalTo(0);
+        make.height.mas_equalTo(50);
+        make.top.mas_equalTo(self.titleButton.mas_bottom).offset(25);
+    }];
+    
+    [self.timeTitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+       
+        make.left.mas_equalTo(0);
+        make.right.mas_equalTo(0);
+        make.top.mas_equalTo(self.numLabel.mas_bottom).offset(20);
+        make.height.mas_equalTo(30);
+    }];
+    
+    [self.timeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+       
+        make.left.mas_equalTo(0);
+        make.right.mas_equalTo(0);
+        make.top.mas_equalTo(self.timeTitleLabel.mas_bottom).offset(20);
+        make.height.mas_equalTo(20);
+    }];
+    
+    [self.disconnectBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+       
+        make.left.mas_equalTo(30);
+        make.right.mas_equalTo(-30);
+        make.height.mas_equalTo(53);
+        make.top.mas_equalTo(self.timeLabel.mas_bottom).offset(20);
+    }];
+}
+
+- (void)setNumValue:(double)numValue {
+    
+    self.numLabel.text = [NSString stringWithFormat:@"%.1f°C",numValue];
+    NSDate *date = [NSDate date];
+    self.timeLabel.text = [Tool localTimeZoneStringDate:date andFormatter:@"yyyy-MM-dd HH:mm:ss"];
+}
+
+- (void)disconnectBtnClick {
+    
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)settingButtonClicked {
+    
+    LXSetAlarmViewController *setAlarmVc = [[LXSetAlarmViewController alloc] init];
+    [self.navigationController pushViewController:setAlarmVc animated:YES];
+}
+
+- (UIButton *)disconnectBtn {
+    
+    if (!_disconnectBtn) {
+        
+        _disconnectBtn = [[UIButton alloc] init];
+        [_disconnectBtn setBackgroundImage:[UIImage imageNamed:@"disconnectBtn"] forState:UIControlStateNormal];
+        [_disconnectBtn setTitle:@"断开连接" forState:UIControlStateNormal];
+        [_disconnectBtn addTarget:self action:@selector(disconnectBtnClick) forControlEvents:UIControlEventTouchUpInside];
+    }
+    
+    return _disconnectBtn;
+}
+
+- (UILabel *)timeLabel {
+    
+    if (!_timeLabel) {
+        
+        _timeLabel = [[UILabel alloc] init];
+        _timeLabel.textColor = KSQColor(76, 219, 191);
+        _timeLabel.font = [UIFont systemFontOfSize:18];
+        _timeLabel.textAlignment = NSTextAlignmentCenter; 
+    }
+    
+    return _timeLabel;
+}
+
+- (UILabel *)timeTitleLabel {
+    
+    if (!_timeTitleLabel) {
+        
+        _timeTitleLabel = [[UILabel alloc] init];
+        _timeTitleLabel.textColor = KSQColor(76, 219, 191);
+        _timeTitleLabel.font = [UIFont systemFontOfSize:24];
+        _timeTitleLabel.textAlignment = NSTextAlignmentCenter;
+        _timeTitleLabel.text = @"测量时间";
+    }
+    
+    return _timeTitleLabel;
 }
 
 - (UILabel *)numLabel {
@@ -89,6 +193,7 @@
         _numLabel.textColor = KSQColor(98, 216, 193);
         _numLabel.font = [UIFont systemFontOfSize:60];
         _numLabel.text = @"36°C";
+        _numLabel.textAlignment = NSTextAlignmentCenter;
     }
     
     return _numLabel;
@@ -100,7 +205,7 @@
         
         _titleButton = [[UIButton alloc] init];
         [_titleButton setTitle:@"您的体温" forState:UIControlStateNormal];
-        _titleButton.backgroundColor = KSQRandomColor;
+        [_titleButton setBackgroundImage:[UIImage imageNamed:@"titleButton"] forState:UIControlStateNormal];
         _titleButton.layer.cornerRadius = 20;
         _titleButton.layer.masksToBounds = YES;
     }
@@ -131,7 +236,6 @@
     
     return _bgImageView;
 }
-
 
 
 @end

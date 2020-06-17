@@ -3,6 +3,14 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "-[LXSetAlarmViewController pickerView:viewForRow:forComponent:reusingView:]:LXSetAlarmViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.row">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "-[LXHomeViewController peripheral:didDiscoverServices:]:LXHomeViewController.m">
          <PersistentStrings>
             <PersistentString

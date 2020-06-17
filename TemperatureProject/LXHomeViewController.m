@@ -12,6 +12,8 @@
 #import "FLAnimatedImageView+WebCache.h"
 #import "LXShowDetailViewController.h"
 
+#import "LXSetAlarmViewController.h"
+
 
 @interface LXHomeViewController ()<LXBluetoothManagerDelegate,LXPeripheralListViewDelegate>
 
@@ -34,6 +36,9 @@
     [self createLayout];
     
     [self.bluetoothManager start];
+    
+    LXSetAlarmViewController *setAlarmVc = [[LXSetAlarmViewController alloc] init];
+    [self.navigationController pushViewController:setAlarmVc animated:YES];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -61,6 +66,11 @@
     
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:nil action:nil];
+//    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:nil style:UIBarButtonItemStylePlain target:nil action:nil];
+
+//        [self.navigationItem.rightBarButtonItem setImage:[UIImage imageNamed:@"titleButton"]];
+
+        
     [self.navigationItem setBackBarButtonItem:backItem];
     
 }
@@ -107,10 +117,10 @@
 
 - (void)didItem:(CBPeripheral *)peripheral {
     
+    [self.bluetoothManager connect:peripheral];
     //
-    LXShowDetailViewController *detailVc = [[LXShowDetailViewController alloc] init];
-    [self.navigationController pushViewController:detailVc animated:YES];
-//    [self.bluetoothManager connect:peripheral];
+
+
 }
 
 
@@ -126,6 +136,14 @@
     
     
 }
+
+- (void)temperatureComplete:(double)numValue {
+
+    LXShowDetailViewController *detailVc = [[LXShowDetailViewController alloc] init];
+    detailVc.numValue = numValue;
+    [self.navigationController pushViewController:detailVc animated:YES];
+}
+
 
 - (UILabel *)tipLabel {
     
@@ -193,3 +211,5 @@
 }
 
 @end
+
+
