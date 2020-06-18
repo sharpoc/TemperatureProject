@@ -99,7 +99,7 @@
 #pragma mark 连接外设--成功
 - (void)centralManager:(CBCentralManager *)central didConnectPeripheral:(CBPeripheral *)peripheral{
     //连接成功后停止扫描，节省内存
-    [central stopScan];
+//    [central stopScan];
     peripheral.delegate = self;
     self.peripheral = peripheral;
     //4.扫描外设的服务

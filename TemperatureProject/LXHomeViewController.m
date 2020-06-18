@@ -112,10 +112,13 @@
 
 - (void)didItem:(CBPeripheral *)peripheral {
     
-    [self.bluetoothManager connect:peripheral];
-    //
-
-
+//    [self.bluetoothManager connect:peripheral];
+    LXShowDetailViewController *detailVc = [[LXShowDetailViewController alloc] init];
+//    detailVc.numValue = numValue;
+    detailVc.peripheral = peripheral;
+    detailVc.bluetoothManager = self.bluetoothManager;
+    self.bluetoothManager.delegate = detailVc;
+    [self.navigationController pushViewController:detailVc animated:YES];
 }
 
 
@@ -124,19 +127,6 @@
     
     self.peripheralArray = [dict allValues];
     self.peripheralListView.peripheralArray = self.peripheralArray;
-}
-
-
-- (void)didConnectBlue {
-    
-    
-}
-
-- (void)temperatureComplete:(double)numValue {
-
-    LXShowDetailViewController *detailVc = [[LXShowDetailViewController alloc] init];
-    detailVc.numValue = numValue;
-    [self.navigationController pushViewController:detailVc animated:YES];
 }
 
 

@@ -8,8 +8,9 @@
 
 #import "LXShowDetailViewController.h"
 #import "LXSetAlarmViewController.h"
+#import "LXBluetoothManager.h"
 
-@interface LXShowDetailViewController ()
+@interface LXShowDetailViewController ()<LXBluetoothManagerDelegate>
 
 @property (nonatomic,strong) UIImageView *bgImageView;
 @property (nonatomic,strong) UIView *bgView;
@@ -18,6 +19,7 @@
 @property (nonatomic,strong) UILabel *timeTitleLabel;
 @property (nonatomic,strong) UILabel *timeLabel;
 @property (nonatomic,strong) UIButton *disconnectBtn;
+
 
 @end
 
@@ -37,6 +39,8 @@
         
     UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithCustomView:settingButton];
     self.navigationItem.rightBarButtonItem = rightItem;
+ 
+    [self.bluetoothManager connect:self.peripheral];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -145,6 +149,18 @@
     [self.navigationController pushViewController:setAlarmVc animated:YES];
 }
 
+
+#pragma mark LXBluetoothManagerDelegate
+- (void)didConnectBlue {
+    
+    
+}
+
+- (void)temperatureComplete:(double)numValue {
+
+    self.numValue = numValue;
+}
+
 - (UIButton *)disconnectBtn {
     
     if (!_disconnectBtn) {
@@ -192,7 +208,7 @@
         _numLabel = [[UILabel alloc] init];
         _numLabel.textColor = KSQColor(98, 216, 193);
         _numLabel.font = [UIFont systemFontOfSize:60];
-        _numLabel.text = @"36°C";
+        _numLabel.text = @"0°C";
         _numLabel.textAlignment = NSTextAlignmentCenter;
     }
     
