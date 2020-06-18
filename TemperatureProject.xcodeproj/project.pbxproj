@@ -21,6 +21,7 @@
 		84E612242498F4570019B6BA /* LXSetAlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E612232498F4560019B6BA /* LXSetAlarmViewController.m */; };
 		84E61261249A47DB0019B6BA /* LXCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E61260249A47DA0019B6BA /* LXCacheManager.m */; };
 		84E61263249B465A0019B6BA /* alarm_d_d.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 84E61262249B46590019B6BA /* alarm_d_d.mp3 */; };
+		84E6126A249B82E30019B6BA /* LoadingHUDManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E61267249B82E30019B6BA /* LoadingHUDManager.m */; };
 		97A232560325C2D0BBA4FF5C /* libPods-TemperatureProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 425AF8C8F268A312023961ED /* libPods-TemperatureProject.a */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +56,8 @@
 		84E6125F249A47DA0019B6BA /* LXCacheManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXCacheManager.h; sourceTree = "<group>"; };
 		84E61260249A47DA0019B6BA /* LXCacheManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXCacheManager.m; sourceTree = "<group>"; };
 		84E61262249B46590019B6BA /* alarm_d_d.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = alarm_d_d.mp3; sourceTree = "<group>"; };
+		84E61265249B82E30019B6BA /* LoadingHUDManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingHUDManager.h; sourceTree = "<group>"; };
+		84E61267249B82E30019B6BA /* LoadingHUDManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingHUDManager.m; sourceTree = "<group>"; };
 		9000B6F833968DAECE5BCAE9 /* Pods-TemperatureProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TemperatureProject.debug.xcconfig"; path = "Target Support Files/Pods-TemperatureProject/Pods-TemperatureProject.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -121,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				84E61213249358540019B6BA /* LXTemperature.pch */,
+				84E61264249B82E30019B6BA /* MBProgressHUD */,
 				84E6125F249A47DA0019B6BA /* LXCacheManager.h */,
 				84E61260249A47DA0019B6BA /* LXCacheManager.m */,
 				84E61205249319BF0019B6BA /* LXConstant.h */,
@@ -152,6 +156,15 @@
 				84E61262249B46590019B6BA /* alarm_d_d.mp3 */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		84E61264249B82E30019B6BA /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				84E61265249B82E30019B6BA /* LoadingHUDManager.h */,
+				84E61267249B82E30019B6BA /* LoadingHUDManager.m */,
+			);
+			path = MBProgressHUD;
 			sourceTree = "<group>";
 		};
 		CC99E4C990F2F50ADEEB33CF /* Pods */ = {
@@ -268,6 +281,7 @@
 				84E6109324921AF20019B6BA /* main.m in Sources */,
 				84E61261249A47DB0019B6BA /* LXCacheManager.m in Sources */,
 				84E612212498BB1D0019B6BA /* Tool.m in Sources */,
+				84E6126A249B82E30019B6BA /* LoadingHUDManager.m in Sources */,
 				84E6121C2497771C0019B6BA /* LXShowDetailViewController.m in Sources */,
 				84E610C0249227F00019B6BA /* LXHomeViewController.m in Sources */,
 			);

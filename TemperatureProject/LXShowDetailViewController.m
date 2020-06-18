@@ -41,6 +41,7 @@
     self.navigationItem.rightBarButtonItem = rightItem;
  
     [self.bluetoothManager connect:self.peripheral];
+    [[LoadingHUDManager shareInstance] showHUDProgress];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -132,6 +133,8 @@
 }
 
 - (void)setNumValue:(double)numValue {
+    
+    [[LoadingHUDManager shareInstance] hidHUDProgress];
     
     self.numLabel.text = [NSString stringWithFormat:@"%.1f°C",numValue];
     NSDate *date = [NSDate date];

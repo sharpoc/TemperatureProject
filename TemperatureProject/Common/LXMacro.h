@@ -6,6 +6,29 @@
 //  Copyright © 2020 admin. All rights reserved.
 //
 
+#ifndef LXMacro_h
+#define LXMacro_h
+
+/** block判空 */
+#define SQSafeBlock(block, ...) if (block) { block(__VA_ARGS__); };
+
+/** 安全的dispatch main */
+#ifndef SQSafeMainDispatch
+#define SQSafeMainDispatch(block)\
+if (strcmp(dispatch_queue_get_label(DISPATCH_CURRENT_QUEUE_LABEL), dispatch_queue_get_label(dispatch_get_main_queue())) == 0) {\
+block();\
+} else {\
+dispatch_async(dispatch_get_main_queue(), block);\
+}
+#endif
+//特定系统判断
+#define IOS(NUM) [[[UIDevice currentDevice]systemVersion] floatValue] >= NUM
+#define ApplicationDelegate ((AppDelegate *)[[UIApplication sharedApplication] delegate])
+//版本号
+#define AppCurrentVersion ([NSString stringWithFormat:@"%@",[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]])
+//app版本号 bundleId
+#define AppCurrentVersionNum ([[NSBundle mainBundle] objectForInfoDictionaryKey:(NSString*)kCFBundleVersionKey])
+#define KEYWINDOW  ApplicationDelegate.window
 #define IS_IPHONEX isIPhoneX()
 #define IPHONE_X_Gap (IS_IPHONEX ? 24 : 0)
 #define Height (IS_IPHONEX ? ([[UIScreen mainScreen] bounds].size.height-20):([[UIScreen mainScreen] bounds].size.height))
@@ -61,3 +84,5 @@ static inline CGFloat SQRealStatusBarHeight() {
         return (systemBarHeight > 20.f || systemBarHeight <= 0) ? 20.f : systemBarHeight;
     }
 }
+
+#endif /* SQMacro_h */
