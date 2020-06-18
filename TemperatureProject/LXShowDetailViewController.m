@@ -31,7 +31,7 @@
     [self createLayout];
 
     UIButton *settingButton = [UIButton buttonWithType:UIButtonTypeSystem];
-    [settingButton setImage:[UIImage imageNamed:@"titleButton"] forState:UIControlStateNormal];
+    [settingButton setImage:[UIImage imageNamed:@"settingIcon"] forState:UIControlStateNormal];
     [settingButton setTitleColor:KSQRandomColor forState:UIControlStateNormal];
     [settingButton addTarget:self action:@selector(settingButtonClicked) forControlEvents:UIControlEventTouchUpInside];
         

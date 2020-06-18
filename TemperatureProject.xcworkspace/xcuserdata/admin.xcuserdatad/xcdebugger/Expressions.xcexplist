@@ -27,6 +27,17 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "-[LXSetAlarmViewController okButtonClick]:LXSetAlarmViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.secondValue">
+            </PersistentString>
+            <PersistentString
+               value = "self.firstValue">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "-[LXHomeViewController peripheral:didDiscoverCharacteristicsForService:error:]:LXHomeViewController.m">
          <PersistentStrings>
             <PersistentString

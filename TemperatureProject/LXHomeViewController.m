@@ -12,8 +12,6 @@
 #import "FLAnimatedImageView+WebCache.h"
 #import "LXShowDetailViewController.h"
 
-#import "LXSetAlarmViewController.h"
-
 
 @interface LXHomeViewController ()<LXBluetoothManagerDelegate,LXPeripheralListViewDelegate>
 
@@ -36,9 +34,6 @@
     [self createLayout];
     
     [self.bluetoothManager start];
-    
-    LXSetAlarmViewController *setAlarmVc = [[LXSetAlarmViewController alloc] init];
-    [self.navigationController pushViewController:setAlarmVc animated:YES];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -104,7 +99,7 @@
        
         make.left.right.mas_equalTo(0);
         make.bottom.mas_equalTo(0);
-        make.height.mas_equalTo(200);
+        make.height.mas_equalTo(350);
     }];
 }
 

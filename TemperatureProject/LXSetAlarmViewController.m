@@ -37,8 +37,8 @@
     [self createUI];
     [self createLayout];
     
-    self.firstNumArray = @[@(33),@(34),@(35),@(36),@(37),@(38),@(39),@(40)];
-    self.secondNumArray = @[@(0),@(1),@(2),@(3),@(4),@(5),@(6),@(7),@(8),@(9)];
+    self.firstNumArray = @[@"33",@"34",@"35",@"36",@"37",@"38",@"39",@"40"];
+    self.secondNumArray = @[@"0",@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9"];
 }
 
 - (void)createUI {
@@ -130,8 +130,8 @@
 
 - (void)okButtonClick {
     
-    float wendu = [[NSString stringWithFormat:@"%@.%@",self.firstValue,self.secondValue] floatValue];
-    [[LXCacheManager shareInstance] setFloatValueWithUserDefaultKey:@"wendu" withFloatValue:wendu];
+    NSString *wendu = [NSString stringWithFormat:@"%@.%@",self.firstValue,self.secondValue];
+    [[LXCacheManager shareInstance] setObjectWithUserDefaultKey:@"wendu" withObject:wendu];
     [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -165,7 +165,7 @@
     if (component == 0) {
       //如果是第一列，直接返回对应行号索引的省的名称
         
-        label.text = [NSString stringWithFormat:@"        %@",[self.firstNumArray[row] stringValue]];
+        label.text = [NSString stringWithFormat:@"        %@",self.firstNumArray[row]];
         if (self.firstRow == row) {
             label.textColor = KSQColor(98, 216, 193);
         } else {
@@ -176,7 +176,7 @@
         
         label.textAlignment = NSTextAlignmentLeft;
         
-        label.text = [NSString stringWithFormat:@"%@ ",[self.secondNumArray[row] stringValue]];
+        label.text = [NSString stringWithFormat:@"%@ ",self.secondNumArray[row]];
 
         if (self.secondRow == row) {
             label.textColor = KSQColor(98, 216, 193);;
@@ -200,11 +200,11 @@
     
     if (component == 0) {
         
-        self.firstValue = [self.firstNumArray[row] stringValue];
+        self.firstValue = self.firstNumArray[row];
         self.firstRow = row;
     } else {
         
-        self.secondValue = [self.secondNumArray[row] stringValue];
+        self.secondValue = self.secondNumArray[row];
         self.secondRow = row;
     }
     

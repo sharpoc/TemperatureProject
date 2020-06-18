@@ -387,6 +387,7 @@
 			baseConfigurationReference = 9000B6F833968DAECE5BCAE9 /* Pods-TemperatureProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P23V9BVWQD;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/TemperatureProject/Common/LXTemperature.pch";
@@ -407,6 +408,7 @@
 			baseConfigurationReference = 582345F093EB901C6CBF0236 /* Pods-TemperatureProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P23V9BVWQD;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/TemperatureProject/Common/LXTemperature.pch";
