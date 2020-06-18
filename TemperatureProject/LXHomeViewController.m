@@ -13,6 +13,7 @@
 #import "LXShowDetailViewController.h"
 
 
+
 @interface LXHomeViewController ()<LXBluetoothManagerDelegate,LXPeripheralListViewDelegate>
 
 @property (nonatomic,strong) UIImageView *bgImageView;
@@ -27,6 +28,13 @@
 
 @implementation LXHomeViewController
 
+SystemSoundID ditaVoice;
+
+static void completionCallback(SystemSoundID mySSID)
+{
+    // Play again after sound play completion
+    AudioServicesPlaySystemSound(mySSID);
+}
 - (void)viewDidLoad {
     
     [super viewDidLoad];
@@ -34,7 +42,12 @@
     [self createLayout];
     
     [self.bluetoothManager start];
+    
+    
+   
 }
+
+
 
 - (void)viewWillAppear:(BOOL)animated{
     

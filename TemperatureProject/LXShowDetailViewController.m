@@ -158,6 +158,12 @@
 
 - (void)temperatureComplete:(double)numValue {
 
+    NSString *wenduValue =  [[LXCacheManager shareInstance] objectCacheAt:@"wendu"];
+    if (numValue > [wenduValue doubleValue]) {
+//       [Tool playSound];
+    }
+    
+
     self.numValue = numValue;
 }
 

@@ -20,6 +20,7 @@
 		84E612212498BB1D0019B6BA /* Tool.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E612202498BB1C0019B6BA /* Tool.m */; };
 		84E612242498F4570019B6BA /* LXSetAlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E612232498F4560019B6BA /* LXSetAlarmViewController.m */; };
 		84E61261249A47DB0019B6BA /* LXCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E61260249A47DA0019B6BA /* LXCacheManager.m */; };
+		84E61263249B465A0019B6BA /* alarm_d_d.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 84E61262249B46590019B6BA /* alarm_d_d.mp3 */; };
 		97A232560325C2D0BBA4FF5C /* libPods-TemperatureProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 425AF8C8F268A312023961ED /* libPods-TemperatureProject.a */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,7 @@
 		84E612232498F4560019B6BA /* LXSetAlarmViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXSetAlarmViewController.m; sourceTree = "<group>"; };
 		84E6125F249A47DA0019B6BA /* LXCacheManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXCacheManager.h; sourceTree = "<group>"; };
 		84E61260249A47DA0019B6BA /* LXCacheManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXCacheManager.m; sourceTree = "<group>"; };
+		84E61262249B46590019B6BA /* alarm_d_d.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = alarm_d_d.mp3; sourceTree = "<group>"; };
 		9000B6F833968DAECE5BCAE9 /* Pods-TemperatureProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TemperatureProject.debug.xcconfig"; path = "Target Support Files/Pods-TemperatureProject/Pods-TemperatureProject.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -147,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				84E6121D24978E940019B6BA /* load.gif */,
+				84E61262249B46590019B6BA /* alarm_d_d.mp3 */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84E61263249B465A0019B6BA /* alarm_d_d.mp3 in Resources */,
 				84E6121E24978E940019B6BA /* load.gif in Resources */,
 				84E6108D24921AF20019B6BA /* Assets.xcassets in Resources */,
 			);

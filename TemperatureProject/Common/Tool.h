@@ -7,12 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <AudioToolbox/AudioToolbox.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface Tool : NSObject
 
 + (nullable NSString *)localTimeZoneStringDate:(nonnull NSDate *)date andFormatter:(nullable NSString *)formatter;
+
++ (void)playSound;
 @end
 
 NS_ASSUME_NONNULL_END
