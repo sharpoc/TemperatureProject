@@ -40,7 +40,8 @@
     UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithCustomView:settingButton];
     self.navigationItem.rightBarButtonItem = rightItem;
  
-    [self.bluetoothManager connect:self.peripheral];
+    [LXBluetoothManager shareInstance].delegate = self;
+    [[LXBluetoothManager shareInstance] connect:self.peripheral];
     [[LoadingHUDManager shareInstance] showHUDProgress];
 }
 

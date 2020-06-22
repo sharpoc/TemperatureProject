@@ -27,6 +27,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic,weak) id<LXBluetoothManagerDelegate> delegate;
 
+//单例
++ (instancetype)shareInstance;
+
 - (void)start;
 
 - (void)connect:(CBPeripheral *)peripheral;

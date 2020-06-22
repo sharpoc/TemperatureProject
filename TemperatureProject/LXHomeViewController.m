@@ -19,7 +19,7 @@
 @property (nonatomic,strong) UIImageView *bgImageView;
 @property (nonatomic,strong) FLAnimatedImageView *loadImageView;//gif图
 @property (nonatomic,strong) UILabel *tipLabel;//正在寻找设备请稍等
-@property (nonatomic,strong) LXBluetoothManager *bluetoothManager;
+//@property (nonatomic,strong) LXBluetoothManager *bluetoothManager;
 @property (nonatomic,copy) NSArray *peripheralArray;
 @property (nonatomic,strong) LXPeripheralListView *peripheralListView;
 
@@ -41,7 +41,8 @@ static void completionCallback(SystemSoundID mySSID)
     [self createUI];
     [self createLayout];
     
-    [self.bluetoothManager start];
+    [LXBluetoothManager shareInstance].delegate = self;
+    [[LXBluetoothManager shareInstance] start];
     
     
    
@@ -129,8 +130,8 @@ static void completionCallback(SystemSoundID mySSID)
     LXShowDetailViewController *detailVc = [[LXShowDetailViewController alloc] init];
 //    detailVc.numValue = numValue;
     detailVc.peripheral = peripheral;
-    detailVc.bluetoothManager = self.bluetoothManager;
-    self.bluetoothManager.delegate = detailVc;
+//    detailVc.bluetoothManager = self.bluetoothManager;
+//    self.bluetoothManager.delegate = detailVc;
     [self.navigationController pushViewController:detailVc animated:YES];
 }
 
@@ -197,16 +198,16 @@ static void completionCallback(SystemSoundID mySSID)
     return _peripheralListView;
 }
 
-- (LXBluetoothManager *)bluetoothManager {
-    
-    if (!_bluetoothManager) {
-        
-        _bluetoothManager = [[LXBluetoothManager alloc] init];
-        _bluetoothManager.delegate = self;
-    }
-    
-    return _bluetoothManager;
-}
+//- (LXBluetoothManager *)bluetoothManager {
+//
+//    if (!_bluetoothManager) {
+//
+//        _bluetoothManager = [[LXBluetoothManager alloc] init];
+//        _bluetoothManager.delegate = self;
+//    }
+//
+//    return _bluetoothManager;
+//}
 
 @end
 

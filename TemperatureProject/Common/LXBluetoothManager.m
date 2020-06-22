@@ -31,9 +31,24 @@
     return self;
 }
 
+
+
+//单例
++ (instancetype)shareInstance {
+    static dispatch_once_t onceToken;
+    static LXBluetoothManager *manager = nil;
+    dispatch_once(&onceToken, ^{
+        manager = [[LXBluetoothManager alloc] init];
+        
+    });
+    return manager;
+}
+
+
+
 - (void)start{
     
-     self.centralManager.delegate = self;
+    self.centralManager.delegate = self;
 }
 
 - (void)connect:(CBPeripheral *)peripheral {
@@ -240,4 +255,6 @@
     
     return _centralManager;
 }
+
+
 @end
