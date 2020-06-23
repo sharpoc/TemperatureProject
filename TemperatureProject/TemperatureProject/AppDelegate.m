@@ -25,7 +25,7 @@
     self.window.backgroundColor = [UIColor whiteColor];
 
     //创建控制器
-    LXLoginViewController *controller=[[LXLoginViewController alloc]init];
+    LXHomeViewController *controller=[[LXHomeViewController alloc]init];
 
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:controller];
     //设置控制器View的背景颜色
