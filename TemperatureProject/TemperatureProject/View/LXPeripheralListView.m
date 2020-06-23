@@ -8,6 +8,7 @@
 
 #import "LXPeripheralListView.h"
 #import "LXPeripheralCollectionViewCell.h"
+#import "LxPeripheral.h"
 
 #define collectinViewCellID @"LXPeripheralCollectionViewCell"
 
@@ -65,7 +66,7 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     LXPeripheralCollectionViewCell * cell = (LXPeripheralCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:collectinViewCellID forIndexPath:indexPath];
     NSInteger row = indexPath.row;
-    CBPeripheral *peripheral = self.peripheralArray[row];
+    LXPeripheral *peripheral = self.peripheralArray[row];
     cell.peripheral = peripheral;
     return cell;
     

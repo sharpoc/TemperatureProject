@@ -8,12 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@class CBPeripheral;
+@class LXPeripheral;
 NS_ASSUME_NONNULL_BEGIN
 
 @interface LXPeripheralCollectionViewCell : UICollectionViewCell
 
-@property (nonatomic,strong) CBPeripheral *peripheral;
+@property (nonatomic,strong) LXPeripheral *peripheral;
 
 @end
 

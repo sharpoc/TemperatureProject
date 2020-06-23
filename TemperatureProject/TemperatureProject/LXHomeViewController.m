@@ -11,6 +11,7 @@
 #import "LXPeripheralListView.h"
 #import "FLAnimatedImageView+WebCache.h"
 #import "LXShowDetailViewController.h"
+#import "LXPeripheral.h"
 
 
 
@@ -124,12 +125,12 @@ static void completionCallback(SystemSoundID mySSID)
 
 #pragma mark LXPeripheralListViewDelegate
 
-- (void)didItem:(CBPeripheral *)peripheral {
+- (void)didItem:(LXPeripheral *)peripheral {
     
 //    [self.bluetoothManager connect:peripheral];
     LXShowDetailViewController *detailVc = [[LXShowDetailViewController alloc] init];
 //    detailVc.numValue = numValue;
-    detailVc.peripheral = peripheral;
+    detailVc.peripheral = peripheral.peripheral;
 //    detailVc.bluetoothManager = self.bluetoothManager;
 //    self.bluetoothManager.delegate = detailVc;
     [self.navigationController pushViewController:detailVc animated:YES];

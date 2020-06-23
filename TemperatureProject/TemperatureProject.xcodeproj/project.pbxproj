@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8402F27C24A1F8770039A255 /* LXPeripheral.m in Sources */ = {isa = PBXBuildFile; fileRef = 8402F27B24A1F8770039A255 /* LXPeripheral.m */; };
 		84AFA78F24A0A9DB00EB57FB /* LXHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AFA78E24A0A9DB00EB57FB /* LXHttpRequest.m */; };
 		84AFA79224A0AC7600EB57FB /* LXLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AFA79124A0AC7600EB57FB /* LXLoginViewController.m */; };
 		84AFA79B24A0AD9D00EB57FB /* LXLoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AFA79A24A0AD9D00EB57FB /* LXLoginViewModel.m */; };
@@ -32,6 +33,8 @@
 /* Begin PBXFileReference section */
 		425AF8C8F268A312023961ED /* libPods-TemperatureProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TemperatureProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		582345F093EB901C6CBF0236 /* Pods-TemperatureProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TemperatureProject.release.xcconfig"; path = "Target Support Files/Pods-TemperatureProject/Pods-TemperatureProject.release.xcconfig"; sourceTree = "<group>"; };
+		8402F27A24A1F8770039A255 /* LXPeripheral.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXPeripheral.h; sourceTree = "<group>"; };
+		8402F27B24A1F8770039A255 /* LXPeripheral.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXPeripheral.m; sourceTree = "<group>"; };
 		84AFA78D24A0A9DB00EB57FB /* LXHttpRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXHttpRequest.h; sourceTree = "<group>"; };
 		84AFA78E24A0A9DB00EB57FB /* LXHttpRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXHttpRequest.m; sourceTree = "<group>"; };
 		84AFA79024A0AC7600EB57FB /* LXLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXLoginViewController.h; sourceTree = "<group>"; };
@@ -91,6 +94,15 @@
 				425AF8C8F268A312023961ED /* libPods-TemperatureProject.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8402F27924A1F8330039A255 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8402F27A24A1F8770039A255 /* LXPeripheral.h */,
+				8402F27B24A1F8770039A255 /* LXPeripheral.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		84AFA79324A0AC9C00EB57FB /* 登录 */ = {
@@ -167,6 +179,7 @@
 		84E6107F24921AEC0019B6BA /* TemperatureProject */ = {
 			isa = PBXGroup;
 			children = (
+				8402F27924A1F8330039A255 /* Model */,
 				84AFA79324A0AC9C00EB57FB /* 登录 */,
 				84E6121724975B330019B6BA /* Resource */,
 				84E6120924934D420019B6BA /* View */,
@@ -341,6 +354,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84E6120F24934DD80019B6BA /* LXPeripheralListView.m in Sources */,
+				8402F27C24A1F8770039A255 /* LXPeripheral.m in Sources */,
 				84E6120824931CA00019B6BA /* LXBluetoothManager.m in Sources */,
 				84E6108224921AEC0019B6BA /* AppDelegate.m in Sources */,
 				84AFA78F24A0A9DB00EB57FB /* LXHttpRequest.m in Sources */,

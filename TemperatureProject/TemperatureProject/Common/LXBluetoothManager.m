@@ -9,6 +9,7 @@
 #import "LXBluetoothManager.h"
 #import "LXConstant.h"
 #import <CoreBluetooth/CoreBluetooth.h>
+#import "LxPeripheral.h"
 
 @interface LXBluetoothManager ()<CBCentralManagerDelegate,CBPeripheralDelegate>
 
@@ -101,13 +102,14 @@
                 NSLog(@"Find device:%@--%@", [peripheral name],peripheral.identifier.UUIDString);
                 if ([[peripheral name] hasPrefix:BRAND] || [[peripheral name] hasPrefix:BRAND2]) {
                     
-                    [self.deviceDic setObject:peripheral forKey:peripheral.identifier.UUIDString];
+                    
                     NSData *data = [advertisementData objectForKey:@"kCBAdvDataManufacturerData"];
                     NSInteger length = [data length];
                     Byte *getbyte = (Byte *)[data bytes];
+                    NSString *mac = @"";
                     if (length > 0) {
                         
-                        NSString *mac = [self ToHex:getbyte[0]];
+                        mac = [self ToHex:getbyte[0]];
                         for(int i = 1;i < length; i++ ){
                                
                             NSString *num = [self ToHex:getbyte[i]];
@@ -119,7 +121,16 @@
                         }
                         
                     }
+                    if ([mac isEqualToString:@""]) {
+                        
+                        mac = peripheral.identifier.UUIDString;
+                    }
                     
+                    LXPeripheral *lxPeripheral = [[LXPeripheral alloc] init];
+                    lxPeripheral.peripheral = peripheral;
+                    lxPeripheral.peripheralName = [peripheral name];
+                    lxPeripheral.mac = mac;
+                    [self.deviceDic setObject:lxPeripheral forKey:mac];
                     if ([self.delegate respondsToSelector:@selector(dataWithBluetoothDic:)]) {
                         [self.delegate dataWithBluetoothDic:_deviceDic];
                     }

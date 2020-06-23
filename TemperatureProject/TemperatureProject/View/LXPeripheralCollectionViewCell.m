@@ -7,7 +7,7 @@
 //
 
 #import "LXPeripheralCollectionViewCell.h"
-#import <CoreBluetooth/CoreBluetooth.h>
+#import "LxPeripheral.h"
 
 @interface LXPeripheralCollectionViewCell ()
 
@@ -55,11 +55,12 @@
     }];
 }
 
-- (void)setPeripheral:(CBPeripheral *)peripheral {
-    
 
-    self.nameLabel.text = [peripheral name];
-    self.idLabel.text = peripheral.identifier.UUIDString;
+- (void)setPeripheral:(LXPeripheral *)peripheral {
+
+
+    self.nameLabel.text = peripheral.peripheralName;
+    self.idLabel.text = peripheral.mac;
 }
 
 - (UILabel *)nameLabel {
