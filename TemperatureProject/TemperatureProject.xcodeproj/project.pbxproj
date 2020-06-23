@@ -1,0 +1,541 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		84AFA78F24A0A9DB00EB57FB /* LXHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AFA78E24A0A9DB00EB57FB /* LXHttpRequest.m */; };
+		84AFA79224A0AC7600EB57FB /* LXLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AFA79124A0AC7600EB57FB /* LXLoginViewController.m */; };
+		84AFA79B24A0AD9D00EB57FB /* LXLoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AFA79A24A0AD9D00EB57FB /* LXLoginViewModel.m */; };
+		84AFA79E24A0AE0600EB57FB /* LXLoginDataService.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AFA79D24A0AE0600EB57FB /* LXLoginDataService.m */; };
+		84E6108224921AEC0019B6BA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E6108124921AEC0019B6BA /* AppDelegate.m */; };
+		84E6108D24921AF20019B6BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84E6108C24921AF20019B6BA /* Assets.xcassets */; };
+		84E6109324921AF20019B6BA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E6109224921AF20019B6BA /* main.m */; };
+		84E610C0249227F00019B6BA /* LXHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E610BF249227F00019B6BA /* LXHomeViewController.m */; };
+		84E612042493199F0019B6BA /* LXConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E612032493199F0019B6BA /* LXConstant.m */; };
+		84E6120824931CA00019B6BA /* LXBluetoothManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E6120724931CA00019B6BA /* LXBluetoothManager.m */; };
+		84E6120F24934DD80019B6BA /* LXPeripheralListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E6120E24934DD80019B6BA /* LXPeripheralListView.m */; };
+		84E6121624935DF60019B6BA /* LXPeripheralCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E6121524935DF60019B6BA /* LXPeripheralCollectionViewCell.m */; };
+		84E6121C2497771C0019B6BA /* LXShowDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E6121B2497771C0019B6BA /* LXShowDetailViewController.m */; };
+		84E6121E24978E940019B6BA /* load.gif in Resources */ = {isa = PBXBuildFile; fileRef = 84E6121D24978E940019B6BA /* load.gif */; };
+		84E612212498BB1D0019B6BA /* Tool.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E612202498BB1C0019B6BA /* Tool.m */; };
+		84E612242498F4570019B6BA /* LXSetAlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E612232498F4560019B6BA /* LXSetAlarmViewController.m */; };
+		84E61261249A47DB0019B6BA /* LXCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E61260249A47DA0019B6BA /* LXCacheManager.m */; };
+		84E61263249B465A0019B6BA /* alarm_d_d.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 84E61262249B46590019B6BA /* alarm_d_d.mp3 */; };
+		84E6126A249B82E30019B6BA /* LoadingHUDManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E61267249B82E30019B6BA /* LoadingHUDManager.m */; };
+		97A232560325C2D0BBA4FF5C /* libPods-TemperatureProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 425AF8C8F268A312023961ED /* libPods-TemperatureProject.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		425AF8C8F268A312023961ED /* libPods-TemperatureProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TemperatureProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		582345F093EB901C6CBF0236 /* Pods-TemperatureProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TemperatureProject.release.xcconfig"; path = "Target Support Files/Pods-TemperatureProject/Pods-TemperatureProject.release.xcconfig"; sourceTree = "<group>"; };
+		84AFA78D24A0A9DB00EB57FB /* LXHttpRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXHttpRequest.h; sourceTree = "<group>"; };
+		84AFA78E24A0A9DB00EB57FB /* LXHttpRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXHttpRequest.m; sourceTree = "<group>"; };
+		84AFA79024A0AC7600EB57FB /* LXLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXLoginViewController.h; sourceTree = "<group>"; };
+		84AFA79124A0AC7600EB57FB /* LXLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXLoginViewController.m; sourceTree = "<group>"; };
+		84AFA79924A0AD9D00EB57FB /* LXLoginViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXLoginViewModel.h; sourceTree = "<group>"; };
+		84AFA79A24A0AD9D00EB57FB /* LXLoginViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXLoginViewModel.m; sourceTree = "<group>"; };
+		84AFA79C24A0AE0600EB57FB /* LXLoginDataService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXLoginDataService.h; sourceTree = "<group>"; };
+		84AFA79D24A0AE0600EB57FB /* LXLoginDataService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXLoginDataService.m; sourceTree = "<group>"; };
+		84E6107D24921AEC0019B6BA /* TemperatureProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TemperatureProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		84E6108024921AEC0019B6BA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		84E6108124921AEC0019B6BA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		84E6108C24921AF20019B6BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		84E6109124921AF20019B6BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84E6109224921AF20019B6BA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		84E610BE249227F00019B6BA /* LXHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXHomeViewController.h; sourceTree = "<group>"; };
+		84E610BF249227F00019B6BA /* LXHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXHomeViewController.m; sourceTree = "<group>"; };
+		84E612032493199F0019B6BA /* LXConstant.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXConstant.m; sourceTree = "<group>"; };
+		84E61205249319BF0019B6BA /* LXConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXConstant.h; sourceTree = "<group>"; };
+		84E6120624931CA00019B6BA /* LXBluetoothManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXBluetoothManager.h; sourceTree = "<group>"; };
+		84E6120724931CA00019B6BA /* LXBluetoothManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXBluetoothManager.m; sourceTree = "<group>"; };
+		84E6120D24934DD80019B6BA /* LXPeripheralListView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXPeripheralListView.h; sourceTree = "<group>"; };
+		84E6120E24934DD80019B6BA /* LXPeripheralListView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXPeripheralListView.m; sourceTree = "<group>"; };
+		84E61210249351F70019B6BA /* LXMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXMacro.h; sourceTree = "<group>"; };
+		84E61213249358540019B6BA /* LXTemperature.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXTemperature.pch; sourceTree = "<group>"; };
+		84E6121424935DF60019B6BA /* LXPeripheralCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXPeripheralCollectionViewCell.h; sourceTree = "<group>"; };
+		84E6121524935DF60019B6BA /* LXPeripheralCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXPeripheralCollectionViewCell.m; sourceTree = "<group>"; };
+		84E6121A2497771C0019B6BA /* LXShowDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXShowDetailViewController.h; sourceTree = "<group>"; };
+		84E6121B2497771C0019B6BA /* LXShowDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXShowDetailViewController.m; sourceTree = "<group>"; };
+		84E6121D24978E940019B6BA /* load.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = load.gif; path = "../../../../doc/温度/load.gif"; sourceTree = "<group>"; };
+		84E6121F2498BB1C0019B6BA /* Tool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tool.h; sourceTree = "<group>"; };
+		84E612202498BB1C0019B6BA /* Tool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tool.m; sourceTree = "<group>"; };
+		84E612222498F4560019B6BA /* LXSetAlarmViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXSetAlarmViewController.h; sourceTree = "<group>"; };
+		84E612232498F4560019B6BA /* LXSetAlarmViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXSetAlarmViewController.m; sourceTree = "<group>"; };
+		84E6125F249A47DA0019B6BA /* LXCacheManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXCacheManager.h; sourceTree = "<group>"; };
+		84E61260249A47DA0019B6BA /* LXCacheManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXCacheManager.m; sourceTree = "<group>"; };
+		84E61262249B46590019B6BA /* alarm_d_d.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = alarm_d_d.mp3; sourceTree = "<group>"; };
+		84E61265249B82E30019B6BA /* LoadingHUDManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingHUDManager.h; sourceTree = "<group>"; };
+		84E61267249B82E30019B6BA /* LoadingHUDManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingHUDManager.m; sourceTree = "<group>"; };
+		9000B6F833968DAECE5BCAE9 /* Pods-TemperatureProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TemperatureProject.debug.xcconfig"; path = "Target Support Files/Pods-TemperatureProject/Pods-TemperatureProject.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		84E6107A24921AEC0019B6BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				97A232560325C2D0BBA4FF5C /* libPods-TemperatureProject.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		14E09B94170CFA2344FC58A5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				425AF8C8F268A312023961ED /* libPods-TemperatureProject.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		84AFA79324A0AC9C00EB57FB /* 登录 */ = {
+			isa = PBXGroup;
+			children = (
+				84AFA79824A0AD0600EB57FB /* Controller */,
+				84AFA79424A0ACFF00EB57FB /* Model */,
+				84AFA79624A0ACFF00EB57FB /* Service */,
+				84AFA79724A0ACFF00EB57FB /* View */,
+				84AFA79524A0ACFF00EB57FB /* ViewModel */,
+			);
+			path = "登录";
+			sourceTree = "<group>";
+		};
+		84AFA79424A0ACFF00EB57FB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		84AFA79524A0ACFF00EB57FB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				84AFA79924A0AD9D00EB57FB /* LXLoginViewModel.h */,
+				84AFA79A24A0AD9D00EB57FB /* LXLoginViewModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		84AFA79624A0ACFF00EB57FB /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				84AFA79C24A0AE0600EB57FB /* LXLoginDataService.h */,
+				84AFA79D24A0AE0600EB57FB /* LXLoginDataService.m */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		84AFA79724A0ACFF00EB57FB /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		84AFA79824A0AD0600EB57FB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				84AFA79024A0AC7600EB57FB /* LXLoginViewController.h */,
+				84AFA79124A0AC7600EB57FB /* LXLoginViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		84E6107424921AEC0019B6BA = {
+			isa = PBXGroup;
+			children = (
+				84E6107F24921AEC0019B6BA /* TemperatureProject */,
+				84E6107E24921AEC0019B6BA /* Products */,
+				CC99E4C990F2F50ADEEB33CF /* Pods */,
+				14E09B94170CFA2344FC58A5 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		84E6107E24921AEC0019B6BA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				84E6107D24921AEC0019B6BA /* TemperatureProject.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		84E6107F24921AEC0019B6BA /* TemperatureProject */ = {
+			isa = PBXGroup;
+			children = (
+				84AFA79324A0AC9C00EB57FB /* 登录 */,
+				84E6121724975B330019B6BA /* Resource */,
+				84E6120924934D420019B6BA /* View */,
+				84E61201249319040019B6BA /* Common */,
+				84E6108024921AEC0019B6BA /* AppDelegate.h */,
+				84E6108124921AEC0019B6BA /* AppDelegate.m */,
+				84E6108C24921AF20019B6BA /* Assets.xcassets */,
+				84E6109124921AF20019B6BA /* Info.plist */,
+				84E6109224921AF20019B6BA /* main.m */,
+				84E610BE249227F00019B6BA /* LXHomeViewController.h */,
+				84E610BF249227F00019B6BA /* LXHomeViewController.m */,
+				84E6121A2497771C0019B6BA /* LXShowDetailViewController.h */,
+				84E6121B2497771C0019B6BA /* LXShowDetailViewController.m */,
+				84E612222498F4560019B6BA /* LXSetAlarmViewController.h */,
+				84E612232498F4560019B6BA /* LXSetAlarmViewController.m */,
+			);
+			path = TemperatureProject;
+			sourceTree = "<group>";
+		};
+		84E61201249319040019B6BA /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				84E61213249358540019B6BA /* LXTemperature.pch */,
+				84E61264249B82E30019B6BA /* MBProgressHUD */,
+				84E6125F249A47DA0019B6BA /* LXCacheManager.h */,
+				84E61260249A47DA0019B6BA /* LXCacheManager.m */,
+				84E61205249319BF0019B6BA /* LXConstant.h */,
+				84E612032493199F0019B6BA /* LXConstant.m */,
+				84E6120624931CA00019B6BA /* LXBluetoothManager.h */,
+				84E6120724931CA00019B6BA /* LXBluetoothManager.m */,
+				84E61210249351F70019B6BA /* LXMacro.h */,
+				84E6121F2498BB1C0019B6BA /* Tool.h */,
+				84E612202498BB1C0019B6BA /* Tool.m */,
+				84AFA78D24A0A9DB00EB57FB /* LXHttpRequest.h */,
+				84AFA78E24A0A9DB00EB57FB /* LXHttpRequest.m */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		84E6120924934D420019B6BA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				84E6120D24934DD80019B6BA /* LXPeripheralListView.h */,
+				84E6120E24934DD80019B6BA /* LXPeripheralListView.m */,
+				84E6121424935DF60019B6BA /* LXPeripheralCollectionViewCell.h */,
+				84E6121524935DF60019B6BA /* LXPeripheralCollectionViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		84E6121724975B330019B6BA /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				84E6121D24978E940019B6BA /* load.gif */,
+				84E61262249B46590019B6BA /* alarm_d_d.mp3 */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		84E61264249B82E30019B6BA /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				84E61265249B82E30019B6BA /* LoadingHUDManager.h */,
+				84E61267249B82E30019B6BA /* LoadingHUDManager.m */,
+			);
+			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
+		CC99E4C990F2F50ADEEB33CF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9000B6F833968DAECE5BCAE9 /* Pods-TemperatureProject.debug.xcconfig */,
+				582345F093EB901C6CBF0236 /* Pods-TemperatureProject.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		84E6107C24921AEC0019B6BA /* TemperatureProject */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84E6109624921AF20019B6BA /* Build configuration list for PBXNativeTarget "TemperatureProject" */;
+			buildPhases = (
+				BEF79F974AA0429ECDA22E47 /* [CP] Check Pods Manifest.lock */,
+				84E6107924921AEC0019B6BA /* Sources */,
+				84E6107A24921AEC0019B6BA /* Frameworks */,
+				84E6107B24921AEC0019B6BA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TemperatureProject;
+			productName = TemperatureProject;
+			productReference = 84E6107D24921AEC0019B6BA /* TemperatureProject.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		84E6107524921AEC0019B6BA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1140;
+				ORGANIZATIONNAME = admin;
+				TargetAttributes = {
+					84E6107C24921AEC0019B6BA = {
+						CreatedOnToolsVersion = 11.4.1;
+					};
+				};
+			};
+			buildConfigurationList = 84E6107824921AEC0019B6BA /* Build configuration list for PBXProject "TemperatureProject" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 84E6107424921AEC0019B6BA;
+			productRefGroup = 84E6107E24921AEC0019B6BA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				84E6107C24921AEC0019B6BA /* TemperatureProject */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		84E6107B24921AEC0019B6BA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84E61263249B465A0019B6BA /* alarm_d_d.mp3 in Resources */,
+				84E6121E24978E940019B6BA /* load.gif in Resources */,
+				84E6108D24921AF20019B6BA /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		BEF79F974AA0429ECDA22E47 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TemperatureProject-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		84E6107924921AEC0019B6BA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84E6120F24934DD80019B6BA /* LXPeripheralListView.m in Sources */,
+				84E6120824931CA00019B6BA /* LXBluetoothManager.m in Sources */,
+				84E6108224921AEC0019B6BA /* AppDelegate.m in Sources */,
+				84AFA78F24A0A9DB00EB57FB /* LXHttpRequest.m in Sources */,
+				84AFA79B24A0AD9D00EB57FB /* LXLoginViewModel.m in Sources */,
+				84AFA79224A0AC7600EB57FB /* LXLoginViewController.m in Sources */,
+				84E6121624935DF60019B6BA /* LXPeripheralCollectionViewCell.m in Sources */,
+				84AFA79E24A0AE0600EB57FB /* LXLoginDataService.m in Sources */,
+				84E612042493199F0019B6BA /* LXConstant.m in Sources */,
+				84E612242498F4570019B6BA /* LXSetAlarmViewController.m in Sources */,
+				84E6109324921AF20019B6BA /* main.m in Sources */,
+				84E61261249A47DB0019B6BA /* LXCacheManager.m in Sources */,
+				84E612212498BB1D0019B6BA /* Tool.m in Sources */,
+				84E6126A249B82E30019B6BA /* LoadingHUDManager.m in Sources */,
+				84E6121C2497771C0019B6BA /* LXShowDetailViewController.m in Sources */,
+				84E610C0249227F00019B6BA /* LXHomeViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		84E6109424921AF20019B6BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		84E6109524921AF20019B6BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		84E6109724921AF20019B6BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9000B6F833968DAECE5BCAE9 /* Pods-TemperatureProject.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P23V9BVWQD;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/TemperatureProject/Common/LXTemperature.pch";
+				INFOPLIST_FILE = TemperatureProject/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sq.lx.TemperatureProject;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		84E6109824921AF20019B6BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 582345F093EB901C6CBF0236 /* Pods-TemperatureProject.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P23V9BVWQD;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/TemperatureProject/Common/LXTemperature.pch";
+				INFOPLIST_FILE = TemperatureProject/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sq.lx.TemperatureProject;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		84E6107824921AEC0019B6BA /* Build configuration list for PBXProject "TemperatureProject" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84E6109424921AF20019B6BA /* Debug */,
+				84E6109524921AF20019B6BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84E6109624921AF20019B6BA /* Build configuration list for PBXNativeTarget "TemperatureProject" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84E6109724921AF20019B6BA /* Debug */,
+				84E6109824921AF20019B6BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 84E6107524921AEC0019B6BA /* Project object */;
+}
