@@ -16,6 +16,9 @@
             <PersistentString
                value = "self.delegate">
             </PersistentString>
+            <PersistentString
+               value = "[peripheral name]">
+            </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
@@ -31,6 +34,14 @@
          <PersistentStrings>
             <PersistentString
                value = "peripheral.services">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "__43+[LXHttpRequest POST:dict:succeed:failure:]_block_invoke_3:LXHttpRequest.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

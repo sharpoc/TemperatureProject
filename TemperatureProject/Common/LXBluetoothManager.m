@@ -98,10 +98,28 @@
         
         if (peripheral!=nil) {
             if ([peripheral name]!=nil) {
-                if ([[peripheral name] hasPrefix:BRAND]) {
-                    NSLog(@"Find device:%@--%@", [peripheral name],peripheral.identifier.UUIDString);
+                NSLog(@"Find device:%@--%@", [peripheral name],peripheral.identifier.UUIDString);
+                if ([[peripheral name] hasPrefix:BRAND] || [[peripheral name] hasPrefix:BRAND2]) {
+                    
                     [self.deviceDic setObject:peripheral forKey:peripheral.identifier.UUIDString];
-                    // 将设备信息传到外面的页面(VC), 构成扫描到的设备列表
+                    NSData *data = [advertisementData objectForKey:@"kCBAdvDataManufacturerData"];
+                    NSInteger length = [data length];
+                    Byte *getbyte = (Byte *)[data bytes];
+                    if (length > 0) {
+                        
+                        NSString *mac = [self ToHex:getbyte[0]];
+                        for(int i = 1;i < length; i++ ){
+                               
+                            NSString *num = [self ToHex:getbyte[i]];
+                            if (num.length==1) {
+                                
+                                num = [NSString stringWithFormat:@"0%@",num];
+                            }
+                            mac = [NSString stringWithFormat:@"%@:%@",mac,num];
+                        }
+                        
+                    }
+                    
                     if ([self.delegate respondsToSelector:@selector(dataWithBluetoothDic:)]) {
                         [self.delegate dataWithBluetoothDic:_deviceDic];
                     }
@@ -234,6 +252,41 @@
         value = *bs;
     }
     return value;
+}
+
+//将十进制转化为十六进制
+-(NSString *)ToHex:(long long int)tmpid
+{
+    NSString *nLetterValue;
+    NSString *str =@"";
+    long long int ttmpig;
+    for (int i = 0; i<9; i++) {
+        ttmpig=tmpid%16;
+        tmpid=tmpid/16;
+        switch (ttmpig)
+        {
+            case 10:
+                nLetterValue =@"A";break;
+            case 11:
+                nLetterValue =@"B";break;
+            case 12:
+                nLetterValue =@"C";break;
+            case 13:
+                nLetterValue =@"D";break;
+            case 14:
+                nLetterValue =@"E";break;
+            case 15:
+                nLetterValue =@"F";break;
+            default:nLetterValue=[[NSString alloc]initWithFormat:@"%lli",ttmpig];
+
+        }
+        str = [nLetterValue stringByAppendingString:str];
+        if (tmpid == 0) {
+            break;
+        }
+
+    }
+    return str;
 }
 
 - (NSMutableDictionary *)deviceDic {
