@@ -8,10 +8,13 @@
 
 #import "LXLoginViewController.h"
 #import "LXLoginViewModel.h"
+#import "LXRegisterViewController.h"
 
 @interface LXLoginViewController ()
 
 @property (nonatomic,strong) LXLoginViewModel *viewModel;
+@property (nonatomic,strong) UITextField *codeTextField;
+@property (nonatomic,strong) UITextField *phone;
 
 @end
 
@@ -19,9 +22,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    
+    LXRegisterViewController *registerVc = [[LXRegisterViewController alloc] init];
+    [self.navigationController pushViewController:registerVc animated:YES];
+    
 //    [self.viewModel sendYZM:^(BOOL success, NSString * _Nonnull msg, NSObject * _Nonnull model) {
-//        
+//
 //    }];
 }
 
