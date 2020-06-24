@@ -30,9 +30,7 @@
     LXRegisterViewController *registerVc = [[LXRegisterViewController alloc] init];
     [self.navigationController pushViewController:registerVc animated:YES];
     
-//    [self.viewModel sendYZM:^(BOOL success, NSString * _Nonnull msg, NSObject * _Nonnull model) {
-//
-//    }];
+
 }
 
 

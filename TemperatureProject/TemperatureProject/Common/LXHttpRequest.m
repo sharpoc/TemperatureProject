@@ -54,8 +54,10 @@ static LXHttpRequest *httpRequest = nil;
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
+        [self printResponse:responseObject rquestUrl:URLString requestParams:dict];
         succeed(responseObject);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        [self printErrorInfo:error rquestUrl:URLString requestParams:dict];
         failure(error);
     }];
    
@@ -78,8 +80,10 @@ static LXHttpRequest *httpRequest = nil;
     [manager POST:URLString parameters:dict headers:nil progress:^(NSProgress * _Nonnull uploadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        [self printResponse:responseObject rquestUrl:URLString requestParams:dict];
         succeed(responseObject);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        [self printErrorInfo:error rquestUrl:URLString requestParams:dict];
         failure(error);
     }];
 
@@ -114,5 +118,35 @@ static LXHttpRequest *httpRequest = nil;
     manager.requestSerializer.timeoutInterval = 15;
     
     return manager;
+}
+
+//MARK:----------接口响应数据打印----------
++ (void)printResponse:(id)response rquestUrl:(NSString *)url requestParams:(id)params {
+#if DEBUG
+    @try {
+        NSData *jsonData = [NSJSONSerialization dataWithJSONObject:response options:NSJSONWritingPrettyPrinted error:nil];
+        NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+        
+        NSString *log = [NSString stringWithFormat:@"\n**************** REQUEST: ****************\n【URL】 %@\n--------------------------------------------\npara:\n%@\n--------------------------------------------\nresponse:\n%@ \n*********************************************\n", url, [params description], jsonString];
+        // 注释掉大数据上报
+        if (![url containsString:@"passenger/appDataReport"]) {
+            printf("%s\n", [log UTF8String]);
+        }
+    } @catch (NSException *exception) {
+        
+    }
+#endif
+}
+
+//MARK:----------接口错误信息打印----------
++ (void)printErrorInfo:(NSError *)error rquestUrl:(NSString *)url requestParams:(id)params {
+#if DEBUG
+    @try {
+        NSString *log = [NSString stringWithFormat:@"\n**************** REQUEST ERROR: ****************\n【URL】%@\n--------------------------------------------\npara:\n%@\n--------------------------------------------\nresponse:\n%@ \n*********************************************\n", url, [params description], error];
+        printf("%s\n", [log UTF8String]);
+    } @catch (NSException *exception) {
+        
+    }
+#endif
 }
 @end
