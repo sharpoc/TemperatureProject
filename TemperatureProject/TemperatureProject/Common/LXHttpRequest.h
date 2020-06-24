@@ -17,6 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)GET:(NSString *)URLString dict:(id)dict succeed:(void (^)(id data))succeed failure:(void (^)(NSError *error))failure;
   
 + (void)POST:(NSString *)URLString dict:(id)dict succeed:(void (^)(id data))succeed failure:(void (^)(NSError *error))failure;
+
++ (void)POST:(NSString *)URLString jsonDict:(id)dict succeed:(void (^)(id data))succeed failure:(void (^)(NSError *error))failure;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -42,4 +42,13 @@
     //3.播放音效文件
     AudioServicesPlaySystemSound(soundID);
 }
+
++ (NSString*)convertToJSONData:(id)infoDict {
+    
+    NSError *error;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:infoDict options:NSJSONWritingPrettyPrinted error:&error];
+    NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    
+    return jsonString;
+}
 @end

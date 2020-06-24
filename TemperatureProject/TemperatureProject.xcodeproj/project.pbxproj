@@ -12,6 +12,8 @@
 		8402F28524A20EE90039A255 /* LXInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8402F28424A20EE90039A255 /* LXInputView.m */; };
 		8402F28824A32B760039A255 /* LXRegisterViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8402F28724A32B760039A255 /* LXRegisterViewModel.m */; };
 		8402F28B24A3347D0039A255 /* LXUserRegisterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8402F28A24A3347D0039A255 /* LXUserRegisterModel.m */; };
+		8402F28E24A365D60039A255 /* NSDictionary+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 8402F28D24A365D60039A255 /* NSDictionary+Log.m */; };
+		8402F29124A366040039A255 /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 8402F29024A366030039A255 /* NSArray+Log.m */; };
 		84AFA78F24A0A9DB00EB57FB /* LXHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AFA78E24A0A9DB00EB57FB /* LXHttpRequest.m */; };
 		84AFA79224A0AC7600EB57FB /* LXLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AFA79124A0AC7600EB57FB /* LXLoginViewController.m */; };
 		84AFA79B24A0AD9D00EB57FB /* LXLoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AFA79A24A0AD9D00EB57FB /* LXLoginViewModel.m */; };
@@ -47,6 +49,10 @@
 		8402F28724A32B760039A255 /* LXRegisterViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXRegisterViewModel.m; sourceTree = "<group>"; };
 		8402F28924A3347D0039A255 /* LXUserRegisterModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXUserRegisterModel.h; sourceTree = "<group>"; };
 		8402F28A24A3347D0039A255 /* LXUserRegisterModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXUserRegisterModel.m; sourceTree = "<group>"; };
+		8402F28C24A365D60039A255 /* NSDictionary+Log.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Log.h"; sourceTree = "<group>"; };
+		8402F28D24A365D60039A255 /* NSDictionary+Log.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Log.m"; sourceTree = "<group>"; };
+		8402F28F24A366030039A255 /* NSArray+Log.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+Log.h"; sourceTree = "<group>"; };
+		8402F29024A366030039A255 /* NSArray+Log.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Log.m"; sourceTree = "<group>"; };
 		84AFA78D24A0A9DB00EB57FB /* LXHttpRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXHttpRequest.h; sourceTree = "<group>"; };
 		84AFA78E24A0A9DB00EB57FB /* LXHttpRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXHttpRequest.m; sourceTree = "<group>"; };
 		84AFA79024A0AC7600EB57FB /* LXLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXLoginViewController.h; sourceTree = "<group>"; };
@@ -235,6 +241,10 @@
 				84E612202498BB1C0019B6BA /* Tool.m */,
 				84AFA78D24A0A9DB00EB57FB /* LXHttpRequest.h */,
 				84AFA78E24A0A9DB00EB57FB /* LXHttpRequest.m */,
+				8402F28C24A365D60039A255 /* NSDictionary+Log.h */,
+				8402F28D24A365D60039A255 /* NSDictionary+Log.m */,
+				8402F28F24A366030039A255 /* NSArray+Log.h */,
+				8402F29024A366030039A255 /* NSArray+Log.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -378,6 +388,8 @@
 				8402F27C24A1F8770039A255 /* LXPeripheral.m in Sources */,
 				84E6120824931CA00019B6BA /* LXBluetoothManager.m in Sources */,
 				8402F28524A20EE90039A255 /* LXInputView.m in Sources */,
+				8402F28E24A365D60039A255 /* NSDictionary+Log.m in Sources */,
+				8402F29124A366040039A255 /* NSArray+Log.m in Sources */,
 				84E6108224921AEC0019B6BA /* AppDelegate.m in Sources */,
 				84AFA78F24A0A9DB00EB57FB /* LXHttpRequest.m in Sources */,
 				84AFA79B24A0AD9D00EB57FB /* LXLoginViewModel.m in Sources */,

@@ -16,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 + (nullable NSString *)localTimeZoneStringDate:(nonnull NSDate *)date andFormatter:(nullable NSString *)formatter;
 
 + (void)playSound;
+
++ (NSString*)convertToJSONData:(id)infoDict;
 @end
 
 NS_ASSUME_NONNULL_END

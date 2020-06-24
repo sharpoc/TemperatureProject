@@ -89,6 +89,54 @@ static LXHttpRequest *httpRequest = nil;
 
 }
 
++ (void)POST:(NSString *)URLString jsonDict:(id)dict succeed:(void (^)(id data))succeed failure:(void (^)(NSError *error))failure
+{
+    // 请求参数数据
+    NSError *error = nil;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dict options:NSJSONWritingPrettyPrinted error:&error];
+    NSString *urlstr = URLString;
+
+       AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+       manager.requestSerializer.timeoutInterval = 30;
+       manager.responseSerializer = [AFJSONResponseSerializer serializer];
+       // 设置header
+       [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+       [manager.requestSerializer setValue:@"Bearer" forHTTPHeaderField:@"Authorization"];
+
+
+       // request
+       NSError *requestError = nil;
+       NSMutableURLRequest *request = [manager.requestSerializer requestWithMethod:@"POST" URLString:urlstr parameters:nil error:&requestError];
+       
+       // body
+       NSData *postData = jsonData;
+       [request setHTTPBody:postData];
+       
+       NSURLSessionDataTask *dataTask = [manager.session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+           
+           if (error) {
+               [self printErrorInfo:error rquestUrl:URLString requestParams:dict];
+               failure(error);
+           }
+           else
+           {
+               NSError * error = nil;
+
+               id jsonData = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
+               NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+               
+               NSString *log = [NSString stringWithFormat:@"\n**************** REQUEST: ****************\n【URL】 %@\n--------------------------------------------\npara:\n%@\n--------------------------------------------\nresponse:\n%@ \n*********************************************\n", URLString, [dict description], [jsonData description]];
+               // 注释掉大数据上报
+              
+                printf("%s\n", [log UTF8String]);
+               
+               succeed(jsonData);
+           }
+           
+       }];
+       [dataTask resume];
+}
+
 #pragma mark -单利获取AFHTTPSessionManager实例
 //MARK:解决[AFHTTPSessionManager manager]内存泄漏问题
 + (AFHTTPSessionManager *)sessionManager {
@@ -96,14 +144,15 @@ static LXHttpRequest *httpRequest = nil;
     static AFHTTPSessionManager *manager = nil;
     dispatch_once(&onceToken, ^{
         manager = [AFHTTPSessionManager manager];
-        // 客户端是否信任非法证书
-        manager.securityPolicy.allowInvalidCertificates = YES;
-        // 是否在证书域字段中验证域名
-        [manager.securityPolicy setValidatesDomainName:NO];
-        
+//        // 客户端是否信任非法证书
+//        manager.securityPolicy.allowInvalidCertificates = YES;
+//        // 是否在证书域字段中验证域名
+//        [manager.securityPolicy setValidatesDomainName:NO];
+        [manager.requestSerializer setValue:@"Bearer" forHTTPHeaderField:@"Authorization"];
         //申明返回的结果是json类型
         manager.responseSerializer = [AFJSONResponseSerializer serializer];
         //申明请求的数据是json类型
+        manager.requestSerializer = [AFJSONRequestSerializer serializer];
         //如果报接受类型不一致请替换一致text/html或别的
         manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:
         @"application/json",
