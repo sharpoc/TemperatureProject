@@ -114,24 +114,26 @@ static LXHttpRequest *httpRequest = nil;
        
        NSURLSessionDataTask *dataTask = [manager.session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
            
-           if (error) {
-               [self printErrorInfo:error rquestUrl:URLString requestParams:dict];
-               failure(error);
-           }
-           else
-           {
-               NSError * error = nil;
+           dispatch_async(dispatch_get_main_queue(), ^{
+                 
+               if (error) {
+                   [self printErrorInfo:error rquestUrl:URLString requestParams:dict];
+                   failure(error);
+               }
+               else
+               {
+                   NSError * error = nil;
 
-               id jsonData = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
-               NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-               
-               NSString *log = [NSString stringWithFormat:@"\n**************** REQUEST: ****************\n【URL】 %@\n--------------------------------------------\npara:\n%@\n--------------------------------------------\nresponse:\n%@ \n*********************************************\n", URLString, [dict description], [jsonData description]];
-               // 注释掉大数据上报
-              
-                printf("%s\n", [log UTF8String]);
-               
-               succeed(jsonData);
-           }
+                   id jsonData = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];                   
+                   NSString *log = [NSString stringWithFormat:@"\n**************** REQUEST: ****************\n【URL】 %@\n--------------------------------------------\npara:\n%@\n--------------------------------------------\nresponse:\n%@ \n*********************************************\n", URLString, [dict description], [jsonData description]];
+                   // 注释掉大数据上报
+                  
+                    printf("%s\n", [log UTF8String]);
+                   
+                   succeed(jsonData);
+               }
+           });
+           
            
        }];
        [dataTask resume];

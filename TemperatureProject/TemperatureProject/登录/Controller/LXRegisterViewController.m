@@ -113,7 +113,8 @@
     userModel.phone = self.phoneInputView.text;
     userModel.code = self.codeInputView.text;
     userModel.pwd = self.pwdInputView.text;
-    userModel.userName = @"18501302581";
+    userModel.userName = self.phoneInputView.text;
+    userModel.cname = @"张三";
 
     [self.viewModel registerWithModel:userModel andBlock:^(BOOL success, NSString * _Nonnull msg, NSObject * _Nonnull model) {
         

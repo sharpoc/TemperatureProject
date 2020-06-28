@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,copy) NSString *code;
 @property (nonatomic,copy) NSString *pwd;
 @property (nonatomic,copy) NSString *userName;
+@property (nonatomic,copy) NSString *cname;
 @end
 
 NS_ASSUME_NONNULL_END
