@@ -101,8 +101,8 @@
 
 - (void)getCodeBtnClick {
     
-    [self.viewModel sendYZM:^(BOOL success, NSString * _Nonnull msg, NSObject * _Nonnull model) {
-
+    NSString *phone = self.phoneInputView.text;
+    [self.viewModel sendYZMPhpne:phone withBlock:^(BOOL success, NSString * _Nonnull msg, NSObject * _Nonnull model) {
         
     }];
 }
@@ -113,7 +113,7 @@
     userModel.phone = self.phoneInputView.text;
     userModel.code = self.codeInputView.text;
     userModel.pwd = self.pwdInputView.text;
-    userModel.userName = @"张三";
+    userModel.userName = @"18501302581";
 
     [self.viewModel registerWithModel:userModel andBlock:^(BOOL success, NSString * _Nonnull msg, NSObject * _Nonnull model) {
         

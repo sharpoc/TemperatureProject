@@ -11,12 +11,11 @@
 
 @implementation LXLoginDataService
 
-+ (void)sendYzmWithBlock:(void(^)(BOOL success,NSString *msg,NSObject *model))block {
++ (void)sendYzmPhone:(NSString *)phone WithBlock:(void(^)(BOOL success,NSString *msg,NSObject *model))block {
     
     NSMutableDictionary *dict=[NSMutableDictionary dictionary];
-    [dict setObject:@"18501302571" forKey:@"phone"];
+    [dict setObject:phone forKey:@"phone"];
     
-    NSString *json = [Tool convertToJSONData:dict];
     [LXHttpRequest POST:@"http://39.103.132.54:1111/accounts/api/app/sendCode" jsonDict:dict succeed:^(id  _Nonnull data) {
         
     } failure:^(NSError * _Nonnull error) {
@@ -35,10 +34,10 @@
     [dict setObject:model.phone forKey:@"phone"];
     [dict setObject:model.code forKey:@"code"];
     [dict setObject:model.pwd forKey:@"password"];
-    [dict setObject:model.userName forKey:@""];
+    [dict setObject:model.userName forKey:@"username"];
     
     
-    [LXHttpRequest POST:@"http://39.103.132.54:1111/accounts/api/app/userRegister" dict:dict succeed:^(id  _Nonnull data) {
+    [LXHttpRequest POST:@"http://39.103.132.54:1111/accounts/api/app/userRegister" jsonDict:dict succeed:^(id  _Nonnull data) {
         
     } failure:^(NSError * _Nonnull error) {
         

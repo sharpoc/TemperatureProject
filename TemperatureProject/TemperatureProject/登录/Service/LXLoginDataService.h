@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LXLoginDataService : NSObject
 
-+ (void)sendYzmWithBlock:(void(^)(BOOL success,NSString *msg,NSObject *model))block;
++ (void)sendYzmPhone:(NSString *)phone WithBlock:(void(^)(BOOL success,NSString *msg,NSObject *model))block;
 
 + (void)registerWithModel:(LXUserRegisterModel *)model andBlock:(void(^)(BOOL success,NSString *msg,NSObject *model))block;
 @end

@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LXRegisterViewModel : NSObject
 
-- (void)sendYZM:(void(^)(BOOL success,NSString *msg,NSObject *model))block;
+- (void)sendYZMPhpne:(NSString *)phone withBlock:(void(^)(BOOL success,NSString *msg,NSObject *model))block;
 
 - (void)registerWithModel:(LXUserRegisterModel *)model andBlock:(void(^)(BOOL success,NSString *msg,NSObject *model))block;
 

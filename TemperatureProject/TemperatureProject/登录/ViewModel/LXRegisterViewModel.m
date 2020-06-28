@@ -11,9 +11,9 @@
 
 @implementation LXRegisterViewModel
 
-- (void)sendYZM:(void(^)(BOOL success,NSString *msg,NSObject *model))block {
+- (void)sendYZMPhpne:(NSString *)phone withBlock:(void(^)(BOOL success,NSString *msg,NSObject *model))block {
     
-    [LXLoginDataService sendYzmWithBlock:^(BOOL success, NSString * _Nonnull msg, NSObject * _Nonnull model) {
+    [LXLoginDataService sendYzmPhone:phone WithBlock:^(BOOL success, NSString * _Nonnull msg, NSObject * _Nonnull model) {
         
     }];
 }
