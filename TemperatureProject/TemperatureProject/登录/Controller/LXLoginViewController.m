@@ -15,9 +15,14 @@
 @interface LXLoginViewController ()
 
 @property (nonatomic,strong) LXLoginViewModel *viewModel;
+@property (nonatomic,strong) UIImageView *phoneIconImageView;
 @property (nonatomic,strong) UITextField *phoneTextField;
+@property (nonatomic,strong) UIImageView *pwdIconImageView;
 @property (nonatomic,strong) UITextField *pwdTextField;
+@property (nonatomic,strong) UIButton *yanButton;
 @property (nonatomic,strong) UIButton *commitBtn;
+@property (nonatomic,strong) UIButton *findPwdBtn;
+@property (nonatomic,strong) UIButton *registerBtn;
 
 @end
 
@@ -32,39 +37,97 @@
 
 - (void)createUI {
     
+    [self.view addSubview:self.phoneIconImageView];
     [self.view addSubview:self.phoneTextField];
+    [self.view addSubview:self.pwdIconImageView];
     [self.view addSubview:self.pwdTextField];
+    [self.view addSubview:self.yanButton];
     [self.view addSubview:self.commitBtn];
+    [self.view addSubview:self.findPwdBtn];
+    [self.view addSubview:self.registerBtn];
 }
 
 - (void)createLayout {
     
     
+    [self.phoneIconImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+       
+        make.left.mas_equalTo(50);
+        make.width.mas_equalTo(50);
+        make.height.mas_equalTo(50);
+        make.centerY.mas_equalTo(self.view.mas_centerY);
+    }];
+    
     [self.phoneTextField mas_makeConstraints:^(MASConstraintMaker *make) {
         
         
-        make.left.mas_equalTo(20);
-        make.right.mas_equalTo(-20);
-        make.top.mas_equalTo(200);
+        make.left.mas_equalTo(self.phoneIconImageView.mas_right);
+        make.right.mas_equalTo(-50);
+        make.top.mas_equalTo(self.phoneIconImageView.mas_top);
         make.height.mas_equalTo(50);
+        
+    }];
+    
+    [self.pwdIconImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+       
+        make.left.mas_equalTo(self.phoneIconImageView.mas_left);
+        make.width.mas_equalTo(self.phoneIconImageView.mas_width);
+        make.height.mas_equalTo(self.phoneIconImageView.mas_height);
+        make.top.mas_equalTo(self.phoneIconImageView.mas_bottom).offset(20);
         
     }];
     
     [self.pwdTextField mas_makeConstraints:^(MASConstraintMaker *make) {
         
-        make.left.mas_equalTo(self.phoneTextField.mas_left);
+        make.left.mas_equalTo(self.pwdIconImageView.mas_right);
         make.right.mas_equalTo(self.phoneTextField.mas_right);
         make.height.mas_equalTo(self.phoneTextField.mas_height);
-        make.top.mas_equalTo(self.phoneTextField.mas_bottom).offset(50);
+        make.top.mas_equalTo(self.pwdIconImageView.mas_top);
+    }];
+    
+    [self.yanButton mas_makeConstraints:^(MASConstraintMaker *make) {
+       
+        make.right.mas_equalTo(self.pwdTextField.mas_right);
+        make.width.mas_equalTo(50);
+        make.height.mas_equalTo(50);
+        make.top.mas_equalTo(self.pwdTextField.mas_top);
     }];
     
     [self.commitBtn mas_makeConstraints:^(MASConstraintMaker *make) {
        
-        make.left.mas_equalTo(50);
-        make.right.mas_equalTo(-50);
+        make.left.mas_equalTo(60);
+        make.right.mas_equalTo(-60);
         make.height.mas_equalTo(50);
         make.top.mas_equalTo(self.pwdTextField.mas_bottom).offset(50);
     }];
+    
+    [self.findPwdBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+       
+        make.left.mas_equalTo(self.commitBtn.mas_left);
+        make.width.mas_equalTo(100);
+        make.height.mas_equalTo(50);
+        make.top.mas_equalTo(self.commitBtn.mas_bottom).offset(0);
+    }];
+    
+    [self.registerBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.mas_equalTo(self.commitBtn.mas_right);
+        make.width.mas_equalTo(100);
+        make.height.mas_equalTo(50);
+        make.top.mas_equalTo(self.findPwdBtn.mas_top);
+    }];
+    
+    [self.view layoutIfNeeded];
+    CALayer *phoneBottomBorder = [CALayer layer];
+    phoneBottomBorder.backgroundColor = [UIColor orangeColor].CGColor;
+    phoneBottomBorder.frame = CGRectMake(0.0f, self.phoneTextField.frame.size.height - 1, self.phoneTextField.frame.size.width, 1.0f);
+    phoneBottomBorder.backgroundColor = [UIColor whiteColor].CGColor;
+    [self.phoneTextField.layer addSublayer:phoneBottomBorder];
+    
+    CALayer *pwdBottomBorder = [CALayer layer];
+    pwdBottomBorder.backgroundColor = [UIColor orangeColor].CGColor;
+    pwdBottomBorder.frame = CGRectMake(0.0f, self.pwdTextField.frame.size.height - 1, self.pwdTextField.frame.size.width, 1.0f);
+    pwdBottomBorder.backgroundColor = [UIColor whiteColor].CGColor;
+    [self.pwdTextField.layer addSublayer:pwdBottomBorder];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
@@ -89,16 +152,21 @@
     }];
 }
 
-- (UIButton *)commitBtn {
+- (void)findPwdBtnClick {
     
-    if (!_commitBtn) {
+    
+}
+
+- (UIImageView *)phoneIconImageView {
+    
+    if (!_phoneIconImageView) {
         
-        _commitBtn = [[UIButton alloc] init];
-        [_commitBtn addTarget:self action:@selector(commitBtnClick) forControlEvents:UIControlEventTouchUpInside];
-        _commitBtn.backgroundColor = KSQRandomColor;
+        _phoneIconImageView = [[UIImageView alloc] init];
+        _phoneIconImageView.contentMode = UIViewContentModeCenter;
+        _phoneIconImageView.image = [UIImage imageNamed:@"loginPhone"];
     }
     
-    return _commitBtn;
+    return _phoneIconImageView;
 }
 
 - (UITextField *)phoneTextField {
@@ -106,10 +174,22 @@
     if (!_phoneTextField) {
         
         _phoneTextField = [[UITextField alloc] init];
-        _phoneTextField.backgroundColor = KSQRandomColor;
+
     }
     
     return _phoneTextField;
+}
+
+- (UIImageView *)pwdIconImageView {
+    
+    if (!_pwdIconImageView) {
+        
+        _pwdIconImageView = [[UIImageView alloc] init];
+        _pwdIconImageView.contentMode = UIViewContentModeCenter;
+        _pwdIconImageView.image  = [UIImage imageNamed:@"loginPwd"];
+    }
+    
+    return _pwdIconImageView;
 }
 
 - (UITextField *)pwdTextField {
@@ -117,11 +197,65 @@
     if (!_pwdTextField) {
         
         _pwdTextField = [[UITextField alloc] init];
-        _pwdTextField.backgroundColor = KSQRandomColor;
     }
     
     return _pwdTextField;
 }
+
+- (UIButton *)yanButton {
+    
+    if (!_yanButton) {
+        
+        _yanButton = [[UIButton alloc] init];
+        [_yanButton setImage:[UIImage imageNamed:@"loginYan"] forState:UIControlStateNormal];
+    }
+    
+    return _yanButton;
+}
+
+- (UIButton *)commitBtn {
+    
+    if (!_commitBtn) {
+        
+        _commitBtn = [[UIButton alloc] init];
+        [_commitBtn setTitle:@"登录" forState:UIControlStateNormal];
+        [_commitBtn setBackgroundImage:[UIImage imageNamed:@"disconnectBtn"] forState:UIControlStateNormal];
+        [_commitBtn addTarget:self action:@selector(commitBtnClick) forControlEvents:UIControlEventTouchUpInside];
+        _commitBtn.backgroundColor = KSQRandomColor;
+        _commitBtn.layer.cornerRadius = 25;
+        _commitBtn.layer.masksToBounds = YES;
+    }
+    
+    return _commitBtn;
+}
+
+- (UIButton *)findPwdBtn {
+    
+    if (!_findPwdBtn) {
+        
+        _findPwdBtn = [[UIButton alloc] init];
+        _findPwdBtn.backgroundColor = [UIColor clearColor];
+        [_findPwdBtn setTitle:@"忘记密码" forState:UIControlStateNormal];
+        [_findPwdBtn addTarget:self action:@selector(findPwdBtnClick) forControlEvents:UIControlEventTouchUpInside];
+    }
+    
+    return _findPwdBtn;
+}
+
+- (UIButton *)registerBtn {
+    
+    if (!_registerBtn) {
+        
+        _registerBtn = [[UIButton alloc] init];
+        _registerBtn.backgroundColor = [UIColor clearColor];
+        [_registerBtn setTitle:@"立即注册" forState:UIControlStateNormal];
+        [_registerBtn addTarget:self action:@selector(registerBtnClick) forControlEvents:UIControlEventTouchUpInside];
+    }
+    
+    return _registerBtn;
+}
+
+
 
 - (LXLoginViewModel *)viewModel {
     
