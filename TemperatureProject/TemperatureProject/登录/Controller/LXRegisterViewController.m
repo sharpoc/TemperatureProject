@@ -212,7 +212,8 @@
     if (!_userNameInputView) {
         
         _userNameInputView = [[LXInputView alloc] init];
-        _userNameInputView.backgroundColor = KSQRandomColor;
+        _userNameInputView.image = [UIImage imageNamed:@"registerName"];
+
     }
     
     return _userNameInputView;
@@ -224,8 +225,9 @@
     if (!_phoneInputView) {
         
         _phoneInputView = [[LXInputView alloc] init];
-        _phoneInputView.backgroundColor = KSQRandomColor;
         _phoneInputView.inputTextField.keyboardType = UIKeyboardTypeNumberPad;
+        _phoneInputView.image = [UIImage imageNamed:@"registerPhone"];
+
     }
     
     return _phoneInputView;
@@ -236,8 +238,9 @@
     if (!_codeInputView) {
         
         _codeInputView = [[LXInputView alloc] init];
-        _codeInputView.backgroundColor = KSQRandomColor;
         _codeInputView.inputTextField.keyboardType = UIKeyboardTypeNumberPad;
+        _codeInputView.image = [UIImage imageNamed:@"registerCode"];
+
     }
     
     return _codeInputView;
@@ -248,7 +251,8 @@
     if (!_pwdInputView) {
         
         _pwdInputView = [[LXInputView alloc] init];
-        _pwdInputView.backgroundColor = KSQRandomColor;
+        _pwdInputView.image = [UIImage imageNamed:@"registerPwd"];
+
     }
     
     return _pwdInputView;
@@ -259,7 +263,8 @@
     if (!_confirmPwdInputView) {
         
         _confirmPwdInputView = [[LXInputView alloc] init];
-        _confirmPwdInputView.backgroundColor = KSQRandomColor;
+        _confirmPwdInputView.image = [UIImage imageNamed:@"registerPwd"];
+
     }
     
     return _confirmPwdInputView;

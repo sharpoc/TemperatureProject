@@ -21,6 +21,10 @@
     self = [super initWithFrame:frame];
     if (self) {
         
+        self.layer.cornerRadius = 20;
+        self.layer.masksToBounds = YES;
+        self.layer.borderWidth = 1;
+        self.layer.borderColor = KSQColor(110, 14, 178).CGColor;
         [self createUI];
         [self createLayout];
     }
@@ -57,12 +61,18 @@
     return self.inputTextField.text;
 }
 
+- (void)setImage:(UIImage *)image {
+    
+    _image = image;
+    self.iconImageView.image = image;
+}
+
 - (UIImageView *)iconImageView {
     
     if (!_iconImageView) {
         
         _iconImageView = [[UIImageView alloc] init];
-        _iconImageView.backgroundColor = KSQRandomColor;
+        _iconImageView.contentMode = UIViewContentModeCenter;
     }
     
     return _iconImageView;
