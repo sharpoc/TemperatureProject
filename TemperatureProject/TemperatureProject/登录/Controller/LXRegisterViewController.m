@@ -23,6 +23,10 @@
 @property (nonatomic,strong) UIButton *getCodeBtn;
 @property (nonatomic,strong) UIButton *submitBtn;
 
+@property (nonatomic, strong) NSTimer *timer;
+@property (nonatomic,assign) NSInteger timeNum;
+
+
 @end
 
 @implementation LXRegisterViewController
@@ -104,6 +108,11 @@
     NSString *phone = self.phoneInputView.text;
     [self.viewModel sendYZMPhpne:phone withBlock:^(BOOL success, NSString * _Nonnull msg, NSObject * _Nonnull model) {
         
+        if (success) {
+            self.timeNum = 60;
+            [self timerStart];
+        }
+       
     }];
 }
 
@@ -120,6 +129,39 @@
         
     }];
     
+}
+
+- (void)timeScheduled {
+    
+    self.timeNum --;
+    NSString *text = [NSString stringWithFormat:@"%@秒",@(self.timeNum)];
+    [self.getCodeBtn setTitle:text forState:UIControlStateNormal];
+    if (self.timeNum < 1) {
+        
+        self.getCodeBtn.enabled = NO;
+        [self.getCodeBtn setTitle:@"" forState:UIControlStateNormal];
+        [self timerStop];
+    }
+}
+
+#pragma mark- 添加定时器
+//启动定时器
+- (void)timerStart
+{
+    [self timerStop];
+    if (_timer == nil) {
+        _timer =[NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timeScheduled) userInfo:nil repeats:YES];
+    }
+}
+//销毁定时器
+- (void)timerStop
+{
+    if (_timer) {
+        if ([_timer isValid]) {
+            [_timer invalidate];
+        }
+        _timer = nil;
+    }
 }
 
 - (LXRegisterViewModel *)viewModel {
@@ -139,6 +181,7 @@
         
         _phoneInputView = [[LXInputView alloc] init];
         _phoneInputView.backgroundColor = KSQRandomColor;
+        _phoneInputView.inputTextField.keyboardType = UIKeyboardTypeNumberPad;
     }
     
     return _phoneInputView;
@@ -150,6 +193,7 @@
         
         _codeInputView = [[LXInputView alloc] init];
         _codeInputView.backgroundColor = KSQRandomColor;
+        _codeInputView.inputTextField.keyboardType = UIKeyboardTypeNumberPad;
     }
     
     return _codeInputView;

@@ -81,14 +81,11 @@
     model.pwd = self.pwdTextField.text;
     [self.viewModel loginWithModel:model withBlock:^(BOOL success, NSString * _Nonnull msg, NSObject * _Nonnull model) {
         
-//        dispatch_async(dispatch_get_main_queue(), ^{
-              
-            LXHomeViewController *homeVc = [[LXHomeViewController alloc] init];
-            UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:homeVc];
-            UIWindow *window = [UIApplication sharedApplication].keyWindow;
-            window.rootViewController = nav;
-//        });
-        
+        LXHomeViewController *homeVc = [[LXHomeViewController alloc] init];
+        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:homeVc];
+        UIWindow *window = [UIApplication sharedApplication].keyWindow;
+        window.rootViewController = nav;
+
     }];
 }
 

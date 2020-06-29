@@ -11,7 +11,7 @@
 @interface LXInputView ()
 
 @property (nonatomic,strong) UIImageView *iconImageView;
-@property (nonatomic,strong) UITextField *inputTextField;
+
 @end
 
 @implementation LXInputView

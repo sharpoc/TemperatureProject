@@ -15,6 +15,7 @@
     
     [LXLoginDataService sendYzmPhone:phone WithBlock:^(BOOL success, NSString * _Nonnull msg, NSObject * _Nonnull model) {
         
+        SQSafeBlock(block,success,msg,model);
     }];
 }
 
