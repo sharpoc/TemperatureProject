@@ -130,13 +130,6 @@
     [self.pwdTextField.layer addSublayer:pwdBottomBorder];
 }
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    
-    LXRegisterViewController *registerVc = [[LXRegisterViewController alloc] init];
-    [self.navigationController pushViewController:registerVc animated:YES];
-    
-}
-
 - (void)commitBtnClick {
     
     LXUserRegisterModel *model = [[LXUserRegisterModel alloc] init];
@@ -157,6 +150,32 @@
     
 }
 
+- (void)registerBtnClick {
+    
+    LXRegisterViewController *registerVc = [[LXRegisterViewController alloc] init];
+    [self.navigationController pushViewController:registerVc animated:YES];
+}
+
+- (void)yanButtonClick {
+    
+    self.yanButton.selected = !self.yanButton.selected;
+    
+    if (self.yanButton.selected) { // 按下去了就是明文
+        
+        NSString *tempPwdStr = self.pwdTextField.text;
+        self.pwdTextField.text = @""; // 这句代码可以防止切换的时候光标偏移
+        self.pwdTextField.secureTextEntry = NO;
+        self.pwdTextField.text = tempPwdStr;
+        
+    } else { // 暗文
+        
+        NSString *tempPwdStr = self.pwdTextField.text;
+        self.pwdTextField.text = @"";
+        self.pwdTextField.secureTextEntry = YES;
+        self.pwdTextField.text = tempPwdStr;
+    }
+}
+
 - (UIImageView *)phoneIconImageView {
     
     if (!_phoneIconImageView) {
@@ -174,6 +193,7 @@
     if (!_phoneTextField) {
         
         _phoneTextField = [[UITextField alloc] init];
+        _phoneTextField.keyboardType = UIKeyboardTypeNumberPad;
 
     }
     
@@ -197,6 +217,7 @@
     if (!_pwdTextField) {
         
         _pwdTextField = [[UITextField alloc] init];
+        _pwdTextField.secureTextEntry = YES;
     }
     
     return _pwdTextField;
@@ -208,6 +229,7 @@
         
         _yanButton = [[UIButton alloc] init];
         [_yanButton setImage:[UIImage imageNamed:@"loginYan"] forState:UIControlStateNormal];
+        [_yanButton addTarget:self action:@selector(yanButtonClick) forControlEvents:UIControlEventTouchUpInside];
     }
     
     return _yanButton;
