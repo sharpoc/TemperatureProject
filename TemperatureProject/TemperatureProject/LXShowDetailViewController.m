@@ -19,6 +19,8 @@
 @property (nonatomic,strong) UILabel *timeTitleLabel;
 @property (nonatomic,strong) UILabel *timeLabel;
 @property (nonatomic,strong) UIButton *disconnectBtn;
+@property (nonatomic,strong) UIButton *continuedTestBtn;
+@property (nonatomic,strong) UIButton *historyBtn;
 
 
 @end
@@ -70,6 +72,8 @@
     [self.bgView addSubview:self.timeTitleLabel];
     [self.bgView addSubview:self.timeLabel];
     [self.bgView addSubview:self.disconnectBtn];
+    [self.bgView addSubview:self.continuedTestBtn];
+    [self.bgView addSubview:self.historyBtn];
     
 }
 
@@ -131,6 +135,22 @@
         make.height.mas_equalTo(53);
         make.top.mas_equalTo(self.timeLabel.mas_bottom).offset(20);
     }];
+    
+    [self.continuedTestBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+        make.left.mas_equalTo(self.disconnectBtn.mas_left);
+        make.right.mas_equalTo(self.disconnectBtn.mas_right);
+        make.height.mas_equalTo(self.disconnectBtn.mas_height);
+        make.top.mas_equalTo(self.disconnectBtn.mas_bottom).offset(20);
+    }];
+    
+    [self.historyBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+        make.left.mas_equalTo(self.disconnectBtn.mas_left);
+        make.right.mas_equalTo(self.disconnectBtn.mas_right);
+        make.height.mas_equalTo(self.disconnectBtn.mas_height);
+        make.top.mas_equalTo(self.continuedTestBtn.mas_bottom).offset(20);
+    }];
 }
 
 - (void)setNumValue:(double)numValue {
@@ -169,6 +189,32 @@
     
 
     self.numValue = numValue;
+}
+
+- (UIButton *)historyBtn {
+    
+    if (!_historyBtn) {
+        
+        _historyBtn = [[UIButton alloc] init];
+        [_historyBtn setBackgroundImage:[UIImage imageNamed:@"disconnectBtn"] forState:UIControlStateNormal];
+        [_historyBtn setTitle:@"历史温度" forState:UIControlStateNormal];
+        [_historyBtn addTarget:self action:@selector(disconnectBtnClick) forControlEvents:UIControlEventTouchUpInside];
+    }
+    
+    return _historyBtn;
+}
+
+- (UIButton *)continuedTestBtn {
+    
+    if (!_continuedTestBtn) {
+        
+        _continuedTestBtn = [[UIButton alloc] init];
+        [_continuedTestBtn setBackgroundImage:[UIImage imageNamed:@"disconnectBtn"] forState:UIControlStateNormal];
+        [_continuedTestBtn setTitle:@"连续监测" forState:UIControlStateNormal];
+        [_continuedTestBtn addTarget:self action:@selector(disconnectBtnClick) forControlEvents:UIControlEventTouchUpInside];
+    }
+    
+    return _continuedTestBtn;
 }
 
 - (UIButton *)disconnectBtn {
