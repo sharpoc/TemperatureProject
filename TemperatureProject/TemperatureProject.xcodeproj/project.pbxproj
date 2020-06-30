@@ -16,6 +16,7 @@
 		8402F29124A366040039A255 /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 8402F29024A366030039A255 /* NSArray+Log.m */; };
 		8402F29524A36AAB0039A255 /* PrintBeautifulLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 8402F29424A36AAB0039A255 /* PrintBeautifulLog.m */; };
 		8402F29824A9E5120039A255 /* LXFindPwdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8402F29724A9E5110039A255 /* LXFindPwdViewController.m */; };
+		8402F2FC24AB11E50039A255 /* LXTostHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 8402F2FB24AB11E50039A255 /* LXTostHUD.m */; };
 		84AFA78F24A0A9DB00EB57FB /* LXHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AFA78E24A0A9DB00EB57FB /* LXHttpRequest.m */; };
 		84AFA79224A0AC7600EB57FB /* LXLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AFA79124A0AC7600EB57FB /* LXLoginViewController.m */; };
 		84AFA79B24A0AD9D00EB57FB /* LXLoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AFA79A24A0AD9D00EB57FB /* LXLoginViewModel.m */; };
@@ -59,6 +60,8 @@
 		8402F29424A36AAB0039A255 /* PrintBeautifulLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrintBeautifulLog.m; sourceTree = "<group>"; };
 		8402F29624A9E5110039A255 /* LXFindPwdViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXFindPwdViewController.h; sourceTree = "<group>"; };
 		8402F29724A9E5110039A255 /* LXFindPwdViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXFindPwdViewController.m; sourceTree = "<group>"; };
+		8402F2FA24AB11E50039A255 /* LXTostHUD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXTostHUD.h; sourceTree = "<group>"; };
+		8402F2FB24AB11E50039A255 /* LXTostHUD.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXTostHUD.m; sourceTree = "<group>"; };
 		84AFA78D24A0A9DB00EB57FB /* LXHttpRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXHttpRequest.h; sourceTree = "<group>"; };
 		84AFA78E24A0A9DB00EB57FB /* LXHttpRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXHttpRequest.m; sourceTree = "<group>"; };
 		84AFA79024A0AC7600EB57FB /* LXLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXLoginViewController.h; sourceTree = "<group>"; };
@@ -245,8 +248,8 @@
 		84E61201249319040019B6BA /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				8402F29224A36AAB0039A255 /* PrintBeautifulLog */,
 				84E61213249358540019B6BA /* LXTemperature.pch */,
+				8402F29224A36AAB0039A255 /* PrintBeautifulLog */,
 				84E61264249B82E30019B6BA /* MBProgressHUD */,
 				84E6125F249A47DA0019B6BA /* LXCacheManager.h */,
 				84E61260249A47DA0019B6BA /* LXCacheManager.m */,
@@ -292,6 +295,8 @@
 			children = (
 				84E61265249B82E30019B6BA /* LoadingHUDManager.h */,
 				84E61267249B82E30019B6BA /* LoadingHUDManager.m */,
+				8402F2FA24AB11E50039A255 /* LXTostHUD.h */,
+				8402F2FB24AB11E50039A255 /* LXTostHUD.m */,
 			);
 			path = MBProgressHUD;
 			sourceTree = "<group>";
@@ -422,6 +427,7 @@
 				84E612242498F4570019B6BA /* LXSetAlarmViewController.m in Sources */,
 				84E6109324921AF20019B6BA /* main.m in Sources */,
 				84E61261249A47DB0019B6BA /* LXCacheManager.m in Sources */,
+				8402F2FC24AB11E50039A255 /* LXTostHUD.m in Sources */,
 				84E612212498BB1D0019B6BA /* Tool.m in Sources */,
 				84E6126A249B82E30019B6BA /* LoadingHUDManager.m in Sources */,
 				84E6121C2497771C0019B6BA /* LXShowDetailViewController.m in Sources */,

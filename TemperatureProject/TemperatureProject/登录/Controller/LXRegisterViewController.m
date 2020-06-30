@@ -131,9 +131,14 @@
     [self.viewModel sendYZMPhpne:phone withBlock:^(BOOL success, NSString * _Nonnull msg, NSObject * _Nonnull model) {
         
         if (success) {
+            
             self.timeNum = 60;
             [self timerStart];
+        } else {
+            
+            
         }
+        [LXTostHUD showTitle:msg];
        
     }];
 }
@@ -145,10 +150,17 @@
     userModel.code = self.codeInputView.text;
     userModel.pwd = self.pwdInputView.text;
     userModel.userName = self.phoneInputView.text;
-    userModel.cname = @"张三";
+    userModel.cname = self.userNameInputView.text;
 
     [self.viewModel registerWithModel:userModel andBlock:^(BOOL success, NSString * _Nonnull msg, NSObject * _Nonnull model) {
         
+        if (success) {
+            
+        } else {
+            
+            
+        }
+        [LXTostHUD showTitle:msg];
     }];
     
 }
@@ -213,6 +225,7 @@
         
         _userNameInputView = [[LXInputView alloc] init];
         _userNameInputView.image = [UIImage imageNamed:@"registerName"];
+        _userNameInputView.placeHolderText = @"用户名";
 
     }
     
@@ -227,6 +240,7 @@
         _phoneInputView = [[LXInputView alloc] init];
         _phoneInputView.inputTextField.keyboardType = UIKeyboardTypeNumberPad;
         _phoneInputView.image = [UIImage imageNamed:@"registerPhone"];
+        _phoneInputView.placeHolderText = @"手机号";
 
     }
     
@@ -240,6 +254,7 @@
         _codeInputView = [[LXInputView alloc] init];
         _codeInputView.inputTextField.keyboardType = UIKeyboardTypeNumberPad;
         _codeInputView.image = [UIImage imageNamed:@"registerCode"];
+        _codeInputView.placeHolderText = @"验证码";
 
     }
     
@@ -252,6 +267,7 @@
         
         _pwdInputView = [[LXInputView alloc] init];
         _pwdInputView.image = [UIImage imageNamed:@"registerPwd"];
+        _pwdInputView.placeHolderText = @"设置密码";
 
     }
     
@@ -264,6 +280,7 @@
         
         _confirmPwdInputView = [[LXInputView alloc] init];
         _confirmPwdInputView.image = [UIImage imageNamed:@"registerPwd"];
+        _confirmPwdInputView.placeHolderText = @"确认密码";
 
     }
     

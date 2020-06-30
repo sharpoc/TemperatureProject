@@ -23,6 +23,7 @@
     
     [LXLoginDataService registerWithModel:model andBlock:^(BOOL success, NSString * _Nonnull msg, NSObject * _Nonnull model) {
         
+        SQSafeBlock(block,success,msg,model);
     }];
 }
 @end

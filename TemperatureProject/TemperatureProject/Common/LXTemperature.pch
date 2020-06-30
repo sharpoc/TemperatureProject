@@ -18,6 +18,7 @@
 #import "LXCacheManager.h"
 #import "LoadingHUDManager.h"
 #import "LXHttpRequest.h"
+#import "LXTostHUD.h"
 
 
 #endif /* LXTemperature_pch */

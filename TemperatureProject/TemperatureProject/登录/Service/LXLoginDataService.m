@@ -33,7 +33,7 @@
     [LXHttpRequest POST:@"http://39.103.132.54:1111/accounts/api/app/sendCode" jsonDict:dict succeed:^(id  _Nonnull data) {
         
         NSString *code = [data valueForKey:@"code"];
-        NSString *msg = [data valueForKey:@"data"];
+        NSString *msg = [data valueForKey:@"message"];
         if ([code isEqualToString:@"0"]) {
             
             SQSafeBlock(block,YES,msg,nil);
@@ -59,6 +59,16 @@
     
     [LXHttpRequest POST:@"http://39.103.132.54:1111/accounts/api/app/userRegister" jsonDict:dict succeed:^(id  _Nonnull data) {
         
+        NSString *code = [data valueForKey:@"code"];
+        NSString *msg = [data valueForKey:@"message"];
+        
+        if ([code isEqualToString:@"0"]) {
+            
+            SQSafeBlock(block,YES,msg,nil);
+        } else {
+            
+            SQSafeBlock(block,YES,msg,nil);
+        }
     } failure:^(NSError * _Nonnull error) {
         
     }];

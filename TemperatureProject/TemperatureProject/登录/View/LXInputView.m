@@ -61,11 +61,19 @@
     return self.inputTextField.text;
 }
 
+- (void)setPlaceHolderText:(NSString *)placeHolderText {
+    
+    _placeHolderText = placeHolderText;
+    
+    self.inputTextField.placeholder = placeHolderText;
+}
+
 - (void)setImage:(UIImage *)image {
     
     _image = image;
     self.iconImageView.image = image;
 }
+
 
 - (UIImageView *)iconImageView {
     
