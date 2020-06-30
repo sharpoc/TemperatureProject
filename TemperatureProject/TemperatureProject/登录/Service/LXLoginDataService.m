@@ -10,6 +10,7 @@
 #import "LXUserRegisterModel.h"
 #import "LXDeviceModel.h"
 #import "LXUserTokenModel.h"
+#import "LXTemperatureModel.h"
 
 @implementation LXLoginDataService
 
@@ -97,11 +98,45 @@
                
                SQSafeBlock(block,NO,msg,nil);
            }
-       } failure:^(NSError * _Nonnull error) {
+    } failure:^(NSError * _Nonnull error) {
            
            SQSafeBlock(block,YES,@"",nil);
-       }];
+    }];
     
+}
+
++ (void)uploadTemperature:(NSArray *)array withBlock:(void(^)(BOOL success,NSString *msg,NSObject *model))block {
+    
+    NSMutableArray *tempArr = [[NSMutableArray alloc] init];
+    for (LXTemperatureModel *model in array) {
+       
+        NSMutableDictionary *dict=[NSMutableDictionary dictionary];
+        [dict setObject:model.deviceId forKey:@"deviceId"];
+        [dict setObject:model.name forKey:@"name"];
+        [dict setObject:model.phone forKey:@"phone"];
+        [dict setObject:model.recordTime forKey:@"recordTime"];
+        [dict setObject:model.temperature forKey:@"temperature"];
+        [tempArr addObject:dict];
+        
+    }
+
+    
+    [LXHttpRequest POST:@"http://39.103.132.54:1111/accounts/api/app/uploadTemperature" jsonDict:tempArr succeed:^(id  _Nonnull data) {
+           
+           NSString *code = [data valueForKey:@"code"];
+           NSString *msg = [data valueForKey:@"message"];
+           
+           if ([code isEqualToString:@"0"]) {
+               
+               SQSafeBlock(block,YES,msg,nil);
+           } else {
+               
+               SQSafeBlock(block,NO,msg,nil);
+           }
+    } failure:^(NSError * _Nonnull error) {
+           
+           SQSafeBlock(block,YES,@"",nil);
+    }];
 }
 
 

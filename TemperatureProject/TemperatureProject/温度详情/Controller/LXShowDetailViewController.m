@@ -13,6 +13,7 @@
 #import "LXDeviceModel.h"
 #import "LXUserTokenModel.h"
 #import "LXPeripheral.h"
+#import "LXTemperatureModel.h"
 
 @interface LXShowDetailViewController ()<LXBluetoothManagerDelegate>
 
@@ -210,9 +211,24 @@
     if (numValue > [wenduValue doubleValue]) {
 //       [Tool playSound];
     }
-    
-
     self.numValue = numValue;
+    NSDate *datenow = [NSDate date];//现在时间
+    //这里如果long不够用,就用(long long)
+    NSString *timeSp = [NSString stringWithFormat:@"%ld", (long)([datenow timeIntervalSince1970]*1000)];
+    LXUserTokenModel *loginModel = [[LXCacheManager shareInstance] unarchiveDataForKey:@"loginuser"];
+    LXTemperatureModel *temperatureModel = [[LXTemperatureModel alloc] init];
+    temperatureModel.phone = loginModel.user.phone;
+    temperatureModel.name = loginModel.user.username;
+    temperatureModel.deviceId = self.peripheral.mac;
+    temperatureModel.recordTime = timeSp;
+    temperatureModel.temperature = [@(numValue) stringValue];
+    NSMutableArray *array = [NSMutableArray array];
+    [array addObject:temperatureModel];
+    
+    
+    [self.viewModel uploadTemperature:array withBlock:^(BOOL success, NSString * _Nonnull msg, NSObject * _Nonnull model) {
+        
+    }];
 }
 
 - (LXShowDetailViewModel *)viewModel {

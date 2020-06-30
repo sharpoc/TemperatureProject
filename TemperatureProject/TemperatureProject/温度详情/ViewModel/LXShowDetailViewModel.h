@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface LXShowDetailViewModel : NSObject
 
 - (void)addDevice:(LXDeviceModel *)model withBlock:(void(^)(BOOL success,NSString *msg,NSObject *model))block;
+
+- (void)uploadTemperature:(NSArray *)array withBlock:(void(^)(BOOL success,NSString *msg,NSObject *model))block;
 @end
 
 NS_ASSUME_NONNULL_END

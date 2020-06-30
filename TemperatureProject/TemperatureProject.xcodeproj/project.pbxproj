@@ -20,6 +20,7 @@
 		8402F30B24AB2C4B0039A255 /* LXDeviceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8402F30A24AB2C4B0039A255 /* LXDeviceModel.m */; };
 		8402F30E24AB2E4E0039A255 /* LXShowDetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8402F30D24AB2E4E0039A255 /* LXShowDetailViewModel.m */; };
 		846B1B7E24AB35D40002C8B8 /* LXUserTokenModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B1B7D24AB35D40002C8B8 /* LXUserTokenModel.m */; };
+		846B1B8124AB5B460002C8B8 /* LXTemperatureModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B1B8024AB5B460002C8B8 /* LXTemperatureModel.m */; };
 		84AFA78F24A0A9DB00EB57FB /* LXHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AFA78E24A0A9DB00EB57FB /* LXHttpRequest.m */; };
 		84AFA79224A0AC7600EB57FB /* LXLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AFA79124A0AC7600EB57FB /* LXLoginViewController.m */; };
 		84AFA79B24A0AD9D00EB57FB /* LXLoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AFA79A24A0AD9D00EB57FB /* LXLoginViewModel.m */; };
@@ -71,6 +72,8 @@
 		8402F30D24AB2E4E0039A255 /* LXShowDetailViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXShowDetailViewModel.m; sourceTree = "<group>"; };
 		846B1B7C24AB35D40002C8B8 /* LXUserTokenModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXUserTokenModel.h; sourceTree = "<group>"; };
 		846B1B7D24AB35D40002C8B8 /* LXUserTokenModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXUserTokenModel.m; sourceTree = "<group>"; };
+		846B1B7F24AB5B460002C8B8 /* LXTemperatureModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXTemperatureModel.h; sourceTree = "<group>"; };
+		846B1B8024AB5B460002C8B8 /* LXTemperatureModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXTemperatureModel.m; sourceTree = "<group>"; };
 		84AFA78D24A0A9DB00EB57FB /* LXHttpRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXHttpRequest.h; sourceTree = "<group>"; };
 		84AFA78E24A0A9DB00EB57FB /* LXHttpRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXHttpRequest.m; sourceTree = "<group>"; };
 		84AFA79024A0AC7600EB57FB /* LXLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXLoginViewController.h; sourceTree = "<group>"; };
@@ -137,6 +140,8 @@
 			children = (
 				8402F27A24A1F8770039A255 /* LXPeripheral.h */,
 				8402F27B24A1F8770039A255 /* LXPeripheral.m */,
+				846B1B7F24AB5B460002C8B8 /* LXTemperatureModel.h */,
+				846B1B8024AB5B460002C8B8 /* LXTemperatureModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -525,6 +530,7 @@
 				8402F28E24A365D60039A255 /* NSDictionary+Log.m in Sources */,
 				8402F29524A36AAB0039A255 /* PrintBeautifulLog.m in Sources */,
 				8402F29124A366040039A255 /* NSArray+Log.m in Sources */,
+				846B1B8124AB5B460002C8B8 /* LXTemperatureModel.m in Sources */,
 				846B1B7E24AB35D40002C8B8 /* LXUserTokenModel.m in Sources */,
 				84E6108224921AEC0019B6BA /* AppDelegate.m in Sources */,
 				8402F29824A9E5120039A255 /* LXFindPwdViewController.m in Sources */,
