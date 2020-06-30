@@ -132,15 +132,23 @@
 
 - (void)commitBtnClick {
     
-    LXUserRegisterModel *model = [[LXUserRegisterModel alloc] init];
-    model.phone = self.phoneTextField.text;
-    model.pwd = self.pwdTextField.text;
-    [self.viewModel loginWithModel:model withBlock:^(BOOL success, NSString * _Nonnull msg, NSObject * _Nonnull model) {
+    LXUserRegisterModel *registermodel = [[LXUserRegisterModel alloc] init];
+    registermodel.phone = self.phoneTextField.text;
+    registermodel.pwd = self.pwdTextField.text;
+    [self.viewModel loginWithModel:registermodel withBlock:^(BOOL success, NSString * _Nonnull msg, LXUserTokenModel * _Nonnull model) {
         
-        LXHomeViewController *homeVc = [[LXHomeViewController alloc] init];
-        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:homeVc];
-        UIWindow *window = [UIApplication sharedApplication].keyWindow;
-        window.rootViewController = nav;
+        if (success) {
+            
+            [[LXCacheManager shareInstance] saveCacheWithArchiveForKey:@"loginuser" withObject:model];
+            LXHomeViewController *homeVc = [[LXHomeViewController alloc] init];
+            UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:homeVc];
+            UIWindow *window = [UIApplication sharedApplication].keyWindow;
+            window.rootViewController = nav;
+        } else {
+            
+            [LXTostHUD showTitle:msg];
+        }
+        
 
     }];
 }

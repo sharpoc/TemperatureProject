@@ -8,14 +8,15 @@
 
 #import "LXLoginViewModel.h"
 #import "LXLoginDataService.h"
+#import "LXUserTokenModel.h"
 
 @implementation LXLoginViewModel
 
-- (void)loginWithModel:(LXUserRegisterModel *)model withBlock:(void(^)(BOOL success,NSString *msg,NSObject *model))block {
+- (void)loginWithModel:(LXUserRegisterModel *)model withBlock:(void(^)(BOOL success,NSString *msg,LXUserTokenModel *model))block {
     
-    [LXLoginDataService loginWithModel:model withBlock:^(BOOL success, NSString * _Nonnull msg, NSObject * _Nonnull model) {
+    [LXLoginDataService loginWithModel:model withBlock:^(BOOL success, NSString * _Nonnull msg, LXUserTokenModel * _Nonnull model) {
         
-        SQSafeBlock(block,success,msg,nil);
+        SQSafeBlock(block,success,msg,model);
     }];
 }
 @end

@@ -19,6 +19,7 @@
 #import "LoadingHUDManager.h"
 #import "LXHttpRequest.h"
 #import "LXTostHUD.h"
+#import "YYModel.h"
 
 
 #endif /* LXTemperature_pch */

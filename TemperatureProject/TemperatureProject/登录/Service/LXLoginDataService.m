@@ -8,10 +8,12 @@
 
 #import "LXLoginDataService.h"
 #import "LXUserRegisterModel.h"
+#import "LXDeviceModel.h"
+#import "LXUserTokenModel.h"
 
 @implementation LXLoginDataService
 
-+ (void)loginWithModel:(LXUserRegisterModel *)model withBlock:(void(^)(BOOL success,NSString *msg,NSObject *model))block {
++ (void)loginWithModel:(LXUserRegisterModel *)model withBlock:(void(^)(BOOL success,NSString *msg,LXUserTokenModel *model))block {
     
     NSMutableDictionary *dict=[NSMutableDictionary dictionary];
     [dict setObject:model.phone forKey:@"phone"];
@@ -19,7 +21,9 @@
     
     [LXHttpRequest POST:@"http://39.103.132.54:1111/accounts/api/app/login" jsonDict:dict succeed:^(id  _Nonnull data) {
         
-        SQSafeBlock(block,YES,@"",nil);
+        NSDictionary *dict = [data valueForKey:@"data"];
+        LXUserTokenModel *userModel = [LXUserTokenModel yy_modelWithJSON:dict];
+        SQSafeBlock(block,YES,@"",userModel);
     } failure:^(NSError * _Nonnull error) {
         SQSafeBlock(block,NO,@"",nil);
     }];
@@ -73,6 +77,31 @@
         
         SQSafeBlock(block,YES,@"",nil);
     }];
+}
+
++ (void)addDevice:(LXDeviceModel *)model withBlock:(void(^)(BOOL success,NSString *msg,NSObject *model))block {
+    
+    NSMutableDictionary *dict=[NSMutableDictionary dictionary];
+    [dict setObject:model.deviceId forKey:@"deviceId"];
+    [dict setObject:model.phone forKey:@"phone"];
+    
+    [LXHttpRequest POST:@"http://39.103.132.54:1111/accounts/api/app/addDevice" jsonDict:dict succeed:^(id  _Nonnull data) {
+           
+           NSString *code = [data valueForKey:@"code"];
+           NSString *msg = [data valueForKey:@"message"];
+           
+           if ([code isEqualToString:@"0"]) {
+               
+               SQSafeBlock(block,YES,msg,nil);
+           } else {
+               
+               SQSafeBlock(block,YES,msg,nil);
+           }
+       } failure:^(NSError * _Nonnull error) {
+           
+           SQSafeBlock(block,YES,@"",nil);
+       }];
+    
 }
 
 

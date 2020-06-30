@@ -17,6 +17,9 @@
 		8402F29524A36AAB0039A255 /* PrintBeautifulLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 8402F29424A36AAB0039A255 /* PrintBeautifulLog.m */; };
 		8402F29824A9E5120039A255 /* LXFindPwdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8402F29724A9E5110039A255 /* LXFindPwdViewController.m */; };
 		8402F2FC24AB11E50039A255 /* LXTostHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 8402F2FB24AB11E50039A255 /* LXTostHUD.m */; };
+		8402F30B24AB2C4B0039A255 /* LXDeviceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8402F30A24AB2C4B0039A255 /* LXDeviceModel.m */; };
+		8402F30E24AB2E4E0039A255 /* LXShowDetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8402F30D24AB2E4E0039A255 /* LXShowDetailViewModel.m */; };
+		846B1B7E24AB35D40002C8B8 /* LXUserTokenModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B1B7D24AB35D40002C8B8 /* LXUserTokenModel.m */; };
 		84AFA78F24A0A9DB00EB57FB /* LXHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AFA78E24A0A9DB00EB57FB /* LXHttpRequest.m */; };
 		84AFA79224A0AC7600EB57FB /* LXLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AFA79124A0AC7600EB57FB /* LXLoginViewController.m */; };
 		84AFA79B24A0AD9D00EB57FB /* LXLoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AFA79A24A0AD9D00EB57FB /* LXLoginViewModel.m */; };
@@ -62,6 +65,12 @@
 		8402F29724A9E5110039A255 /* LXFindPwdViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXFindPwdViewController.m; sourceTree = "<group>"; };
 		8402F2FA24AB11E50039A255 /* LXTostHUD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXTostHUD.h; sourceTree = "<group>"; };
 		8402F2FB24AB11E50039A255 /* LXTostHUD.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXTostHUD.m; sourceTree = "<group>"; };
+		8402F30924AB2C4B0039A255 /* LXDeviceModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXDeviceModel.h; sourceTree = "<group>"; };
+		8402F30A24AB2C4B0039A255 /* LXDeviceModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXDeviceModel.m; sourceTree = "<group>"; };
+		8402F30C24AB2E4E0039A255 /* LXShowDetailViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXShowDetailViewModel.h; sourceTree = "<group>"; };
+		8402F30D24AB2E4E0039A255 /* LXShowDetailViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXShowDetailViewModel.m; sourceTree = "<group>"; };
+		846B1B7C24AB35D40002C8B8 /* LXUserTokenModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXUserTokenModel.h; sourceTree = "<group>"; };
+		846B1B7D24AB35D40002C8B8 /* LXUserTokenModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXUserTokenModel.m; sourceTree = "<group>"; };
 		84AFA78D24A0A9DB00EB57FB /* LXHttpRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXHttpRequest.h; sourceTree = "<group>"; };
 		84AFA78E24A0A9DB00EB57FB /* LXHttpRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXHttpRequest.m; sourceTree = "<group>"; };
 		84AFA79024A0AC7600EB57FB /* LXLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXLoginViewController.h; sourceTree = "<group>"; };
@@ -141,6 +150,106 @@
 			path = PrintBeautifulLog;
 			sourceTree = "<group>";
 		};
+		8402F2FD24AB27CA0039A255 /* 温度详情 */ = {
+			isa = PBXGroup;
+			children = (
+				8402F2FE24AB27CA0039A255 /* ViewModel */,
+				8402F2FF24AB27CA0039A255 /* Controller */,
+				8402F30024AB27CA0039A255 /* Model */,
+				8402F30124AB27CA0039A255 /* View */,
+				8402F30224AB27CA0039A255 /* Service */,
+			);
+			path = "温度详情";
+			sourceTree = "<group>";
+		};
+		8402F2FE24AB27CA0039A255 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8402F30C24AB2E4E0039A255 /* LXShowDetailViewModel.h */,
+				8402F30D24AB2E4E0039A255 /* LXShowDetailViewModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		8402F2FF24AB27CA0039A255 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				84E6121A2497771C0019B6BA /* LXShowDetailViewController.h */,
+				84E6121B2497771C0019B6BA /* LXShowDetailViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8402F30024AB27CA0039A255 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8402F30124AB27CA0039A255 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8402F30224AB27CA0039A255 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		8402F30324AB27CA0039A255 /* 首页 */ = {
+			isa = PBXGroup;
+			children = (
+				8402F30424AB27CA0039A255 /* ViewModel */,
+				8402F30524AB27CA0039A255 /* Controller */,
+				8402F30624AB27CA0039A255 /* Model */,
+				8402F30724AB27CA0039A255 /* View */,
+				8402F30824AB27CA0039A255 /* Service */,
+			);
+			path = "首页";
+			sourceTree = "<group>";
+		};
+		8402F30424AB27CA0039A255 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		8402F30524AB27CA0039A255 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				84E610BE249227F00019B6BA /* LXHomeViewController.h */,
+				84E610BF249227F00019B6BA /* LXHomeViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8402F30624AB27CA0039A255 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8402F30724AB27CA0039A255 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8402F30824AB27CA0039A255 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		84AFA79324A0AC9C00EB57FB /* 登录 */ = {
 			isa = PBXGroup;
 			children = (
@@ -158,6 +267,10 @@
 			children = (
 				8402F28924A3347D0039A255 /* LXUserRegisterModel.h */,
 				8402F28A24A3347D0039A255 /* LXUserRegisterModel.m */,
+				8402F30924AB2C4B0039A255 /* LXDeviceModel.h */,
+				8402F30A24AB2C4B0039A255 /* LXDeviceModel.m */,
+				846B1B7C24AB35D40002C8B8 /* LXUserTokenModel.h */,
+				846B1B7D24AB35D40002C8B8 /* LXUserTokenModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -225,8 +338,10 @@
 		84E6107F24921AEC0019B6BA /* TemperatureProject */ = {
 			isa = PBXGroup;
 			children = (
-				8402F27924A1F8330039A255 /* Model */,
 				84AFA79324A0AC9C00EB57FB /* 登录 */,
+				8402F30324AB27CA0039A255 /* 首页 */,
+				8402F2FD24AB27CA0039A255 /* 温度详情 */,
+				8402F27924A1F8330039A255 /* Model */,
 				84E6121724975B330019B6BA /* Resource */,
 				84E6120924934D420019B6BA /* View */,
 				84E61201249319040019B6BA /* Common */,
@@ -235,10 +350,6 @@
 				84E6108C24921AF20019B6BA /* Assets.xcassets */,
 				84E6109124921AF20019B6BA /* Info.plist */,
 				84E6109224921AF20019B6BA /* main.m */,
-				84E610BE249227F00019B6BA /* LXHomeViewController.h */,
-				84E610BF249227F00019B6BA /* LXHomeViewController.m */,
-				84E6121A2497771C0019B6BA /* LXShowDetailViewController.h */,
-				84E6121B2497771C0019B6BA /* LXShowDetailViewController.m */,
 				84E612222498F4560019B6BA /* LXSetAlarmViewController.h */,
 				84E612232498F4560019B6BA /* LXSetAlarmViewController.m */,
 			);
@@ -414,6 +525,7 @@
 				8402F28E24A365D60039A255 /* NSDictionary+Log.m in Sources */,
 				8402F29524A36AAB0039A255 /* PrintBeautifulLog.m in Sources */,
 				8402F29124A366040039A255 /* NSArray+Log.m in Sources */,
+				846B1B7E24AB35D40002C8B8 /* LXUserTokenModel.m in Sources */,
 				84E6108224921AEC0019B6BA /* AppDelegate.m in Sources */,
 				8402F29824A9E5120039A255 /* LXFindPwdViewController.m in Sources */,
 				84AFA78F24A0A9DB00EB57FB /* LXHttpRequest.m in Sources */,
@@ -425,8 +537,10 @@
 				8402F28224A20BC00039A255 /* LXRegisterViewController.m in Sources */,
 				84E612042493199F0019B6BA /* LXConstant.m in Sources */,
 				84E612242498F4570019B6BA /* LXSetAlarmViewController.m in Sources */,
+				8402F30B24AB2C4B0039A255 /* LXDeviceModel.m in Sources */,
 				84E6109324921AF20019B6BA /* main.m in Sources */,
 				84E61261249A47DB0019B6BA /* LXCacheManager.m in Sources */,
+				8402F30E24AB2E4E0039A255 /* LXShowDetailViewModel.m in Sources */,
 				8402F2FC24AB11E50039A255 /* LXTostHUD.m in Sources */,
 				84E612212498BB1D0019B6BA /* Tool.m in Sources */,
 				84E6126A249B82E30019B6BA /* LoadingHUDManager.m in Sources */,

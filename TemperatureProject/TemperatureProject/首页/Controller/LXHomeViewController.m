@@ -157,7 +157,7 @@ static void completionCallback(SystemSoundID mySSID)
 - (void)didItem:(LXPeripheral *)peripheral {
     
     LXShowDetailViewController *detailVc = [[LXShowDetailViewController alloc] init];
-    detailVc.peripheral = peripheral.peripheral;
+    detailVc.peripheral = peripheral;
     [self.navigationController pushViewController:detailVc animated:YES];
 }
 

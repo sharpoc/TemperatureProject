@@ -9,6 +9,10 @@
 #import "LXShowDetailViewController.h"
 #import "LXSetAlarmViewController.h"
 #import "LXBluetoothManager.h"
+#import "LXShowDetailViewModel.h"
+#import "LXDeviceModel.h"
+#import "LXUserTokenModel.h"
+#import "LXPeripheral.h"
 
 @interface LXShowDetailViewController ()<LXBluetoothManagerDelegate>
 
@@ -21,6 +25,8 @@
 @property (nonatomic,strong) UIButton *disconnectBtn;
 @property (nonatomic,strong) UIButton *continuedTestBtn;
 @property (nonatomic,strong) UIButton *historyBtn;
+@property (nonatomic,strong) LXShowDetailViewModel *viewModel;
+
 
 
 @end
@@ -43,8 +49,10 @@
     self.navigationItem.rightBarButtonItem = rightItem;
  
     [LXBluetoothManager shareInstance].delegate = self;
-    [[LXBluetoothManager shareInstance] connect:self.peripheral];
+    [[LXBluetoothManager shareInstance] connect:self.peripheral.peripheral];
     [[LoadingHUDManager shareInstance] showHUDProgress];
+    
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -173,6 +181,18 @@
     [self.navigationController pushViewController:setAlarmVc animated:YES];
 }
 
+- (void)addDevice {
+    
+    LXUserTokenModel *loginModel = [[LXCacheManager shareInstance] unarchiveDataForKey:@"loginuser"];
+
+    LXDeviceModel *model = [[LXDeviceModel alloc] init];
+    model.phone = loginModel.user.phone;
+    model.deviceId = self.peripheral.mac;
+    [self.viewModel addDevice:model withBlock:^(BOOL success, NSString * _Nonnull msg, NSObject * _Nonnull model) {
+        
+    }];
+}
+
 
 #pragma mark LXBluetoothManagerDelegate
 - (void)didConnectBlue {
@@ -189,6 +209,16 @@
     
 
     self.numValue = numValue;
+}
+
+- (LXShowDetailViewModel *)viewModel {
+    
+    if (!_viewModel) {
+        
+        _viewModel = [[LXShowDetailViewModel alloc] init];
+    }
+    
+    return _viewModel;
 }
 
 - (UIButton *)historyBtn {
@@ -308,6 +338,7 @@
     
     return _bgImageView;
 }
+
 
 
 @end

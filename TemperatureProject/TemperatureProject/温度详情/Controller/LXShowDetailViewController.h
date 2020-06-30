@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-@class CBPeripheral;
+@class LXPeripheral;
 @class LXBluetoothManager;
 
 NS_ASSUME_NONNULL_BEGIN
@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic,assign) double numValue;
 //@property (nonatomic,strong) LXBluetoothManager *bluetoothManager;
-@property (nonatomic,strong) CBPeripheral *peripheral;
+@property (nonatomic,strong) LXPeripheral *peripheral;
 
 
 @end

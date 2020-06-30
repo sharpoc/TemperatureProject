@@ -121,18 +121,16 @@
                         }
                         
                     }
-                    if ([mac isEqualToString:@""]) {
+                    if (![mac isEqualToString:@""]) {
                         
-                        mac = peripheral.identifier.UUIDString;
-                    }
-                    
-                    LXPeripheral *lxPeripheral = [[LXPeripheral alloc] init];
-                    lxPeripheral.peripheral = peripheral;
-                    lxPeripheral.peripheralName = [peripheral name];
-                    lxPeripheral.mac = mac;
-                    [self.deviceDic setObject:lxPeripheral forKey:mac];
-                    if ([self.delegate respondsToSelector:@selector(dataWithBluetoothDic:)]) {
-                        [self.delegate dataWithBluetoothDic:_deviceDic];
+                        LXPeripheral *lxPeripheral = [[LXPeripheral alloc] init];
+                        lxPeripheral.peripheral = peripheral;
+                        lxPeripheral.peripheralName = [peripheral name];
+                        lxPeripheral.mac = mac;
+                        [self.deviceDic setObject:lxPeripheral forKey:mac];
+                        if ([self.delegate respondsToSelector:@selector(dataWithBluetoothDic:)]) {
+                            [self.delegate dataWithBluetoothDic:_deviceDic];
+                        }
                     }
                 }
             }
