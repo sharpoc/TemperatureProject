@@ -52,7 +52,7 @@
     [[LXBluetoothManager shareInstance] connect:self.peripheral.peripheral];
     [[LoadingHUDManager shareInstance] showHUDProgress];
     
-    
+    [self addDevice];
 }
 
 - (void)viewWillAppear:(BOOL)animated{

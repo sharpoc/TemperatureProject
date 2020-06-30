@@ -8,6 +8,7 @@
 
 #import "LXHttpRequest.h"
 #import "AFNetworking.h"
+#import "LXUserTokenModel.h"
 
 @implementation LXHttpRequest
 
@@ -95,48 +96,48 @@ static LXHttpRequest *httpRequest = nil;
     NSError *error = nil;
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dict options:NSJSONWritingPrettyPrinted error:&error];
     NSString *urlstr = URLString;
+    LXUserTokenModel *loginModel = [[LXCacheManager shareInstance] unarchiveDataForKey:@"loginuser"];
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.requestSerializer.timeoutInterval = 30;
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    // 设置header
+    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [manager.requestSerializer setValue:loginModel.token forHTTPHeaderField:@"Bearer"];
 
-       AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-       manager.requestSerializer.timeoutInterval = 30;
-       manager.responseSerializer = [AFJSONResponseSerializer serializer];
-       // 设置header
-       [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-       [manager.requestSerializer setValue:@"Bearer" forHTTPHeaderField:@"Authorization"];
 
+    // request
+    NSError *requestError = nil;
+    NSMutableURLRequest *request = [manager.requestSerializer requestWithMethod:@"POST" URLString:urlstr parameters:nil error:&requestError];
 
-       // request
-       NSError *requestError = nil;
-       NSMutableURLRequest *request = [manager.requestSerializer requestWithMethod:@"POST" URLString:urlstr parameters:nil error:&requestError];
+    // body
+    NSData *postData = jsonData;
+    [request setHTTPBody:postData];
+
+    NSURLSessionDataTask *dataTask = [manager.session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
        
-       // body
-       NSData *postData = jsonData;
-       [request setHTTPBody:postData];
-       
-       NSURLSessionDataTask *dataTask = [manager.session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-           
-           dispatch_async(dispatch_get_main_queue(), ^{
-                 
-               if (error) {
-                   [self printErrorInfo:error rquestUrl:URLString requestParams:dict];
-                   failure(error);
-               }
-               else
-               {
-                   NSError * error = nil;
+       dispatch_async(dispatch_get_main_queue(), ^{
+             
+           if (error) {
+               [self printErrorInfo:error rquestUrl:URLString requestParams:dict];
+               failure(error);
+           }
+           else
+           {
+               NSError * error = nil;
 
-                   id jsonData = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];                   
-                   NSString *log = [NSString stringWithFormat:@"\n**************** REQUEST: ****************\n【URL】 %@\n--------------------------------------------\npara:\n%@\n--------------------------------------------\nresponse:\n%@ \n*********************************************\n", URLString, [dict description], [jsonData description]];
-                   // 注释掉大数据上报
-                  
-                    printf("%s\n", [log UTF8String]);
-                   
-                   succeed(jsonData);
-               }
-           });
-           
-           
-       }];
-       [dataTask resume];
+               id jsonData = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
+               NSString *log = [NSString stringWithFormat:@"\n**************** REQUEST: ****************\n【URL】 %@\n--------------------------------------------\npara:\n%@\n--------------------------------------------\nresponse:\n%@ \n*********************************************\n", URLString, [dict description], [jsonData description]];
+               // 注释掉大数据上报
+              
+                printf("%s\n", [log UTF8String]);
+               
+               succeed(jsonData);
+           }
+       });
+       
+       
+    }];
+    [dataTask resume];
 }
 
 #pragma mark -单利获取AFHTTPSessionManager实例
