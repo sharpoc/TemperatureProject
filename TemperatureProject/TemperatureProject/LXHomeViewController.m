@@ -18,11 +18,15 @@
 @interface LXHomeViewController ()<LXBluetoothManagerDelegate,LXPeripheralListViewDelegate>
 
 @property (nonatomic,strong) UIImageView *bgImageView;
+@property (nonatomic,strong) UIButton *leftTopButton;
+@property (nonatomic,strong) UIButton *rightTopButton;
+
 @property (nonatomic,strong) FLAnimatedImageView *loadImageView;//gif图
 @property (nonatomic,strong) UILabel *tipLabel;//正在寻找设备请稍等
 //@property (nonatomic,strong) LXBluetoothManager *bluetoothManager;
 @property (nonatomic,copy) NSArray *peripheralArray;
 @property (nonatomic,strong) LXPeripheralListView *peripheralListView;
+
 
 
 @end
@@ -45,8 +49,7 @@ static void completionCallback(SystemSoundID mySSID)
     [LXBluetoothManager shareInstance].delegate = self;
     [[LXBluetoothManager shareInstance] start];
     
-    
-   
+
 }
 
 
@@ -58,6 +61,8 @@ static void completionCallback(SystemSoundID mySSID)
     
     //去掉透明后导航栏下边的黑边
     [self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]];
+    
+    
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
@@ -74,6 +79,9 @@ static void completionCallback(SystemSoundID mySSID)
     [self.view addSubview:self.tipLabel];
     [self.view addSubview:self.peripheralListView];
     
+    [self.view addSubview:self.leftTopButton];
+    [self.view addSubview:self.rightTopButton];
+    
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:nil action:nil];
 //    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:nil style:UIBarButtonItemStylePlain target:nil action:nil];
@@ -86,6 +94,22 @@ static void completionCallback(SystemSoundID mySSID)
 }
 
 - (void)createLayout {
+    
+    [self.leftTopButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+        make.left.mas_equalTo(20);
+        make.top.mas_equalTo(25);
+        make.width.mas_equalTo(40);
+        make.height.mas_equalTo(40);
+    }];
+    
+    [self.rightTopButton mas_makeConstraints:^(MASConstraintMaker *make) {
+       
+        make.right.mas_equalTo(-20);
+        make.top.mas_equalTo(self.leftTopButton.mas_top);
+        make.width.mas_equalTo(self.leftTopButton.mas_width);
+        make.height.mas_equalTo(self.rightTopButton.mas_height);
+    }];
     
     [self.bgImageView mas_makeConstraints:^(MASConstraintMaker *make) {
        
@@ -118,21 +142,22 @@ static void completionCallback(SystemSoundID mySSID)
     }];
 }
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+- (void)leftTopButtonClick {
     
+    
+}
 
+- (void)rightTopButtonClick {
+    
+    
 }
 
 #pragma mark LXPeripheralListViewDelegate
 
 - (void)didItem:(LXPeripheral *)peripheral {
     
-//    [self.bluetoothManager connect:peripheral];
     LXShowDetailViewController *detailVc = [[LXShowDetailViewController alloc] init];
-//    detailVc.numValue = numValue;
     detailVc.peripheral = peripheral.peripheral;
-//    detailVc.bluetoothManager = self.bluetoothManager;
-//    self.bluetoothManager.delegate = detailVc;
     [self.navigationController pushViewController:detailVc animated:YES];
 }
 
@@ -142,6 +167,30 @@ static void completionCallback(SystemSoundID mySSID)
     
     self.peripheralArray = [dict allValues];
     self.peripheralListView.peripheralArray = self.peripheralArray;
+}
+
+- (UIButton *)leftTopButton {
+    
+    if (!_leftTopButton) {
+        
+        _leftTopButton = [[UIButton alloc] init];
+        [_leftTopButton setImage:[UIImage imageNamed:@"home_left"] forState:UIControlStateNormal];
+        [_leftTopButton addTarget:self action:@selector(leftTopButtonClick) forControlEvents:UIControlEventTouchUpInside];
+    }
+    
+    return _leftTopButton;
+}
+
+- (UIButton *)rightTopButton {
+    
+    if (!_rightTopButton) {
+        
+        _rightTopButton = [[UIButton alloc] init];
+        [_rightTopButton setImage:[UIImage imageNamed:@"home_right"] forState:UIControlStateNormal];
+        [_rightTopButton addTarget:self action:@selector(rightTopButtonClick) forControlEvents:UIControlEventTouchUpInside];
+    }
+    
+    return _rightTopButton;
 }
 
 
@@ -198,17 +247,6 @@ static void completionCallback(SystemSoundID mySSID)
     
     return _peripheralListView;
 }
-
-//- (LXBluetoothManager *)bluetoothManager {
-//
-//    if (!_bluetoothManager) {
-//
-//        _bluetoothManager = [[LXBluetoothManager alloc] init];
-//        _bluetoothManager.delegate = self;
-//    }
-//
-//    return _bluetoothManager;
-//}
 
 @end
 

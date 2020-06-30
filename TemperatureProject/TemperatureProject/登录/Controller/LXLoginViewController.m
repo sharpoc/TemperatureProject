@@ -194,6 +194,7 @@
         
         _phoneTextField = [[UITextField alloc] init];
         _phoneTextField.keyboardType = UIKeyboardTypeNumberPad;
+        _phoneTextField.text = @"18501302581";
 
     }
     
@@ -218,6 +219,7 @@
         
         _pwdTextField = [[UITextField alloc] init];
         _pwdTextField.secureTextEntry = YES;
+        _pwdTextField.text = @"111111";
     }
     
     return _pwdTextField;

@@ -71,6 +71,7 @@
         }
     } failure:^(NSError * _Nonnull error) {
         
+        SQSafeBlock(block,YES,@"",nil);
     }];
 }
 

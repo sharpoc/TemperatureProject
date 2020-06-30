@@ -100,7 +100,7 @@
         
         UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
         flowLayout.minimumInteritemSpacing = 20;
-        flowLayout.minimumLineSpacing = 100;
+        flowLayout.minimumLineSpacing = 20;
         flowLayout.itemSize = CGSizeMake((KScreenWidth - 40)/2, 60);
         _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flowLayout];
         _collectionView.backgroundColor = [UIColor clearColor];
