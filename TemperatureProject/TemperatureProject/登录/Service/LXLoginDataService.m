@@ -95,7 +95,7 @@
                SQSafeBlock(block,YES,msg,nil);
            } else {
                
-               SQSafeBlock(block,YES,msg,nil);
+               SQSafeBlock(block,NO,msg,nil);
            }
        } failure:^(NSError * _Nonnull error) {
            

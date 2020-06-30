@@ -190,6 +190,10 @@
     model.deviceId = self.peripheral.mac;
     [self.viewModel addDevice:model withBlock:^(BOOL success, NSString * _Nonnull msg, NSObject * _Nonnull model) {
         
+        if (success) {
+            
+            [LXTostHUD showTitle:msg];
+        }
     }];
 }
 

@@ -102,7 +102,12 @@ static LXHttpRequest *httpRequest = nil;
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
     // 设置header
     [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    [manager.requestSerializer setValue:loginModel.token forHTTPHeaderField:@"Bearer"];
+    NSString *token = [NSString stringWithFormat:@"Bearer %@",loginModel.token];
+    if ([URLString containsString:@"login"] || [URLString containsString:@"sendCode"] || [URLString containsString:@"userRegister"]) {
+        
+        token = @"Bearer";
+    }
+    [manager.requestSerializer setValue:token forHTTPHeaderField:@"Authorization"];
 
 
     // request
