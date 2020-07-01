@@ -21,6 +21,7 @@
 #import "LXTostHUD.h"
 #import "YYModel.h"
 #import "AAGlobalMacro.h"
+#import "NSDate+SQAdd.h"
 
 
 #endif /* LXTemperature_pch */

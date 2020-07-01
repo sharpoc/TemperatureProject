@@ -9,7 +9,7 @@
 #import "LXLoopTemperatureViewController.h"
 #import "LXSetAlarmViewController.h"
 #import "LXBluetoothManager.h"
-#import "LXShowDetailViewModel.h"
+#import "LXLoopTemperatureViewModel.h"
 #import "LXDeviceModel.h"
 #import "LXUserTokenModel.h"
 #import "LXPeripheral.h"
@@ -22,8 +22,12 @@
 @property (nonatomic,strong) UIView *bgView;
 @property (nonatomic,strong) UIButton *titleButton;
 @property (nonatomic,strong) UILabel *numLabel;
-@property (nonatomic,strong) LXShowDetailViewModel *viewModel;
+@property (nonatomic,strong) LXLoopTemperatureViewModel *viewModel;
+@property (nonatomic,strong) UISegmentedControl *segmentedControl;
 @property (nonatomic,strong) AAChartView *chartView;
+@property (nonatomic, strong) NSTimer *timer;
+@property (nonatomic,strong) NSMutableArray *temperatureDataArray;
+@property (nonatomic,assign) NSInteger minJG;//时间间隔
 
 
 
@@ -33,7 +37,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
+    [LXBluetoothManager shareInstance].delegate = self;
     self.view.backgroundColor = [UIColor whiteColor];
     [self createUI];
     [self createLayout];
@@ -45,13 +50,12 @@
         
     UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithCustomView:settingButton];
     self.navigationItem.rightBarButtonItem = rightItem;
- 
-    [LXBluetoothManager shareInstance].delegate = self;
-    [[LXBluetoothManager shareInstance] connect:self.peripheral.peripheral];
-    [[LoadingHUDManager shareInstance] showHUDProgress];
+     
+    self.minJG = 5;
+    NSArray *array = [self createTimeData:self.minJG];
+    [self showChartData:array];
+    [self timerStart];
     
-    [self addDevice];
-    [self showChartData];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -76,6 +80,7 @@
     [self.view addSubview:self.bgView];
     [self.view addSubview:self.titleButton];
     [self.bgView addSubview:self.numLabel];
+    [self.bgView addSubview:self.segmentedControl];
     [self.bgView addSubview:self.chartView];
     
 }
@@ -115,12 +120,21 @@
         make.top.mas_equalTo(self.titleButton.mas_bottom).offset(25);
     }];
     
+    [self.segmentedControl mas_makeConstraints:^(MASConstraintMaker *make) {
+       
+        make.left.mas_equalTo(20);
+        make.right.mas_equalTo(-20);
+        make.height.mas_equalTo(50);
+        make.top.mas_equalTo(self.numLabel.mas_bottom).offset(20);
+
+    }];
+    
     [self.chartView mas_makeConstraints:^(MASConstraintMaker *make) {
        
         make.left.mas_equalTo(0);
         make.right.mas_equalTo(0);
-        make.top.mas_equalTo(self.numLabel.mas_bottom).offset(20);
-        make.height.mas_equalTo(200);
+        make.top.mas_equalTo(self.segmentedControl.mas_bottom).offset(20);
+        make.height.mas_equalTo(250);
     }];
     
     
@@ -128,37 +142,65 @@
 
 - (void)setNumValue:(double)numValue {
     
-    [[LoadingHUDManager shareInstance] hidHUDProgress];
+
+    [self.temperatureDataArray addObject:@(numValue)];
+   
     self.numLabel.text = [NSString stringWithFormat:@"%.1f°C",numValue];
-}
-
-- (void)addDevice {
+    NSArray *array = [self createTimeData:self.minJG];
     
-    LXUserTokenModel *loginModel = [[LXCacheManager shareInstance] unarchiveDataForKey:@"loginuser"];
-
-    LXDeviceModel *model = [[LXDeviceModel alloc] init];
-    model.phone = loginModel.user.phone;
-    model.deviceId = self.peripheral.mac;
-    [self.viewModel addDevice:model withBlock:^(BOOL success, NSString * _Nonnull msg, NSObject * _Nonnull model) {
+    NSMutableArray *pArray = [NSMutableArray array];
+    
+    for (NSInteger i = 0 ; i < self.temperatureDataArray.count; i++) {
         
-        if (success) {
-            
-            [LXTostHUD showTitle:msg];
-        }
-    }];
-}
-
-- (void)showChartData {
-
+        [pArray addObject:self.temperatureDataArray[i]];
+    }
+    
+    for (NSInteger i = pArray.count; i < 12; i++) {
+        
+        [pArray addObject:[NSNull null]];
+    }
+    
     AAChartModel *aaChartModel= AAObject(AAChartModel)
     .chartTypeSet(AAChartTypeArea)//设置图表的类型(这里以设置的为折线面积图为例)
-    .yAxisTickPositionsSet(@[@"35",@"36",@"37",@"38", @"39"])
-    .categoriesSet(@[@"1",@"2",@"3",@"4", @"5",@"6",@"7",@"8",@"9"])//图表横轴的内容
+    .yAxisTickPositionsSet(@[@(27),@(28),@(29),@(30),@(31),@(32)])
+    .categoriesSet(array)//图表横轴的内容
     .yAxisTitleSet(@"摄氏度")//设置图表 y 轴的单位
     .seriesSet(@[
             AAObject(AASeriesElement)
             .nameSet(nil)
-            .dataSet(@[@3.9, @4.2, @5.7, @8.5, @11.9, @15.2, @17.0, @16.6, @14.2, @10.3, @6.6, @4.8]),
+            .dataSet(pArray),
+                     ])
+    ;
+    
+    /*图表视图对象调用图表模型对象,绘制最终图形*/
+    [self.chartView aa_refreshChartWithChartModel:aaChartModel];
+}
+
+- (NSArray *)createTimeData:(NSUInteger)min {
+    
+    NSMutableArray *array = [NSMutableArray array];
+    NSDate *date = [NSDate date];
+    for (NSInteger i = 0; i < 12; i++) {
+        
+        NSDate *tempDate = [date sq_dateByAddingMinutes:i * min];
+        NSString *dateString = [tempDate sq_stringWithFormat:@"hh:mm"];
+        [array addObject:dateString];
+    }
+    
+    return array;;
+}
+
+- (void)showChartData:(NSArray *)array {
+
+    AAChartModel *aaChartModel= AAObject(AAChartModel)
+    .chartTypeSet(AAChartTypeArea)//设置图表的类型(这里以设置的为折线面积图为例)
+    .yAxisTickPositionsSet(@[@"35",@"36",@"37",@"38", @"39"])
+    .categoriesSet(array)//图表横轴的内容
+    .yAxisTitleSet(@"摄氏度")//设置图表 y 轴的单位
+    .seriesSet(@[
+            AAObject(AASeriesElement)
+            .nameSet(nil)
+            .dataSet(@[[NSNull null],[NSNull null],[NSNull null],[NSNull null],[NSNull null],[NSNull null],[NSNull null],[NSNull null],[NSNull null],[NSNull null],[NSNull null],[NSNull null]]),
                      ])
     ;
     
@@ -166,6 +208,22 @@
     [self.chartView aa_drawChartWithChartModel:aaChartModel];
 
 
+}
+
+- (void)selectItem:(UISegmentedControl *)sender{
+    
+    NSLog(@"测试");
+    if (sender.selectedSegmentIndex == 0) {
+        self.minJG = 1;
+    }else if (sender.selectedSegmentIndex == 1){
+        self.minJG = 5;
+    }else if (sender.selectedSegmentIndex == 2){
+        self.minJG = 10;
+    }
+    
+    NSArray *array = [self createTimeData:self.minJG];
+    [self showChartData:array];
+    
 }
 
 - (void)disconnectBtnClick {
@@ -179,7 +237,31 @@
     [self.navigationController pushViewController:setAlarmVc animated:YES];
 }
 
+- (void)timeScheduled {
+    
+    [[LXBluetoothManager shareInstance] connect:self.peripheral.peripheral];
 
+}
+
+#pragma mark- 添加定时器
+//启动定时器
+- (void)timerStart
+{
+    [self timerStop];
+    if (_timer == nil) {
+        _timer =[NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(timeScheduled) userInfo:nil repeats:YES];
+    }
+}
+//销毁定时器
+- (void)timerStop
+{
+    if (_timer) {
+        if ([_timer isValid]) {
+            [_timer invalidate];
+        }
+        _timer = nil;
+    }
+}
 
 
 #pragma mark LXBluetoothManagerDelegate
@@ -214,6 +296,20 @@
     }];
 }
 
+- (UISegmentedControl *)segmentedControl {
+    
+    
+    if (!_segmentedControl) {
+        
+        NSArray *array = [NSArray arrayWithObjects:@"1min",@"5min",@"10min",nil];
+        _segmentedControl = [[UISegmentedControl alloc]initWithItems:array];
+        [_segmentedControl setSelectedSegmentIndex:1];
+        [_segmentedControl addTarget:self action:@selector(selectItem:) forControlEvents:UIControlEventValueChanged];// 添加响应方法
+    }
+    
+    return _segmentedControl;
+}
+
 - (AAChartView *)chartView {
     
     if (!_chartView) {
@@ -225,11 +321,11 @@
     return _chartView;
 }
 
-- (LXShowDetailViewModel *)viewModel {
+- (LXLoopTemperatureViewModel *)viewModel {
     
     if (!_viewModel) {
         
-        _viewModel = [[LXShowDetailViewModel alloc] init];
+        _viewModel = [[LXLoopTemperatureViewModel alloc] init];
     }
     
     return _viewModel;
@@ -287,6 +383,14 @@
     return _bgImageView;
 }
 
-
+- (NSMutableArray *)temperatureDataArray {
+    
+    if (!_temperatureDataArray) {
+        
+        _temperatureDataArray = [NSMutableArray array];
+    }
+    
+    return _temperatureDataArray;
+}
 
 @end
