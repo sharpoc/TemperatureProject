@@ -14,6 +14,7 @@
 #import "LXUserTokenModel.h"
 #import "LXPeripheral.h"
 #import "LXTemperatureModel.h"
+#import "LXLoopTemperatureViewController.h"
 
 @interface LXShowDetailViewController ()<LXBluetoothManagerDelegate>
 
@@ -27,8 +28,6 @@
 @property (nonatomic,strong) UIButton *continuedTestBtn;
 @property (nonatomic,strong) UIButton *historyBtn;
 @property (nonatomic,strong) LXShowDetailViewModel *viewModel;
-
-
 
 @end
 
@@ -176,6 +175,13 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+- (void)continuedTestBtnClick {
+    
+    LXLoopTemperatureViewController *loopTemperatureVC = [[LXLoopTemperatureViewController alloc] init];
+    loopTemperatureVC.peripheral = self.peripheral;
+    [self.navigationController pushViewController:loopTemperatureVC animated:YES];
+}
+
 - (void)settingButtonClicked {
     
     LXSetAlarmViewController *setAlarmVc = [[LXSetAlarmViewController alloc] init];
@@ -261,7 +267,7 @@
         _continuedTestBtn = [[UIButton alloc] init];
         [_continuedTestBtn setBackgroundImage:[UIImage imageNamed:@"disconnectBtn"] forState:UIControlStateNormal];
         [_continuedTestBtn setTitle:@"连续监测" forState:UIControlStateNormal];
-        [_continuedTestBtn addTarget:self action:@selector(disconnectBtnClick) forControlEvents:UIControlEventTouchUpInside];
+        [_continuedTestBtn addTarget:self action:@selector(continuedTestBtnClick) forControlEvents:UIControlEventTouchUpInside];
     }
     
     return _continuedTestBtn;

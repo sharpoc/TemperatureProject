@@ -21,6 +21,7 @@
 		8402F30E24AB2E4E0039A255 /* LXShowDetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8402F30D24AB2E4E0039A255 /* LXShowDetailViewModel.m */; };
 		846B1B7E24AB35D40002C8B8 /* LXUserTokenModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B1B7D24AB35D40002C8B8 /* LXUserTokenModel.m */; };
 		846B1B8124AB5B460002C8B8 /* LXTemperatureModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B1B8024AB5B460002C8B8 /* LXTemperatureModel.m */; };
+		846B1B8424AC28E90002C8B8 /* LXLoopTemperatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B1B8324AC28E80002C8B8 /* LXLoopTemperatureViewController.m */; };
 		84AFA78F24A0A9DB00EB57FB /* LXHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AFA78E24A0A9DB00EB57FB /* LXHttpRequest.m */; };
 		84AFA79224A0AC7600EB57FB /* LXLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AFA79124A0AC7600EB57FB /* LXLoginViewController.m */; };
 		84AFA79B24A0AD9D00EB57FB /* LXLoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AFA79A24A0AD9D00EB57FB /* LXLoginViewModel.m */; };
@@ -74,6 +75,8 @@
 		846B1B7D24AB35D40002C8B8 /* LXUserTokenModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXUserTokenModel.m; sourceTree = "<group>"; };
 		846B1B7F24AB5B460002C8B8 /* LXTemperatureModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXTemperatureModel.h; sourceTree = "<group>"; };
 		846B1B8024AB5B460002C8B8 /* LXTemperatureModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXTemperatureModel.m; sourceTree = "<group>"; };
+		846B1B8224AC28E80002C8B8 /* LXLoopTemperatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXLoopTemperatureViewController.h; sourceTree = "<group>"; };
+		846B1B8324AC28E80002C8B8 /* LXLoopTemperatureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXLoopTemperatureViewController.m; sourceTree = "<group>"; };
 		84AFA78D24A0A9DB00EB57FB /* LXHttpRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXHttpRequest.h; sourceTree = "<group>"; };
 		84AFA78E24A0A9DB00EB57FB /* LXHttpRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXHttpRequest.m; sourceTree = "<group>"; };
 		84AFA79024A0AC7600EB57FB /* LXLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXLoginViewController.h; sourceTree = "<group>"; };
@@ -181,6 +184,8 @@
 			children = (
 				84E6121A2497771C0019B6BA /* LXShowDetailViewController.h */,
 				84E6121B2497771C0019B6BA /* LXShowDetailViewController.m */,
+				846B1B8224AC28E80002C8B8 /* LXLoopTemperatureViewController.h */,
+				846B1B8324AC28E80002C8B8 /* LXLoopTemperatureViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -437,6 +442,7 @@
 				84E6107924921AEC0019B6BA /* Sources */,
 				84E6107A24921AEC0019B6BA /* Frameworks */,
 				84E6107B24921AEC0019B6BA /* Resources */,
+				BB15273D349D6701AA4342EB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -493,6 +499,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		BB15273D349D6701AA4342EB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TemperatureProject/Pods-TemperatureProject-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TemperatureProject/Pods-TemperatureProject-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TemperatureProject/Pods-TemperatureProject-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		BEF79F974AA0429ECDA22E47 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -543,6 +566,7 @@
 				8402F28224A20BC00039A255 /* LXRegisterViewController.m in Sources */,
 				84E612042493199F0019B6BA /* LXConstant.m in Sources */,
 				84E612242498F4570019B6BA /* LXSetAlarmViewController.m in Sources */,
+				846B1B8424AC28E90002C8B8 /* LXLoopTemperatureViewController.m in Sources */,
 				8402F30B24AB2C4B0039A255 /* LXDeviceModel.m in Sources */,
 				84E6109324921AF20019B6BA /* main.m in Sources */,
 				84E61261249A47DB0019B6BA /* LXCacheManager.m in Sources */,

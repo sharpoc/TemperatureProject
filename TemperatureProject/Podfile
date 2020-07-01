@@ -10,5 +10,6 @@ target 'TemperatureProject' do
   pod 'MBProgressHUD'
   pod 'AFNetworking'
   pod 'IQKeyboardManager'
+  pod 'AAChartKit', :git => 'https://github.com/AAChartModel/AAChartKit.git'
 
 end

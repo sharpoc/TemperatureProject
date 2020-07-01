@@ -20,6 +20,7 @@
 #import "LXHttpRequest.h"
 #import "LXTostHUD.h"
 #import "YYModel.h"
+#import "AAGlobalMacro.h"
 
 
 #endif /* LXTemperature_pch */
