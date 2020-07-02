@@ -22,6 +22,6 @@
 #import "YYModel.h"
 #import "AAGlobalMacro.h"
 #import "NSDate+SQAdd.h"
-
+#import "MJRefresh.h"
 
 #endif /* LXTemperature_pch */

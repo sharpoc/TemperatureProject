@@ -18,7 +18,11 @@
 @property (nonatomic,strong) UILabel *titleLabel;
 @property (nonatomic,strong) UITableView *tableView;
 @property (nonatomic,strong) LXHistoryTemperatureViewModel *viewModel;
-@property (nonatomic,copy) NSArray *lists;
+@property (nonatomic,copy) NSMutableArray *lists;
+@property (nonatomic,assign) NSInteger page;
+@property (nonatomic,assign) NSInteger size;
+
+
 
 @end
 
@@ -28,9 +32,23 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor whiteColor];
+    
+    self.page = 0;
+    self.size = 20;
     [self createUI];
     [self createLayout];
     [self createData];
+    
+    //下拉刷新
+    MJRefreshNormalHeader *refreshHeader = [MJRefreshNormalHeader headerWithRefreshingTarget:self
+                                                                           refreshingAction:@selector(refreshListData)];
+//    refreshHeader.ignoredScrollViewContentInsetTop = 10.f;
+    self.tableView.mj_header = refreshHeader;
+    //加载更多
+    MJRefreshBackNormalFooter *refreshFooter = [MJRefreshBackNormalFooter footerWithRefreshingTarget:self
+                                                                                   refreshingAction:@selector(refreshMoreListData)];
+    refreshFooter.ignoredScrollViewContentInsetBottom = BottomGap;
+    self.tableView.mj_footer = refreshFooter;
 }
 
 - (void)createUI {
@@ -77,12 +95,30 @@
 
 }
 
+- (void)refreshListData {
+    
+    self.page = 0;
+    [self.lists removeAllObjects];
+    [self createData];
+}
+
+- (void)refreshMoreListData {
+    
+    self.page ++;
+    [self createData];
+}
+
+
+
 - (void)createData {
     
-    [self.viewModel getHistoryData:self.mac page:1 size:20 withBlock:^(BOOL success, NSString * _Nonnull msg, NSArray * _Nonnull model) {
+    
+    [self.viewModel getHistoryData:self.mac page:self.page size:self.size withBlock:^(BOOL success, NSString * _Nonnull msg, NSArray * _Nonnull model) {
        
-        self.lists = model;
+        [self.lists addObjectsFromArray:model];
         [self.tableView reloadData];
+        [self.tableView.mj_header endRefreshing];
+        [self.tableView.mj_footer endRefreshing];
     }];
 }
 
@@ -146,6 +182,16 @@
     }
     
     return _titleLabel;
+}
+
+- (NSMutableArray *)lists {
+    
+    if (!_lists) {
+        
+        _lists = [NSMutableArray array];
+    }
+    
+    return _lists;
 }
 
 - (UITableView *)tableView {
