@@ -15,6 +15,7 @@
 #import "LXPeripheral.h"
 #import "LXTemperatureModel.h"
 #import "LXLoopTemperatureViewController.h"
+#import "LXHistoryTemperatureViewController.h"
 
 @interface LXShowDetailViewController ()<LXBluetoothManagerDelegate>
 
@@ -188,6 +189,13 @@
     [self.navigationController pushViewController:setAlarmVc animated:YES];
 }
 
+- (void)historyBtnClick {
+    
+    LXHistoryTemperatureViewController *hisVC = [[LXHistoryTemperatureViewController alloc] init];
+    hisVC.mac = self.peripheral.mac;
+    [self.navigationController pushViewController:hisVC animated:YES];
+}
+
 - (void)addDevice {
     
     LXUserTokenModel *loginModel = [[LXCacheManager shareInstance] unarchiveDataForKey:@"loginuser"];
@@ -254,7 +262,7 @@
         _historyBtn = [[UIButton alloc] init];
         [_historyBtn setBackgroundImage:[UIImage imageNamed:@"disconnectBtn"] forState:UIControlStateNormal];
         [_historyBtn setTitle:@"历史温度" forState:UIControlStateNormal];
-        [_historyBtn addTarget:self action:@selector(disconnectBtnClick) forControlEvents:UIControlEventTouchUpInside];
+        [_historyBtn addTarget:self action:@selector(historyBtnClick) forControlEvents:UIControlEventTouchUpInside];
     }
     
     return _historyBtn;

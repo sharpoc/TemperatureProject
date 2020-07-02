@@ -11,6 +11,7 @@
 #import "LXDeviceModel.h"
 #import "LXUserTokenModel.h"
 #import "LXTemperatureModel.h"
+#import "LXHistoryTemperatureModel.h"
 
 @implementation LXLoginDataService
 
@@ -139,6 +140,34 @@
     }];
 }
 
++ (void)getHistoryData:(NSString *)mac page:(NSInteger)page size:(NSInteger)size withBlock:(void(^)(BOOL success,NSString *msg,NSArray *model))block {
+    
+    NSMutableDictionary *dict=[NSMutableDictionary dictionary];
+    [dict setObject:mac forKey:@"deviceId"];
+    [dict setObject:@(page) forKey:@"page"];
+    [dict setObject:@(size) forKey:@"size"];
+
+    
+    [LXHttpRequest POST:@"http://39.103.132.54:1111/accounts/api/app/temperature" jsonDict:dict succeed:^(id  _Nonnull data) {
+           
+        NSString *code = [data valueForKey:@"code"];
+        NSString *msg = [data valueForKey:@"message"];
+        NSDictionary *dict = [data valueForKey:@"data"];
+        NSArray *array = [NSArray yy_modelArrayWithClass:[LXHistoryTemperatureModel class] json:[dict valueForKey:@"content"]];
+        
+       if ([code isEqualToString:@"0"]) {
+           
+           SQSafeBlock(block,YES,msg,array);
+       } else {
+           
+           SQSafeBlock(block,NO,msg,nil);
+       }
+    } failure:^(NSError * _Nonnull error) {
+           
+        SQSafeBlock(block,YES,@"",nil);
+    }];
+    
+}
 
 
 @end

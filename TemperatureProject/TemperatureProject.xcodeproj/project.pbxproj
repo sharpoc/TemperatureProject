@@ -24,6 +24,10 @@
 		846B1B8424AC28E90002C8B8 /* LXLoopTemperatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B1B8324AC28E80002C8B8 /* LXLoopTemperatureViewController.m */; };
 		846B1B8724AC876E0002C8B8 /* NSDate+SQAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B1B8524AC876E0002C8B8 /* NSDate+SQAdd.m */; };
 		846B1B8A24AC90D60002C8B8 /* LXLoopTemperatureViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B1B8924AC90D60002C8B8 /* LXLoopTemperatureViewModel.m */; };
+		846B1B8D24ADB6040002C8B8 /* LXHistoryTemperatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B1B8C24ADB6030002C8B8 /* LXHistoryTemperatureViewController.m */; };
+		846B1B9024ADD82A0002C8B8 /* LXHistoryTemperatureViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B1B8F24ADD82A0002C8B8 /* LXHistoryTemperatureViewModel.m */; };
+		846B1B9324ADDF7D0002C8B8 /* LXHistoryTemperatureModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B1B9224ADDF7D0002C8B8 /* LXHistoryTemperatureModel.m */; };
+		846B1B9624ADE50A0002C8B8 /* LXHistoryTemperatureTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B1B9524ADE50A0002C8B8 /* LXHistoryTemperatureTableViewCell.m */; };
 		84AFA78F24A0A9DB00EB57FB /* LXHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AFA78E24A0A9DB00EB57FB /* LXHttpRequest.m */; };
 		84AFA79224A0AC7600EB57FB /* LXLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AFA79124A0AC7600EB57FB /* LXLoginViewController.m */; };
 		84AFA79B24A0AD9D00EB57FB /* LXLoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AFA79A24A0AD9D00EB57FB /* LXLoginViewModel.m */; };
@@ -83,6 +87,14 @@
 		846B1B8624AC876E0002C8B8 /* NSDate+SQAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+SQAdd.h"; sourceTree = "<group>"; };
 		846B1B8824AC90D60002C8B8 /* LXLoopTemperatureViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXLoopTemperatureViewModel.h; sourceTree = "<group>"; };
 		846B1B8924AC90D60002C8B8 /* LXLoopTemperatureViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXLoopTemperatureViewModel.m; sourceTree = "<group>"; };
+		846B1B8B24ADB6030002C8B8 /* LXHistoryTemperatureViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXHistoryTemperatureViewController.h; sourceTree = "<group>"; };
+		846B1B8C24ADB6030002C8B8 /* LXHistoryTemperatureViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXHistoryTemperatureViewController.m; sourceTree = "<group>"; };
+		846B1B8E24ADD82A0002C8B8 /* LXHistoryTemperatureViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXHistoryTemperatureViewModel.h; sourceTree = "<group>"; };
+		846B1B8F24ADD82A0002C8B8 /* LXHistoryTemperatureViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXHistoryTemperatureViewModel.m; sourceTree = "<group>"; };
+		846B1B9124ADDF7D0002C8B8 /* LXHistoryTemperatureModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXHistoryTemperatureModel.h; sourceTree = "<group>"; };
+		846B1B9224ADDF7D0002C8B8 /* LXHistoryTemperatureModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXHistoryTemperatureModel.m; sourceTree = "<group>"; };
+		846B1B9424ADE50A0002C8B8 /* LXHistoryTemperatureTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXHistoryTemperatureTableViewCell.h; sourceTree = "<group>"; };
+		846B1B9524ADE50A0002C8B8 /* LXHistoryTemperatureTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXHistoryTemperatureTableViewCell.m; sourceTree = "<group>"; };
 		84AFA78D24A0A9DB00EB57FB /* LXHttpRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXHttpRequest.h; sourceTree = "<group>"; };
 		84AFA78E24A0A9DB00EB57FB /* LXHttpRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXHttpRequest.m; sourceTree = "<group>"; };
 		84AFA79024A0AC7600EB57FB /* LXLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXLoginViewController.h; sourceTree = "<group>"; };
@@ -183,6 +195,8 @@
 				8402F30D24AB2E4E0039A255 /* LXShowDetailViewModel.m */,
 				846B1B8824AC90D60002C8B8 /* LXLoopTemperatureViewModel.h */,
 				846B1B8924AC90D60002C8B8 /* LXLoopTemperatureViewModel.m */,
+				846B1B8E24ADD82A0002C8B8 /* LXHistoryTemperatureViewModel.h */,
+				846B1B8F24ADD82A0002C8B8 /* LXHistoryTemperatureViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -194,6 +208,8 @@
 				84E6121B2497771C0019B6BA /* LXShowDetailViewController.m */,
 				846B1B8224AC28E80002C8B8 /* LXLoopTemperatureViewController.h */,
 				846B1B8324AC28E80002C8B8 /* LXLoopTemperatureViewController.m */,
+				846B1B8B24ADB6030002C8B8 /* LXHistoryTemperatureViewController.h */,
+				846B1B8C24ADB6030002C8B8 /* LXHistoryTemperatureViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -201,6 +217,8 @@
 		8402F30024AB27CA0039A255 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				846B1B9124ADDF7D0002C8B8 /* LXHistoryTemperatureModel.h */,
+				846B1B9224ADDF7D0002C8B8 /* LXHistoryTemperatureModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -208,6 +226,8 @@
 		8402F30124AB27CA0039A255 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				846B1B9424ADE50A0002C8B8 /* LXHistoryTemperatureTableViewCell.h */,
+				846B1B9524ADE50A0002C8B8 /* LXHistoryTemperatureTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -568,6 +588,7 @@
 				846B1B8124AB5B460002C8B8 /* LXTemperatureModel.m in Sources */,
 				846B1B7E24AB35D40002C8B8 /* LXUserTokenModel.m in Sources */,
 				84E6108224921AEC0019B6BA /* AppDelegate.m in Sources */,
+				846B1B9624ADE50A0002C8B8 /* LXHistoryTemperatureTableViewCell.m in Sources */,
 				8402F29824A9E5120039A255 /* LXFindPwdViewController.m in Sources */,
 				84AFA78F24A0A9DB00EB57FB /* LXHttpRequest.m in Sources */,
 				84AFA79B24A0AD9D00EB57FB /* LXLoginViewModel.m in Sources */,
@@ -576,14 +597,17 @@
 				8402F28824A32B760039A255 /* LXRegisterViewModel.m in Sources */,
 				84AFA79E24A0AE0600EB57FB /* LXLoginDataService.m in Sources */,
 				8402F28224A20BC00039A255 /* LXRegisterViewController.m in Sources */,
+				846B1B9024ADD82A0002C8B8 /* LXHistoryTemperatureViewModel.m in Sources */,
 				84E612042493199F0019B6BA /* LXConstant.m in Sources */,
 				84E612242498F4570019B6BA /* LXSetAlarmViewController.m in Sources */,
 				846B1B8424AC28E90002C8B8 /* LXLoopTemperatureViewController.m in Sources */,
+				846B1B8D24ADB6040002C8B8 /* LXHistoryTemperatureViewController.m in Sources */,
 				8402F30B24AB2C4B0039A255 /* LXDeviceModel.m in Sources */,
 				84E6109324921AF20019B6BA /* main.m in Sources */,
 				84E61261249A47DB0019B6BA /* LXCacheManager.m in Sources */,
 				8402F30E24AB2E4E0039A255 /* LXShowDetailViewModel.m in Sources */,
 				8402F2FC24AB11E50039A255 /* LXTostHUD.m in Sources */,
+				846B1B9324ADDF7D0002C8B8 /* LXHistoryTemperatureModel.m in Sources */,
 				84E612212498BB1D0019B6BA /* Tool.m in Sources */,
 				84E6126A249B82E30019B6BA /* LoadingHUDManager.m in Sources */,
 				84E6121C2497771C0019B6BA /* LXShowDetailViewController.m in Sources */,
