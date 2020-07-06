@@ -11,6 +11,7 @@
 #import "LXRegisterViewController.h"
 #import "LXUserRegisterModel.h"
 #import "LXHomeViewController.h"
+#import "LXFindPwdViewController.h"
 
 @interface LXLoginViewController ()
 
@@ -155,7 +156,8 @@
 
 - (void)findPwdBtnClick {
     
-    
+    LXFindPwdViewController *findPwdVC = [[LXFindPwdViewController alloc] init];
+    [self.navigationController pushViewController:findPwdVC animated:YES];
 }
 
 - (void)registerBtnClick {
@@ -253,7 +255,6 @@
         [_commitBtn setTitle:@"登录" forState:UIControlStateNormal];
         [_commitBtn setBackgroundImage:[UIImage imageNamed:@"disconnectBtn"] forState:UIControlStateNormal];
         [_commitBtn addTarget:self action:@selector(commitBtnClick) forControlEvents:UIControlEventTouchUpInside];
-        _commitBtn.backgroundColor = KSQRandomColor;
         _commitBtn.layer.cornerRadius = 25;
         _commitBtn.layer.masksToBounds = YES;
     }

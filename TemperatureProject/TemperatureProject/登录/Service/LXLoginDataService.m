@@ -169,5 +169,32 @@
     
 }
 
++ (void)findPwdWithModel:(LXUserRegisterModel *)model andBlock:(void(^)(BOOL success,NSString *msg,NSObject *model))block {
+    
+    NSMutableDictionary *dict=[NSMutableDictionary dictionary];
+    [dict setObject:model.code forKey:@"code"];
+    [dict setObject:model.pwd forKey:@"password"];
+    [dict setObject:model.phone forKey:@"phone"];
+
+    
+    [LXHttpRequest POST:@"http://39.103.132.54:1111/accounts/api/app/resetPassword" jsonDict:dict succeed:^(id  _Nonnull data) {
+           
+        NSString *code = [data valueForKey:@"code"];
+        NSString *msg = [data valueForKey:@"message"];
+
+        
+       if ([code isEqualToString:@"0"]) {
+           
+           SQSafeBlock(block,YES,msg,nil);
+       } else {
+           
+           SQSafeBlock(block,NO,msg,nil);
+       }
+    } failure:^(NSError * _Nonnull error) {
+           
+        SQSafeBlock(block,YES,@"",nil);
+    }];
+}
+
 
 @end

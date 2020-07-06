@@ -268,6 +268,7 @@
         _pwdInputView = [[LXInputView alloc] init];
         _pwdInputView.image = [UIImage imageNamed:@"registerPwd"];
         _pwdInputView.placeHolderText = @"设置密码";
+        _pwdInputView.inputTextField.secureTextEntry = YES;
 
     }
     
@@ -281,6 +282,7 @@
         _confirmPwdInputView = [[LXInputView alloc] init];
         _confirmPwdInputView.image = [UIImage imageNamed:@"registerPwd"];
         _confirmPwdInputView.placeHolderText = @"确认密码";
+        _confirmPwdInputView.inputTextField.secureTextEntry = YES;
 
     }
     
