@@ -12,6 +12,8 @@
 #import "FLAnimatedImageView+WebCache.h"
 #import "LXShowDetailViewController.h"
 #import "LXPeripheral.h"
+#import "LXSettingViewController.h"
+#import "LXSettingItemModel.h"
 
 
 
@@ -56,20 +58,15 @@ static void completionCallback(SystemSoundID mySSID)
 
 - (void)viewWillAppear:(BOOL)animated{
     
-    //设置导航栏背景图片为一个空的image，这样就透明了
-    [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
-    
-    //去掉透明后导航栏下边的黑边
-    [self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]];
-    
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBarHidden = YES;
     
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
     
-    //    如果不想让其他页面的导航栏变为透明 需要重置
-    [self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
-    [self.navigationController.navigationBar setShadowImage:nil];
+    [super viewWillDisappear:animated];
+    self.navigationController.navigationBarHidden = NO;
 }
 
 - (void)createUI {
@@ -79,8 +76,7 @@ static void completionCallback(SystemSoundID mySSID)
     [self.view addSubview:self.tipLabel];
     [self.view addSubview:self.peripheralListView];
     
-    [self.view addSubview:self.leftTopButton];
-    [self.view addSubview:self.rightTopButton];
+   
     
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:nil action:nil];
@@ -90,6 +86,9 @@ static void completionCallback(SystemSoundID mySSID)
 
         
     [self.navigationItem setBackBarButtonItem:backItem];
+    
+    [self.view addSubview:self.leftTopButton];
+    [self.view addSubview:self.rightTopButton];
     
 }
 
@@ -144,12 +143,42 @@ static void completionCallback(SystemSoundID mySSID)
 
 - (void)leftTopButtonClick {
     
+    LXSettingItemModel *adminManagerModel = [[LXSettingItemModel alloc] init];
+    adminManagerModel.titleText = @"账户管理";
+    adminManagerModel.itemType = SQSettingItemTypeAdmin;
     
+    LXSettingItemModel *helpModel = [[LXSettingItemModel alloc] init];
+    helpModel.titleText = @"帮助";
+    helpModel.itemType = SQSettingItemTypeHelp;
+    
+    NSMutableArray *array = [[NSMutableArray alloc] init];
+    [array addObject:adminManagerModel];
+    [array addObject:helpModel];
+    
+    LXSettingViewController *settingVC = [[LXSettingViewController alloc] init];
+    settingVC.lists = array;
+    [self.navigationController pushViewController:settingVC animated:YES];
 }
 
 - (void)rightTopButtonClick {
     
+    LXSettingItemModel *adminManagerModel = [[LXSettingItemModel alloc] init];
+    adminManagerModel.iconText = @"personcenter";
+    adminManagerModel.titleText = @"账户管理";
+    adminManagerModel.itemType = SQSettingItemTypeAdmin;
     
+    LXSettingItemModel *helpModel = [[LXSettingItemModel alloc] init];
+    helpModel.iconText = @"help";
+    helpModel.titleText = @"帮助";
+    helpModel.itemType = SQSettingItemTypeHelp;
+    
+    NSMutableArray *array = [[NSMutableArray alloc] init];
+    [array addObject:adminManagerModel];
+    [array addObject:helpModel];
+    
+    LXSettingViewController *settingVC = [[LXSettingViewController alloc] init];
+    settingVC.lists = array;
+    [self.navigationController pushViewController:settingVC animated:YES];
 }
 
 #pragma mark LXPeripheralListViewDelegate
@@ -232,6 +261,7 @@ static void completionCallback(SystemSoundID mySSID)
         
         _bgImageView = [[UIImageView alloc] init];
         _bgImageView.image = [UIImage imageNamed:@"home"];
+        _bgImageView.userInteractionEnabled = YES;
     }
     
     return _bgImageView;

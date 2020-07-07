@@ -23,5 +23,6 @@
 #import "AAGlobalMacro.h"
 #import "NSDate+SQAdd.h"
 #import "MJRefresh.h"
+#import "LXEnum.h"
 
 #endif /* LXTemperature_pch */
