@@ -10,6 +10,7 @@
 #import "LXSettingItemModel.h"
 #import "LXSettingItemTableViewCell.h"
 #import "LXUpdateUserNameViewController.h"
+#import "LXFindPwdViewController.h"
 
 @interface LXSettingViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong) UILabel *titleLabel;
@@ -124,7 +125,8 @@
         
     } else if (model.itemType == SQSettingItemTypePassWrod) {//修改密码
         
-        
+        LXFindPwdViewController *findPwdVC = [[LXFindPwdViewController alloc] init];
+        [self.navigationController pushViewController:findPwdVC animated:YES];
     }
 }
 
