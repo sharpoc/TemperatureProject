@@ -143,17 +143,25 @@ static void completionCallback(SystemSoundID mySSID)
 
 - (void)leftTopButtonClick {
     
-    LXSettingItemModel *adminManagerModel = [[LXSettingItemModel alloc] init];
-    adminManagerModel.titleText = @"账户管理";
-    adminManagerModel.itemType = SQSettingItemTypeAdmin;
+    LXSettingItemModel *groupManagerModel = [[LXSettingItemModel alloc] init];
+    groupManagerModel.titleText = @"群组管理";
+    groupManagerModel.iconText = @"group";
+    groupManagerModel.itemType = SQSettingItemTypeGroupAdmin;
     
-    LXSettingItemModel *helpModel = [[LXSettingItemModel alloc] init];
-    helpModel.titleText = @"帮助";
-    helpModel.itemType = SQSettingItemTypeHelp;
+    LXSettingItemModel *deviceManagerModel = [[LXSettingItemModel alloc] init];
+    deviceManagerModel.titleText = @"设备管理";
+    deviceManagerModel.iconText = @"setting";
+    deviceManagerModel.itemType = SQSettingItemTypeDeviceAdmin;
+    
+    LXSettingItemModel *wdManagerModel = [[LXSettingItemModel alloc] init];
+    wdManagerModel.titleText = @"温度管理";
+    wdManagerModel.iconText = @"police";
+    wdManagerModel.itemType = SQSettingItemTypePoliceAdmin;
     
     NSMutableArray *array = [[NSMutableArray alloc] init];
-    [array addObject:adminManagerModel];
-    [array addObject:helpModel];
+    [array addObject:groupManagerModel];
+    [array addObject:deviceManagerModel];
+    [array addObject:wdManagerModel];
     
     LXSettingViewController *settingVC = [[LXSettingViewController alloc] init];
     settingVC.lists = array;

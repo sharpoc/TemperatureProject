@@ -39,6 +39,7 @@
 		84DDC1D424B41AF4004F5C57 /* LXUpdateUserNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DDC1D324B41AF3004F5C57 /* LXUpdateUserNameViewController.m */; };
 		84DDC1D724B41B41004F5C57 /* LXUpdateUserNameViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DDC1D624B41B41004F5C57 /* LXUpdateUserNameViewModel.m */; };
 		84DDC1DA24B46693004F5C57 /* LXBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DDC1D924B46693004F5C57 /* LXBaseViewController.m */; };
+		84DDC1DD24B48592004F5C57 /* LXAddGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DDC1DC24B48592004F5C57 /* LXAddGroupViewController.m */; };
 		84E6108224921AEC0019B6BA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E6108124921AEC0019B6BA /* AppDelegate.m */; };
 		84E6108D24921AF20019B6BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84E6108C24921AF20019B6BA /* Assets.xcassets */; };
 		84E6109324921AF20019B6BA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E6109224921AF20019B6BA /* main.m */; };
@@ -125,6 +126,8 @@
 		84DDC1D624B41B41004F5C57 /* LXUpdateUserNameViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXUpdateUserNameViewModel.m; sourceTree = "<group>"; };
 		84DDC1D824B46693004F5C57 /* LXBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXBaseViewController.h; sourceTree = "<group>"; };
 		84DDC1D924B46693004F5C57 /* LXBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXBaseViewController.m; sourceTree = "<group>"; };
+		84DDC1DB24B48592004F5C57 /* LXAddGroupViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXAddGroupViewController.h; sourceTree = "<group>"; };
+		84DDC1DC24B48592004F5C57 /* LXAddGroupViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXAddGroupViewController.m; sourceTree = "<group>"; };
 		84E6107D24921AEC0019B6BA /* TemperatureProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TemperatureProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84E6108024921AEC0019B6BA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		84E6108124921AEC0019B6BA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -407,6 +410,8 @@
 				84DDC1C924B31BC9004F5C57 /* LXSettingViewController.m */,
 				84DDC1D224B41AF3004F5C57 /* LXUpdateUserNameViewController.h */,
 				84DDC1D324B41AF3004F5C57 /* LXUpdateUserNameViewController.m */,
+				84DDC1DB24B48592004F5C57 /* LXAddGroupViewController.h */,
+				84DDC1DC24B48592004F5C57 /* LXAddGroupViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -702,6 +707,7 @@
 				84E612212498BB1D0019B6BA /* Tool.m in Sources */,
 				84E6126A249B82E30019B6BA /* LoadingHUDManager.m in Sources */,
 				84E6121C2497771C0019B6BA /* LXShowDetailViewController.m in Sources */,
+				84DDC1DD24B48592004F5C57 /* LXAddGroupViewController.m in Sources */,
 				84DDC1D424B41AF4004F5C57 /* LXUpdateUserNameViewController.m in Sources */,
 				84E610C0249227F00019B6BA /* LXHomeViewController.m in Sources */,
 			);

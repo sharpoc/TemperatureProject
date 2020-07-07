@@ -11,6 +11,7 @@
 #import "LXSettingItemTableViewCell.h"
 #import "LXUpdateUserNameViewController.h"
 #import "LXFindPwdViewController.h"
+#import "LXAddGroupViewController.h"
 
 @interface LXSettingViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong) UILabel *titleLabel;
@@ -127,6 +128,10 @@
         
         LXFindPwdViewController *findPwdVC = [[LXFindPwdViewController alloc] init];
         [self.navigationController pushViewController:findPwdVC animated:YES];
+    } else if (model.itemType == SQSettingItemTypeGroupAdmin) {//添加群组
+        
+        LXAddGroupViewController *addGroupVC = [[LXAddGroupViewController alloc] init];
+        [self.navigationController pushViewController:addGroupVC animated:YES];
     }
 }
 
