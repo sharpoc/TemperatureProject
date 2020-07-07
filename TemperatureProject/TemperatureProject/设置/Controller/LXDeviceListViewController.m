@@ -7,26 +7,63 @@
 //
 
 #import "LXDeviceListViewController.h"
+#import "LXDeviceListViewModel.h"
 
-@interface LXDeviceListViewController ()
+@interface LXDeviceListViewController ()<UITableViewDataSource,UITableViewDelegate>
 
+@property (nonatomic,strong) UITableView *tableView;
+
+@property (nonatomic,strong) LXDeviceListViewModel *viewModel;
+@property (nonatomic,copy) NSArray *lists;
 @end
 
 @implementation LXDeviceListViewController
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self.viewModel getDeviceListWithBlock:^(BOOL success, NSString * _Nonnull msg, NSArray * _Nonnull model) {
+        
+        if (success) {
+            
+            self.lists = model;
+        }
+    }];
+
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
 }
-*/
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.lists.count;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+//    SQPTSelectAddressListViewTableViewCell *cell = [SQPTSelectAddressListViewTableViewCell cellWithTableView:tableView];
+    return nil;
+}
+
+- (LXDeviceListViewModel *)viewModel {
+    
+    if (!_viewModel) {
+        
+        _viewModel = [[LXDeviceListViewModel alloc] init];
+    }
+    
+    return _viewModel;
+}
+
+- (UITableView *)tableView {
+    
+    if (!_tableView) {
+        
+        _tableView = [[UITableView alloc] init];
+        _tableView.dataSource = self;
+        _tableView.delegate = self;
+    }
+    
+    return _tableView;
+}
 
 @end

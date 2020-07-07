@@ -12,6 +12,7 @@
 #import "LXUpdateUserNameViewController.h"
 #import "LXFindPwdViewController.h"
 #import "LXAddGroupViewController.h"
+#import "LXDeviceListViewController.h"
 
 @interface LXSettingViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong) UILabel *titleLabel;
@@ -132,6 +133,10 @@
         
         LXAddGroupViewController *addGroupVC = [[LXAddGroupViewController alloc] init];
         [self.navigationController pushViewController:addGroupVC animated:YES];
+    } else if (model.itemType == SQSettingItemTypeDeviceAdmin) { //设备管理
+        
+        LXDeviceListViewController *deviceVC = [[LXDeviceListViewController alloc] init];
+        [self.navigationController pushViewController:deviceVC animated:YES];
     }
 }
 

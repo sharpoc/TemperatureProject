@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LXDeviceListViewModel : NSObject
 
+- (void)getDeviceListWithBlock:(void(^)(BOOL success,NSString *msg,NSArray *model))block;
 @end
 
 NS_ASSUME_NONNULL_END

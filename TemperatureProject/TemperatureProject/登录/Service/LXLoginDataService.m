@@ -12,6 +12,7 @@
 #import "LXUserTokenModel.h"
 #import "LXTemperatureModel.h"
 #import "LXHistoryTemperatureModel.h"
+#import "LXDeviceModel.h"
 
 @implementation LXLoginDataService
 
@@ -247,6 +248,32 @@
 
         SQSafeBlock(block,YES,@"",nil);
     }];
+}
+
++ (void)getDeviceListWithBlock:(void(^)(BOOL success,NSString *msg,NSArray *model))block {
+    
+    LXUserTokenModel *loginModel = [[LXCacheManager shareInstance] unarchiveDataForKey:@"loginuser"];
+    NSMutableDictionary *dict=[NSMutableDictionary dictionary];
+    [dict setObject:loginModel.user.uid forKey:@"userId"];
+    
+    [LXHttpRequest GET:@"http://39.103.132.54:1111/accounts/api/app/getDevice" dict:dict succeed:^(id  _Nonnull data) {
+        NSString *code = [data valueForKey:@"code"];
+        NSString *msg = [data valueForKey:@"message"];
+        NSDictionary *dict = [data valueForKey:@"data"];
+        NSArray *array = [NSArray yy_modelArrayWithClass:[LXDeviceModel class] json:dict];
+
+        if ([code isEqualToString:@"0"]) {
+
+           SQSafeBlock(block,YES,msg,array);
+        } else {
+
+           SQSafeBlock(block,NO,msg,nil);
+        }
+    } failure:^(NSError * _Nonnull error) {
+        
+        SQSafeBlock(block,YES,@"",nil);
+    }];
+
 }
 
 

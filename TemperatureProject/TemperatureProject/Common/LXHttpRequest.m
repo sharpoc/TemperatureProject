@@ -51,6 +51,16 @@ static LXHttpRequest *httpRequest = nil;
 {
     //创建网络请求管理对象
     AFHTTPSessionManager *manager = [self sessionManager];
+    // 设置header
+    LXUserTokenModel *loginModel = [[LXCacheManager shareInstance] unarchiveDataForKey:@"loginuser"];
+
+    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    NSString *token = [NSString stringWithFormat:@"Bearer %@",loginModel.token];
+    if ([URLString containsString:@"login"] || [URLString containsString:@"sendCode"] || [URLString containsString:@"userRegister"]) {
+        
+        token = @"Bearer";
+    }
+    [manager.requestSerializer setValue:token forHTTPHeaderField:@"Authorization"];
     [manager GET:URLString parameters:dict headers:nil progress:^(NSProgress * _Nonnull downloadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {

@@ -17,7 +17,6 @@
 		8402F29524A36AAB0039A255 /* PrintBeautifulLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 8402F29424A36AAB0039A255 /* PrintBeautifulLog.m */; };
 		8402F29824A9E5120039A255 /* LXFindPwdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8402F29724A9E5110039A255 /* LXFindPwdViewController.m */; };
 		8402F2FC24AB11E50039A255 /* LXTostHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 8402F2FB24AB11E50039A255 /* LXTostHUD.m */; };
-		8402F30B24AB2C4B0039A255 /* LXDeviceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8402F30A24AB2C4B0039A255 /* LXDeviceModel.m */; };
 		8402F30E24AB2E4E0039A255 /* LXShowDetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8402F30D24AB2E4E0039A255 /* LXShowDetailViewModel.m */; };
 		846B1B7E24AB35D40002C8B8 /* LXUserTokenModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B1B7D24AB35D40002C8B8 /* LXUserTokenModel.m */; };
 		846B1B8124AB5B460002C8B8 /* LXTemperatureModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B1B8024AB5B460002C8B8 /* LXTemperatureModel.m */; };
@@ -43,6 +42,8 @@
 		84DDC1E024B48B86004F5C57 /* LXAddGroupViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DDC1DF24B48B86004F5C57 /* LXAddGroupViewModel.m */; };
 		84DDC1E324B490A5004F5C57 /* LXDeviceListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DDC1E224B490A5004F5C57 /* LXDeviceListViewController.m */; };
 		84DDC1E624B4917D004F5C57 /* LXDeviceListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DDC1E524B4917D004F5C57 /* LXDeviceListViewModel.m */; };
+		84DDC1E924B497F6004F5C57 /* LXDeviceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DDC1E824B497F6004F5C57 /* LXDeviceModel.m */; };
+		84DDC1EC24B4A413004F5C57 /* LXDeviceListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DDC1EB24B4A413004F5C57 /* LXDeviceListTableViewCell.m */; };
 		84E6108224921AEC0019B6BA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E6108124921AEC0019B6BA /* AppDelegate.m */; };
 		84E6108D24921AF20019B6BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84E6108C24921AF20019B6BA /* Assets.xcassets */; };
 		84E6109324921AF20019B6BA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E6109224921AF20019B6BA /* main.m */; };
@@ -84,8 +85,6 @@
 		8402F29724A9E5110039A255 /* LXFindPwdViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXFindPwdViewController.m; sourceTree = "<group>"; };
 		8402F2FA24AB11E50039A255 /* LXTostHUD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXTostHUD.h; sourceTree = "<group>"; };
 		8402F2FB24AB11E50039A255 /* LXTostHUD.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXTostHUD.m; sourceTree = "<group>"; };
-		8402F30924AB2C4B0039A255 /* LXDeviceModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXDeviceModel.h; sourceTree = "<group>"; };
-		8402F30A24AB2C4B0039A255 /* LXDeviceModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXDeviceModel.m; sourceTree = "<group>"; };
 		8402F30C24AB2E4E0039A255 /* LXShowDetailViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXShowDetailViewModel.h; sourceTree = "<group>"; };
 		8402F30D24AB2E4E0039A255 /* LXShowDetailViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXShowDetailViewModel.m; sourceTree = "<group>"; };
 		846B1B7C24AB35D40002C8B8 /* LXUserTokenModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXUserTokenModel.h; sourceTree = "<group>"; };
@@ -137,6 +136,10 @@
 		84DDC1E224B490A5004F5C57 /* LXDeviceListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXDeviceListViewController.m; sourceTree = "<group>"; };
 		84DDC1E424B4917D004F5C57 /* LXDeviceListViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXDeviceListViewModel.h; sourceTree = "<group>"; };
 		84DDC1E524B4917D004F5C57 /* LXDeviceListViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXDeviceListViewModel.m; sourceTree = "<group>"; };
+		84DDC1E724B497F6004F5C57 /* LXDeviceModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXDeviceModel.h; sourceTree = "<group>"; };
+		84DDC1E824B497F6004F5C57 /* LXDeviceModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXDeviceModel.m; sourceTree = "<group>"; };
+		84DDC1EA24B4A413004F5C57 /* LXDeviceListTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXDeviceListTableViewCell.h; sourceTree = "<group>"; };
+		84DDC1EB24B4A413004F5C57 /* LXDeviceListTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXDeviceListTableViewCell.m; sourceTree = "<group>"; };
 		84E6107D24921AEC0019B6BA /* TemperatureProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TemperatureProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84E6108024921AEC0019B6BA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		84E6108124921AEC0019B6BA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -339,8 +342,6 @@
 			children = (
 				8402F28924A3347D0039A255 /* LXUserRegisterModel.h */,
 				8402F28A24A3347D0039A255 /* LXUserRegisterModel.m */,
-				8402F30924AB2C4B0039A255 /* LXDeviceModel.h */,
-				8402F30A24AB2C4B0039A255 /* LXDeviceModel.m */,
 				846B1B7C24AB35D40002C8B8 /* LXUserTokenModel.h */,
 				846B1B7D24AB35D40002C8B8 /* LXUserTokenModel.m */,
 			);
@@ -436,6 +437,8 @@
 			children = (
 				84DDC1CB24B32839004F5C57 /* LXSettingItemModel.h */,
 				84DDC1CC24B3283A004F5C57 /* LXSettingItemModel.m */,
+				84DDC1E724B497F6004F5C57 /* LXDeviceModel.h */,
+				84DDC1E824B497F6004F5C57 /* LXDeviceModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -445,6 +448,8 @@
 			children = (
 				84DDC1CF24B34EEE004F5C57 /* LXSettingItemTableViewCell.h */,
 				84DDC1D024B34EEE004F5C57 /* LXSettingItemTableViewCell.m */,
+				84DDC1EA24B4A413004F5C57 /* LXDeviceListTableViewCell.h */,
+				84DDC1EB24B4A413004F5C57 /* LXDeviceListTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -687,8 +692,10 @@
 				8402F27C24A1F8770039A255 /* LXPeripheral.m in Sources */,
 				846B1B9924B2D1D70002C8B8 /* LXFindPwdViewModel.m in Sources */,
 				84E6120824931CA00019B6BA /* LXBluetoothManager.m in Sources */,
+				84DDC1E924B497F6004F5C57 /* LXDeviceModel.m in Sources */,
 				84DDC1E324B490A5004F5C57 /* LXDeviceListViewController.m in Sources */,
 				8402F28524A20EE90039A255 /* LXInputView.m in Sources */,
+				84DDC1EC24B4A413004F5C57 /* LXDeviceListTableViewCell.m in Sources */,
 				8402F28E24A365D60039A255 /* NSDictionary+Log.m in Sources */,
 				84DDC1CD24B3283A004F5C57 /* LXSettingItemModel.m in Sources */,
 				8402F29524A36AAB0039A255 /* PrintBeautifulLog.m in Sources */,
@@ -714,7 +721,6 @@
 				84DDC1D124B34EEE004F5C57 /* LXSettingItemTableViewCell.m in Sources */,
 				846B1B8424AC28E90002C8B8 /* LXLoopTemperatureViewController.m in Sources */,
 				846B1B8D24ADB6040002C8B8 /* LXHistoryTemperatureViewController.m in Sources */,
-				8402F30B24AB2C4B0039A255 /* LXDeviceModel.m in Sources */,
 				84E6109324921AF20019B6BA /* main.m in Sources */,
 				84E61261249A47DB0019B6BA /* LXCacheManager.m in Sources */,
 				8402F30E24AB2E4E0039A255 /* LXShowDetailViewModel.m in Sources */,

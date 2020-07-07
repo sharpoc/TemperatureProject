@@ -32,6 +32,8 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)getHistoryData:(NSString *)mac page:(NSInteger)page size:(NSInteger)size withBlock:(void(^)(BOOL success,NSString *msg,NSArray *model))block;
 
 + (void)addGroupWithCode:(NSString *)code andBlock:(void(^)(BOOL success,NSString *msg,NSObject *model))block;
+
++ (void)getDeviceListWithBlock:(void(^)(BOOL success,NSString *msg,NSArray *model))block;
 @end
 
 NS_ASSUME_NONNULL_END
