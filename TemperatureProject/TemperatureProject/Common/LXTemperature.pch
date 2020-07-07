@@ -24,5 +24,6 @@
 #import "NSDate+SQAdd.h"
 #import "MJRefresh.h"
 #import "LXEnum.h"
+#import "LXBaseViewController.h"
 
 #endif /* LXTemperature_pch */
