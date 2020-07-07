@@ -9,6 +9,7 @@
 #import "LXSettingViewController.h"
 #import "LXSettingItemModel.h"
 #import "LXSettingItemTableViewCell.h"
+#import "LXUpdateUserNameViewController.h"
 
 @interface LXSettingViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong) UILabel *titleLabel;
@@ -118,6 +119,8 @@
     }
     else if (model.itemType == SQSettingItemTypeUserName) {//修改用户名
         
+        LXUpdateUserNameViewController *updateUserNameVC = [[LXUpdateUserNameViewController alloc] init];
+        [self.navigationController pushViewController:updateUserNameVC animated:YES];
         
     } else if (model.itemType == SQSettingItemTypePassWrod) {//修改密码
         
