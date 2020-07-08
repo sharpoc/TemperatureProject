@@ -16,6 +16,7 @@
 @interface LXLoginViewController ()
 
 @property (nonatomic,strong) LXLoginViewModel *viewModel;
+@property (nonatomic,strong) UIImageView *bgImageView;
 @property (nonatomic,strong) UIImageView *phoneIconImageView;
 @property (nonatomic,strong) UITextField *phoneTextField;
 @property (nonatomic,strong) UIImageView *pwdIconImageView;
@@ -32,24 +33,33 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    self.navigationController.navigationBarHidden = YES;
     [self createUI];
     [self createLayout];
 }
 
 - (void)createUI {
     
-    [self.view addSubview:self.phoneIconImageView];
-    [self.view addSubview:self.phoneTextField];
-    [self.view addSubview:self.pwdIconImageView];
-    [self.view addSubview:self.pwdTextField];
-    [self.view addSubview:self.yanButton];
-    [self.view addSubview:self.commitBtn];
-    [self.view addSubview:self.findPwdBtn];
-    [self.view addSubview:self.registerBtn];
+    [self.view addSubview:self.bgImageView];
+    [self.bgImageView addSubview:self.phoneIconImageView];
+    [self.bgImageView addSubview:self.phoneTextField];
+    [self.bgImageView addSubview:self.pwdIconImageView];
+    [self.bgImageView addSubview:self.pwdTextField];
+    [self.bgImageView addSubview:self.yanButton];
+    [self.bgImageView addSubview:self.commitBtn];
+    [self.bgImageView addSubview:self.findPwdBtn];
+    [self.bgImageView addSubview:self.registerBtn];
 }
 
 - (void)createLayout {
     
+    [self.bgImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+       
+        make.left.mas_equalTo(0);
+        make.right.mas_equalTo(0);
+        make.top.mas_equalTo(0);
+        make.bottom.mas_equalTo(0);
+    }];
     
     [self.phoneIconImageView mas_makeConstraints:^(MASConstraintMaker *make) {
        
@@ -184,6 +194,18 @@
         self.pwdTextField.secureTextEntry = YES;
         self.pwdTextField.text = tempPwdStr;
     }
+}
+
+- (UIImageView *)bgImageView {
+    
+    if (!_bgImageView) {
+        
+        _bgImageView = [[UIImageView alloc] init];
+        _bgImageView.image = [UIImage imageNamed:@"loginBg"];
+        
+    }
+    
+    return _bgImageView;
 }
 
 - (UIImageView *)phoneIconImageView {
