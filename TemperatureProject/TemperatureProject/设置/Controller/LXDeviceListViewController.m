@@ -8,8 +8,11 @@
 
 #import "LXDeviceListViewController.h"
 #import "LXDeviceListViewModel.h"
+#import "LXDeviceListTableViewCell.h"
+#import "LXDeviceModel.h"
+#import "LXSetAlarmViewController.h"
 
-@interface LXDeviceListViewController ()<UITableViewDataSource,UITableViewDelegate>
+@interface LXDeviceListViewController ()<UITableViewDataSource,UITableViewDelegate,LXDeviceListTableViewCellDelegate>
 
 @property (nonatomic,strong) UITableView *tableView;
 
@@ -21,15 +24,59 @@
 
 - (void)viewDidLoad {
     
+    self.view.backgroundColor = [UIColor whiteColor];
     [super viewDidLoad];
+    
+    [self createUI];
+    [self createLayout];
+    [self createData];
+
+}
+
+- (void)createUI {
+    
+    [self.view addSubview:self.tableView];
+}
+
+- (void)createLayout {
+    
+    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+       
+        make.left.mas_equalTo(0);
+        make.right.mas_equalTo(0);
+        make.top.mas_equalTo(self.navView.mas_bottom);
+        make.bottom.mas_equalTo(0);
+    }];
+}
+
+- (void)createData {
+    
     [self.viewModel getDeviceListWithBlock:^(BOOL success, NSString * _Nonnull msg, NSArray * _Nonnull model) {
         
         if (success) {
             
             self.lists = model;
+            [self.tableView reloadData];
         }
     }];
+}
 
+#pragma mark LXDeviceListTableViewCellDelegate
+
+- (void)controlClick:(LXDeviceModel *)model {
+    
+    LXSetAlarmViewController *alarmVc = [[LXSetAlarmViewController alloc] init];
+    [self.navigationController pushViewController:alarmVc animated:YES];
+}
+
+- (void)infoClick:(LXDeviceModel *)model {
+    
+    
+}
+
+- (void)delClick:(LXDeviceModel *)model {
+    
+    
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -40,8 +87,16 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-//    SQPTSelectAddressListViewTableViewCell *cell = [SQPTSelectAddressListViewTableViewCell cellWithTableView:tableView];
-    return nil;
+    LXDeviceModel *model = self.lists[indexPath.row];
+    LXDeviceListTableViewCell *cell = [LXDeviceListTableViewCell cellWithTableView:tableView];
+    cell.delegate = self;
+    cell.model = model;
+    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    return 200;
 }
 
 - (LXDeviceListViewModel *)viewModel {

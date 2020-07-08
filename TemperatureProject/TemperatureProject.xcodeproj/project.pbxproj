@@ -450,6 +450,8 @@
 				84DDC1D024B34EEE004F5C57 /* LXSettingItemTableViewCell.m */,
 				84DDC1EA24B4A413004F5C57 /* LXDeviceListTableViewCell.h */,
 				84DDC1EB24B4A413004F5C57 /* LXDeviceListTableViewCell.m */,
+				84E612222498F4560019B6BA /* LXSetAlarmViewController.h */,
+				84E612232498F4560019B6BA /* LXSetAlarmViewController.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -495,8 +497,6 @@
 				84E6108C24921AF20019B6BA /* Assets.xcassets */,
 				84E6109124921AF20019B6BA /* Info.plist */,
 				84E6109224921AF20019B6BA /* main.m */,
-				84E612222498F4560019B6BA /* LXSetAlarmViewController.h */,
-				84E612232498F4560019B6BA /* LXSetAlarmViewController.m */,
 			);
 			path = TemperatureProject;
 			sourceTree = "<group>";
