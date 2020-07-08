@@ -229,19 +229,19 @@
     NSMutableDictionary *dict=[NSMutableDictionary dictionary];
     [dict setObject:code forKey:@"code"];
     [dict setObject:loginModel.user.uid forKey:@"userId"];
-
-
+    
+    
     [LXHttpRequest POST:@"http://39.103.132.54:1111/accounts/api/inAppGroup" jsonDict:dict succeed:^(id  _Nonnull data) {
-
+        
         NSString *code = [data valueForKey:@"code"];
         NSString *msg = [data valueForKey:@"message"];
-
-
+        
+        
         if ([code isEqualToString:@"0"]) {
-
+            
             SQSafeBlock(block,YES,msg,nil);
         } else {
-
+            
             SQSafeBlock(block,NO,msg,nil);
         }
     } failure:^(NSError * _Nonnull error) {
@@ -274,6 +274,33 @@
         SQSafeBlock(block,YES,@"",nil);
     }];
 
+}
+
++ (void)delDeviceWithMac:(LXDeviceModel *)model andBlock:(void(^)(BOOL success,NSString *msg,NSArray *model))block {
+    
+    LXUserTokenModel *loginModel = [[LXCacheManager shareInstance] unarchiveDataForKey:@"loginuser"];
+    NSMutableDictionary *dict=[NSMutableDictionary dictionary];
+    [dict setObject:loginModel.user.phone forKey:@"phone"];
+    [dict setObject:model.deviceId forKey:@"deviceId"];
+    
+    
+    [LXHttpRequest POST:@"http://39.103.132.54:1111/accounts/api/app/removeDevice" jsonDict:dict succeed:^(id  _Nonnull data) {
+        
+        NSString *code = [data valueForKey:@"code"];
+        NSString *msg = [data valueForKey:@"message"];
+        
+        
+        if ([code isEqualToString:@"0"]) {
+            
+            SQSafeBlock(block,YES,msg,nil);
+        } else {
+            
+            SQSafeBlock(block,NO,msg,nil);
+        }
+    } failure:^(NSError * _Nonnull error) {
+
+        SQSafeBlock(block,YES,@"",nil);
+    }];
 }
 
 

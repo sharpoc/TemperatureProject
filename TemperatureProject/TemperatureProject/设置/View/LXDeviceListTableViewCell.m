@@ -135,7 +135,7 @@
     
     if ([self.delegate respondsToSelector:@selector(delClick:)]) {
         
-        [self.delegate controlClick:self.model];
+        [self.delegate delClick:self.model];
     }
 }
 

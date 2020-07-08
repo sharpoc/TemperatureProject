@@ -11,6 +11,7 @@
 #import "LXDeviceListTableViewCell.h"
 #import "LXDeviceModel.h"
 #import "LXSetAlarmViewController.h"
+#import "LXHistoryTemperatureViewController.h"
 
 @interface LXDeviceListViewController ()<UITableViewDataSource,UITableViewDelegate,LXDeviceListTableViewCellDelegate>
 
@@ -71,12 +72,21 @@
 
 - (void)infoClick:(LXDeviceModel *)model {
     
-    
+    LXHistoryTemperatureViewController *historyVC = [[LXHistoryTemperatureViewController alloc] init];
+    historyVC.mac = model.deviceId;
+    [self.navigationController pushViewController:historyVC animated:YES];
 }
 
 - (void)delClick:(LXDeviceModel *)model {
     
-    
+    [self.viewModel delDeviceWithMac:model andBlock:^(BOOL success, NSString * _Nonnull msg, NSArray * _Nonnull model) {
+       
+        if (success) {
+            
+            [LXTostHUD showTitle:msg];
+            [self createData];
+        }
+    }];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

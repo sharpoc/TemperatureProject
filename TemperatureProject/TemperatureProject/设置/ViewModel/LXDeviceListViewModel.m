@@ -18,4 +18,12 @@
         SQSafeBlock(block,success,msg,model);
     }];
 }
+
+- (void)delDeviceWithMac:(LXDeviceModel *)model andBlock:(void(^)(BOOL success,NSString *msg,NSArray *model))block {
+    
+    [LXLoginDataService delDeviceWithMac:model andBlock:^(BOOL success, NSString * _Nonnull msg, NSArray * _Nonnull model) {
+       
+        SQSafeBlock(block,success,msg,model);
+    }];
+}
 @end
