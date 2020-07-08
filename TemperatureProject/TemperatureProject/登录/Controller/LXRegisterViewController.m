@@ -14,7 +14,8 @@
 @interface LXRegisterViewController ()
 
 @property (nonatomic,strong) LXRegisterViewModel *viewModel;
-
+@property (nonatomic,strong) UIImageView *logImageView;
+@property (nonatomic,strong) UIImageView *bgImageView;
 @property (nonatomic,strong) UIView *bgView;
 
 @property (nonatomic,strong) LXInputView *userNameInputView;
@@ -38,15 +39,16 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.view.backgroundColor = KSQRandomColor;
+    self.view.backgroundColor = [UIColor whiteColor];
     [self createUI];
     [self createLayout];
 }
 
 - (void)createUI {
     
+    [self.view addSubview:self.bgImageView];
     [self.view addSubview:self.bgView];
-    
+    [self.view addSubview:self.logImageView];
     [self.bgView addSubview:self.userNameInputView];
     [self.bgView addSubview:self.phoneInputView];
     [self.bgView addSubview:self.codeInputView];
@@ -60,6 +62,14 @@
 
 - (void)createLayout {
     
+    [self.bgImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+       
+        make.left.mas_equalTo(0);
+        make.top.mas_equalTo(0);
+        make.right.mas_equalTo(0);
+        make.bottom.mas_equalTo(0);
+    }];
+    
     [self.bgView mas_makeConstraints:^(MASConstraintMaker *make) {
        
         make.left.mas_equalTo(20);
@@ -67,11 +77,20 @@
         make.top.mas_equalTo(150);
     }];
     
+    [self.logImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+       
+        make.centerX.mas_equalTo(self.view.mas_centerX);
+        make.width.mas_equalTo(110);
+        make.height.mas_equalTo(110);
+        make.top.mas_equalTo(self.bgView.mas_top).offset(-55);
+        
+    }];
+    
     [self.userNameInputView mas_makeConstraints:^(MASConstraintMaker *make) {
        
         make.left.mas_equalTo(20);
         make.right.mas_equalTo(-20);
-        make.top.mas_equalTo(20);
+        make.top.mas_equalTo(65);
         make.height.mas_equalTo(43);
     }];
     
@@ -109,9 +128,9 @@
     
     [self.getCodeBtn mas_makeConstraints:^(MASConstraintMaker *make) {
        
-        make.right.mas_equalTo(0);
-        make.top.mas_equalTo(0);
-        make.bottom.mas_equalTo(0);
+        make.right.mas_equalTo(-2);
+        make.top.mas_equalTo(2);
+        make.bottom.mas_equalTo(-2);
         make.width.mas_equalTo(100);
     }];
     
@@ -208,15 +227,44 @@
     return _viewModel;
 }
 
+- (UIImageView *)bgImageView {
+    
+    if (!_bgImageView) {
+        
+        _bgImageView = [[UIImageView alloc] init];
+        _bgImageView.userInteractionEnabled = YES;
+        _bgImageView.image = [UIImage imageNamed:@"loginBg"];
+    }
+    
+    return _bgImageView;
+}
+
 - (UIView *)bgView {
     
     if (!_bgView) {
         
         _bgView = [[UIView alloc] init];
         _bgView.backgroundColor = [UIColor whiteColor];
+        _bgView.layer.cornerRadius = 10;
+        
     }
     
     return _bgView;
+}
+
+- (UIImageView *)logImageView {
+    
+    if (!_logImageView) {
+        
+        _logImageView = [[UIImageView alloc] init];
+        _logImageView.backgroundColor = KSQColor(112, 233, 205);
+        _logImageView.image = [UIImage imageNamed:@"logowz"];
+        _logImageView.contentMode = UIViewContentModeCenter;
+        _logImageView.layer.cornerRadius = 55;
+        
+    }
+    
+    return _logImageView;
 }
 
 - (LXInputView *)userNameInputView {
@@ -294,7 +342,12 @@
     if (!_getCodeBtn) {
         
         _getCodeBtn = [[UIButton alloc] init];
-        _getCodeBtn.backgroundColor = KSQRandomColor;
+        _getCodeBtn.backgroundColor = KSQColor(112, 233, 205);
+        _getCodeBtn.layer.cornerRadius = 20;
+        _getCodeBtn.layer.masksToBounds = YES;
+        [_getCodeBtn setTitle:@"获取验证码" forState:UIControlStateNormal];
+        _getCodeBtn.titleLabel.font = [UIFont systemFontOfSize:12];
+        [_getCodeBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [_getCodeBtn addTarget:self action:@selector(getCodeBtnClick) forControlEvents:UIControlEventTouchUpInside];
     }
     

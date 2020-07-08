@@ -201,6 +201,7 @@
     if (!_bgImageView) {
         
         _bgImageView = [[UIImageView alloc] init];
+        _bgImageView.userInteractionEnabled = YES;
         _bgImageView.image = [UIImage imageNamed:@"loginBg"];
         
     }

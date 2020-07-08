@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "LXHomeViewController.h"
-
+#import "LXWelcomeViewController.h"
 #import "LXLoginViewController.h"
 
 @interface AppDelegate ()
@@ -26,8 +26,10 @@
 
     //创建控制器
     LXLoginViewController *controller=[[LXLoginViewController alloc]init];
-
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:controller];
+    
+    LXWelcomeViewController *welcomeVC = [[LXWelcomeViewController alloc] init];
+    
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:welcomeVC];
     //设置控制器View的背景颜色
     controller.view.backgroundColor = [UIColor brownColor];
     //设置该控制器为Window的根控制器

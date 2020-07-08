@@ -44,6 +44,7 @@
 		84DDC1E624B4917D004F5C57 /* LXDeviceListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DDC1E524B4917D004F5C57 /* LXDeviceListViewModel.m */; };
 		84DDC1E924B497F6004F5C57 /* LXDeviceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DDC1E824B497F6004F5C57 /* LXDeviceModel.m */; };
 		84DDC1EC24B4A413004F5C57 /* LXDeviceListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DDC1EB24B4A413004F5C57 /* LXDeviceListTableViewCell.m */; };
+		84DDC1EF24B5C262004F5C57 /* LXWelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DDC1EE24B5C262004F5C57 /* LXWelcomeViewController.m */; };
 		84E6108224921AEC0019B6BA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E6108124921AEC0019B6BA /* AppDelegate.m */; };
 		84E6108D24921AF20019B6BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84E6108C24921AF20019B6BA /* Assets.xcassets */; };
 		84E6109324921AF20019B6BA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E6109224921AF20019B6BA /* main.m */; };
@@ -140,6 +141,8 @@
 		84DDC1E824B497F6004F5C57 /* LXDeviceModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXDeviceModel.m; sourceTree = "<group>"; };
 		84DDC1EA24B4A413004F5C57 /* LXDeviceListTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXDeviceListTableViewCell.h; sourceTree = "<group>"; };
 		84DDC1EB24B4A413004F5C57 /* LXDeviceListTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXDeviceListTableViewCell.m; sourceTree = "<group>"; };
+		84DDC1ED24B5C262004F5C57 /* LXWelcomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXWelcomeViewController.h; sourceTree = "<group>"; };
+		84DDC1EE24B5C262004F5C57 /* LXWelcomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXWelcomeViewController.m; sourceTree = "<group>"; };
 		84E6107D24921AEC0019B6BA /* TemperatureProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TemperatureProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84E6108024921AEC0019B6BA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		84E6108124921AEC0019B6BA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -388,6 +391,8 @@
 				8402F28124A20BC00039A255 /* LXRegisterViewController.m */,
 				8402F29624A9E5110039A255 /* LXFindPwdViewController.h */,
 				8402F29724A9E5110039A255 /* LXFindPwdViewController.m */,
+				84DDC1ED24B5C262004F5C57 /* LXWelcomeViewController.h */,
+				84DDC1EE24B5C262004F5C57 /* LXWelcomeViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -688,6 +693,7 @@
 				846B1B8724AC876E0002C8B8 /* NSDate+SQAdd.m in Sources */,
 				84E6120F24934DD80019B6BA /* LXPeripheralListView.m in Sources */,
 				8402F28B24A3347D0039A255 /* LXUserRegisterModel.m in Sources */,
+				84DDC1EF24B5C262004F5C57 /* LXWelcomeViewController.m in Sources */,
 				846B1B8A24AC90D60002C8B8 /* LXLoopTemperatureViewModel.m in Sources */,
 				8402F27C24A1F8770039A255 /* LXPeripheral.m in Sources */,
 				846B1B9924B2D1D70002C8B8 /* LXFindPwdViewModel.m in Sources */,
