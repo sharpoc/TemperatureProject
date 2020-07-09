@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface LXRegisterViewController : UIViewController
+@interface LXRegisterViewController : LXBaseViewController
 
 @end
 

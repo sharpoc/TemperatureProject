@@ -44,6 +44,7 @@ static void completionCallback(SystemSoundID mySSID)
 }
 - (void)viewDidLoad {
     
+    self.navigationController.navigationBarHidden = YES;
     [super viewDidLoad];
     [self createUI];
     [self createLayout];
@@ -55,20 +56,6 @@ static void completionCallback(SystemSoundID mySSID)
 }
 
 
-
-- (void)viewWillAppear:(BOOL)animated{
-    
-    [super viewWillAppear:animated];
-    self.navigationController.navigationBarHidden = YES;
-    
-}
-
-- (void)viewWillDisappear:(BOOL)animated{
-    
-    [super viewWillDisappear:animated];
-    self.navigationController.navigationBarHidden = NO;
-}
-
 - (void)createUI {
     
     [self.view addSubview:self.bgImageView];
@@ -77,15 +64,7 @@ static void completionCallback(SystemSoundID mySSID)
     [self.view addSubview:self.peripheralListView];
     
    
-    
-    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-    UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:nil action:nil];
-//    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:nil style:UIBarButtonItemStylePlain target:nil action:nil];
 
-//        [self.navigationItem.rightBarButtonItem setImage:[UIImage imageNamed:@"titleButton"]];
-
-        
-    [self.navigationItem setBackBarButtonItem:backItem];
     
     [self.view addSubview:self.leftTopButton];
     [self.view addSubview:self.rightTopButton];

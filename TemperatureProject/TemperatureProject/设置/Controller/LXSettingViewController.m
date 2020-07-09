@@ -15,7 +15,6 @@
 #import "LXDeviceListViewController.h"
 
 @interface LXSettingViewController ()<UITableViewDelegate,UITableViewDataSource>
-@property (nonatomic,strong) UILabel *titleLabel;
 @property (nonatomic,strong) UITableView *tableView;
 @end
 
@@ -24,49 +23,28 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    self.view.backgroundColor = KSQRandomColor;
+    self.navigationController.navigationBarHidden = YES;
+    self.view.backgroundColor = [UIColor whiteColor];
     [self createUI];
     [self createLayout];
 }
 
-- (void)viewWillAppear:(BOOL)animated{
-    
-    //设置导航栏背景图片为一个空的image，这样就透明了
-    [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
-    
-    //去掉透明后导航栏下边的黑边
-    [self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]];
-}
 
-- (void)viewWillDisappear:(BOOL)animated{
-    
-    //    如果不想让其他页面的导航栏变为透明 需要重置
-    [self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
-    [self.navigationController.navigationBar setShadowImage:nil];
-}
 
 - (void)createUI {
     
-    [self.view addSubview:self.titleLabel];
     [self.view addSubview:self.tableView];
 }
 
 - (void)createLayout {
     
-    [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-       
-        make.left.mas_equalTo(0);
-        make.right.mas_equalTo(0);
-        make.height.mas_equalTo(44);
-        make.top.mas_equalTo(STATUS_BAR_HEIGHT);
-    }];
+
     
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
        
         make.left.mas_equalTo(0);
         make.right.mas_equalTo(0);
-        make.top.mas_equalTo(self.titleLabel.mas_bottom);
+        make.top.mas_equalTo(self.navView.mas_bottom);
         make.bottom.mas_equalTo(0);
     }];
     
@@ -138,17 +116,6 @@
         LXDeviceListViewController *deviceVC = [[LXDeviceListViewController alloc] init];
         [self.navigationController pushViewController:deviceVC animated:YES];
     }
-}
-
-- (UILabel *)titleLabel {
-    
-    if (!_titleLabel) {
-        
-        _titleLabel = [[UILabel alloc] init];
-        _titleLabel.backgroundColor = KSQColor(49, 197, 159);
-    }
-    
-    return _titleLabel;
 }
 
 - (UITableView *)tableView {

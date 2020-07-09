@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 @class LXSettingItemModel;
 
-@interface LXSettingViewController : UIViewController
+@interface LXSettingViewController : LXBaseViewController
 
 @property (nonatomic,copy) NSArray<LXSettingItemModel *> *lists;
 @end

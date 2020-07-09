@@ -13,6 +13,9 @@
 
 @interface LXFindPwdViewController ()
 
+@property (nonatomic,strong) UIImageView *bgImageView;
+@property (nonatomic,strong) UIView *bgView;
+@property (nonatomic,strong) UIImageView *logImageView;
 @property (nonatomic,strong) LXInputView *phoneInputView;
 @property (nonatomic,strong) LXInputView *codeInputView;
 @property (nonatomic,strong) LXInputView *pwdInputView;
@@ -38,22 +41,49 @@
 
 - (void)createUI {
     
-    [self.view addSubview:self.phoneInputView];
-    [self.view addSubview:self.codeInputView];
-    [self.view addSubview:self.pwdInputView];
-    [self.view addSubview:self.confirmPwdInputView];
-    [self.view addSubview:self.commitButton];
+    [self.view addSubview:self.bgImageView];
+    [self.view addSubview:self.bgView];
+    [self.view addSubview:self.logImageView];
+    [self.bgView addSubview:self.phoneInputView];
+    [self.bgView addSubview:self.codeInputView];
+    [self.bgView addSubview:self.pwdInputView];
+    [self.bgView addSubview:self.confirmPwdInputView];
+    [self.bgView addSubview:self.commitButton];
     
     [self.codeInputView addSubview:self.getCodeBtn];
 }
 
 - (void)createLayout {
     
+    [self.bgImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+       
+        make.left.mas_equalTo(0);
+        make.right.mas_equalTo(0);
+        make.bottom.mas_equalTo(0);
+        make.top.mas_equalTo(self.navView.mas_bottom);
+    }];
+    
+    [self.bgView mas_makeConstraints:^(MASConstraintMaker *make) {
+       
+        make.left.mas_equalTo(20);
+        make.right.mas_equalTo(-20);
+        make.top.mas_equalTo(150);
+    }];
+    
+    [self.logImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+          
+        make.centerX.mas_equalTo(self.view.mas_centerX);
+        make.width.mas_equalTo(110);
+        make.height.mas_equalTo(110);
+        make.top.mas_equalTo(self.bgView.mas_top).offset(-55);
+           
+    }];
+    
     [self.phoneInputView mas_makeConstraints:^(MASConstraintMaker *make) {
        
         make.left.mas_equalTo(20);
         make.right.mas_equalTo(-20);
-        make.top.mas_equalTo(200);
+        make.top.mas_equalTo(65);
         make.height.mas_equalTo(43);
         
     }];
@@ -69,9 +99,9 @@
     
     [self.getCodeBtn mas_makeConstraints:^(MASConstraintMaker *make) {
        
-        make.right.mas_equalTo(0);
-        make.top.mas_equalTo(0);
-        make.bottom.mas_equalTo(0);
+        make.right.mas_equalTo(2);
+        make.top.mas_equalTo(2);
+        make.bottom.mas_equalTo(-2);
         make.width.mas_equalTo(100);
     }];
     
@@ -98,6 +128,8 @@
         make.right.mas_equalTo(-50);
         make.height.mas_equalTo(50);
         make.top.mas_equalTo(self.confirmPwdInputView.mas_bottom).offset(20);
+        make.bottom.mas_equalTo(self.bgView.mas_bottom).offset(-20);
+
     }];
 }
 
@@ -248,7 +280,12 @@
     if (!_getCodeBtn) {
         
         _getCodeBtn = [[UIButton alloc] init];
-        _getCodeBtn.backgroundColor = KSQRandomColor;
+        _getCodeBtn.backgroundColor = KSQColor(112, 233, 205);
+        _getCodeBtn.layer.cornerRadius = 20;
+        _getCodeBtn.layer.masksToBounds = YES;
+        [_getCodeBtn setTitle:@"获取验证码" forState:UIControlStateNormal];
+        _getCodeBtn.titleLabel.font = [UIFont systemFontOfSize:12];
+        [_getCodeBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [_getCodeBtn addTarget:self action:@selector(getCodeBtnClick) forControlEvents:UIControlEventTouchUpInside];
     }
     
@@ -263,6 +300,45 @@
     }
     
     return _viewModel;
+}
+
+- (UIImageView *)bgImageView {
+    
+    if (!_bgImageView) {
+        
+        _bgImageView = [[UIImageView alloc] init];
+        _bgImageView.image = [UIImage imageNamed:@"loginBg"];
+    }
+    
+    return _bgImageView;
+}
+
+- (UIView *)bgView {
+    
+    if (!_bgView) {
+        
+        _bgView = [[UIView alloc] init];
+        _bgView.backgroundColor = [UIColor whiteColor];
+        _bgView.layer.cornerRadius = 10;
+        
+    }
+    
+    return _bgView;
+}
+
+- (UIImageView *)logImageView {
+    
+    if (!_logImageView) {
+        
+        _logImageView = [[UIImageView alloc] init];
+        _logImageView.backgroundColor = KSQColor(112, 233, 205);
+        _logImageView.image = [UIImage imageNamed:@"logowz"];
+        _logImageView.contentMode = UIViewContentModeCenter;
+        _logImageView.layer.cornerRadius = 55;
+        
+    }
+    
+    return _logImageView;
 }
 
 

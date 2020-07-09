@@ -65,7 +65,7 @@
     [self.bgImageView mas_makeConstraints:^(MASConstraintMaker *make) {
        
         make.left.mas_equalTo(0);
-        make.top.mas_equalTo(0);
+        make.top.mas_equalTo(self.navView.mas_bottom);
         make.right.mas_equalTo(0);
         make.bottom.mas_equalTo(0);
     }];
@@ -136,8 +136,8 @@
     
     [self.submitBtn mas_makeConstraints:^(MASConstraintMaker *make) {
        
-        make.left.mas_equalTo(30);
-        make.right.mas_equalTo(-30);
+        make.left.mas_equalTo(50);
+        make.right.mas_equalTo(-50);
         make.top.mas_equalTo(self.confirmPwdInputView.mas_bottom).offset(20);
         make.height.mas_equalTo(50);
         make.bottom.mas_equalTo(self.bgView.mas_bottom).offset(-20);
@@ -359,7 +359,10 @@
     if (!_submitBtn) {
         
         _submitBtn = [[UIButton alloc] init];
-        _submitBtn.backgroundColor = KSQRandomColor;
+        _submitBtn.layer.cornerRadius = 25;
+        _submitBtn.layer.masksToBounds = YES;
+        [_submitBtn setTitle:@"立即注册" forState:UIControlStateNormal];
+        [_submitBtn setBackgroundImage:[UIImage imageNamed:@"disconnectBtn"] forState:UIControlStateNormal];
         [_submitBtn addTarget:self action:@selector(submitBtnClick) forControlEvents:UIControlEventTouchUpInside];
     }
     
