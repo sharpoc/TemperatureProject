@@ -10,6 +10,7 @@
 #import "LXHomeViewController.h"
 #import "LXWelcomeViewController.h"
 #import "LXLoginViewController.h"
+#import "LXUserTokenModel.h"
 
 @interface AppDelegate ()
 
@@ -25,11 +26,19 @@
     self.window.backgroundColor = [UIColor whiteColor];
 
     //创建控制器
-    LXLoginViewController *controller=[[LXLoginViewController alloc]init];
-    
+    LXHomeViewController *controller=[[LXHomeViewController alloc]init];
     LXWelcomeViewController *welcomeVC = [[LXWelcomeViewController alloc] init];
+
+    UINavigationController *nav = nil;
+    LXUserTokenModel *loginModel = [[LXCacheManager shareInstance] unarchiveDataForKey:@"loginuser"];
+    if (loginModel) {
+        
+        nav = [[UINavigationController alloc] initWithRootViewController:controller];
+    } else {
+        
+        nav = [[UINavigationController alloc] initWithRootViewController:welcomeVC];
+    }
     
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:welcomeVC];
     //设置控制器View的背景颜色
     controller.view.backgroundColor = [UIColor brownColor];
     //设置该控制器为Window的根控制器
