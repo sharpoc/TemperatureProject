@@ -65,7 +65,7 @@
        
         make.left.mas_equalTo(0);
         make.right.mas_equalTo(0);
-        make.top.mas_equalTo(0);
+        make.top.mas_equalTo(self.navView.mas_bottom);
         make.bottom.mas_equalTo(0);
     }];
     
@@ -73,7 +73,7 @@
        
         make.left.mas_equalTo(20);
         make.right.mas_equalTo(-20);
-        make.top.mas_equalTo(100);
+        make.top.mas_equalTo(30);
         make.bottom.mas_equalTo(-20);
     }];
     
