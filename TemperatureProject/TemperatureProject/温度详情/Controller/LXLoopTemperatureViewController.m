@@ -28,7 +28,7 @@
 @property (nonatomic, strong) NSTimer *timer;
 @property (nonatomic,strong) NSMutableArray *temperatureDataArray;
 @property (nonatomic,assign) NSInteger minJG;//时间间隔
-
+@property (nonatomic,strong) AAChartModel *chartModel;
 
 
 @end
@@ -160,11 +160,13 @@
         [pArray addObject:[NSNull null]];
     }
     
-    AAChartModel *aaChartModel= AAObject(AAChartModel)
-    .chartTypeSet(AAChartTypeArea)//设置图表的类型(这里以设置的为折线面积图为例)
-    .yAxisTickPositionsSet(@[@(27),@(28),@(29),@(30),@(31),@(32)])
+    self.chartModel= AAObject(AAChartModel)
+    .chartTypeSet(AAChartTypeScatter)//设置图表的类型(这里以设置的为折线面积图为例)
+    .yAxisTickPositionsSet(@[@(25),@(30),@(35),@(40)])
     .categoriesSet(array)//图表横轴的内容
     .yAxisTitleSet(@"摄氏度")//设置图表 y 轴的单位
+    .yAxisMinSet(@(20))
+    .yAxisMaxSet(@(45))
     .seriesSet(@[
             AAObject(AASeriesElement)
             .nameSet(nil)
@@ -173,7 +175,7 @@
     ;
     
     /*图表视图对象调用图表模型对象,绘制最终图形*/
-    [self.chartView aa_refreshChartWithChartModel:aaChartModel];
+    [self.chartView aa_refreshChartWithChartModel:self.chartModel];
 }
 
 - (NSArray *)createTimeData:(NSUInteger)min {
@@ -192,11 +194,13 @@
 
 - (void)showChartData:(NSArray *)array {
 
-    AAChartModel *aaChartModel= AAObject(AAChartModel)
-    .chartTypeSet(AAChartTypeArea)//设置图表的类型(这里以设置的为折线面积图为例)
-    .yAxisTickPositionsSet(@[@"35",@"36",@"37",@"38", @"39"])
+    self.chartModel= AAObject(AAChartModel)
+    .chartTypeSet(AAChartTypeScatter)
+    .yAxisTickPositionsSet(@[@(25),@(30),@(35),@(40)])
     .categoriesSet(array)//图表横轴的内容
     .yAxisTitleSet(@"摄氏度")//设置图表 y 轴的单位
+    .yAxisMinSet(@(20))
+    .yAxisMaxSet(@(45))
     .seriesSet(@[
             AAObject(AASeriesElement)
             .nameSet(nil)
@@ -205,7 +209,7 @@
     ;
     
     /*图表视图对象调用图表模型对象,绘制最终图形*/
-    [self.chartView aa_drawChartWithChartModel:aaChartModel];
+    [self.chartView aa_drawChartWithChartModel:self.chartModel];
 
 
 }

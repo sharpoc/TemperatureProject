@@ -115,7 +115,9 @@
     if (!_fastBtn) {
         
         _fastBtn = [[UIButton alloc] init];
-        _fastBtn.backgroundColor = [UIColor clearColor];
+        _fastBtn.layer.cornerRadius = 75;
+        _fastBtn.layer.masksToBounds = YES;
+        [_fastBtn setBackgroundImage:[UIImage imageNamed:@"welcomeIcon"] forState:UIControlStateNormal];
         [_fastBtn setTitle:@"快速检测" forState:UIControlStateNormal];
         [_fastBtn setTitleColor:KSQColor(8, 163, 163) forState:UIControlStateNormal];
         _fastBtn.titleLabel.font = [UIFont systemFontOfSize:24];
