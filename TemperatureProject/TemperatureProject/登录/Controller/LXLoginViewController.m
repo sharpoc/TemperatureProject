@@ -17,6 +17,7 @@
 
 @property (nonatomic,strong) LXLoginViewModel *viewModel;
 @property (nonatomic,strong) UIImageView *bgImageView;
+@property (nonatomic,strong) UIImageView *loginiconImageView;
 @property (nonatomic,strong) UIImageView *phoneIconImageView;
 @property (nonatomic,strong) UITextField *phoneTextField;
 @property (nonatomic,strong) UIImageView *pwdIconImageView;
@@ -41,6 +42,7 @@
 - (void)createUI {
     
     [self.view addSubview:self.bgImageView];
+    [self.view addSubview:self.loginiconImageView];
     [self.bgImageView addSubview:self.phoneIconImageView];
     [self.bgImageView addSubview:self.phoneTextField];
     [self.bgImageView addSubview:self.pwdIconImageView];
@@ -59,6 +61,14 @@
         make.right.mas_equalTo(0);
         make.top.mas_equalTo(0);
         make.bottom.mas_equalTo(0);
+    }];
+    
+    [self.loginiconImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+        make.width.mas_equalTo(150);
+        make.height.mas_equalTo(150);
+        make.centerX.mas_equalTo(self.view.mas_centerX);
+        make.bottom.mas_equalTo(self.self.phoneIconImageView.mas_top).offset(-70);
     }];
     
     [self.phoneIconImageView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -194,6 +204,20 @@
         self.pwdTextField.secureTextEntry = YES;
         self.pwdTextField.text = tempPwdStr;
     }
+}
+
+- (UIImageView *)loginiconImageView {
+    
+    if (!_loginiconImageView) {
+        
+        _loginiconImageView = [[UIImageView alloc] init];
+        _loginiconImageView.image = [UIImage imageNamed:@"loginicon"];
+        _loginiconImageView.layer.cornerRadius = 75;
+        _loginiconImageView.layer.masksToBounds = YES;
+        
+    }
+    
+    return _loginiconImageView;
 }
 
 - (UIImageView *)bgImageView {

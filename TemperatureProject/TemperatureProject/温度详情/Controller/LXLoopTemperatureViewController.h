@@ -12,7 +12,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface LXLoopTemperatureViewController : UIViewController
+@interface LXLoopTemperatureViewController : LXBaseViewController
 
 
 @property (nonatomic,assign) double numValue;

@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface LXHistoryTemperatureViewController : UIViewController
+@interface LXHistoryTemperatureViewController : LXBaseViewController
 
 @property (nonatomic,copy) NSString *mac;
 @end
