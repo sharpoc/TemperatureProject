@@ -25,5 +25,6 @@
 #import "MJRefresh.h"
 #import "LXEnum.h"
 #import "LXBaseViewController.h"
+#import "SQCategories.h"
 
 #endif /* LXTemperature_pch */

@@ -19,8 +19,8 @@
 + (void)loginWithModel:(LXUserRegisterModel *)model withBlock:(void(^)(BOOL success,NSString *msg,LXUserTokenModel *model))block {
     
     NSMutableDictionary *dict=[NSMutableDictionary dictionary];
-    [dict setObject:model.phone forKey:@"phone"];
-    [dict setObject:model.pwd forKey:@"password"];
+    [dict setObject:[NSString sq_safeString:model.phone]  forKey:@"phone"];
+    [dict setObject:[NSString sq_safeString:model.pwd] forKey:@"password"];
     
     [LXHttpRequest POST:@"http://39.103.132.54:1111/accounts/api/app/login" jsonDict:dict succeed:^(id  _Nonnull data) {
         
@@ -35,7 +35,7 @@
 + (void)sendYzmPhone:(NSString *)phone WithBlock:(void(^)(BOOL success,NSString *msg,NSObject *model))block {
     
     NSMutableDictionary *dict=[NSMutableDictionary dictionary];
-    [dict setObject:phone forKey:@"phone"];
+    [dict setObject:[NSString sq_safeString:phone] forKey:@"phone"];
     
     [LXHttpRequest POST:@"http://39.103.132.54:1111/accounts/api/app/sendCode" jsonDict:dict succeed:^(id  _Nonnull data) {
         
@@ -57,11 +57,11 @@
 + (void)registerWithModel:(LXUserRegisterModel *)model andBlock:(void(^)(BOOL success,NSString *msg,NSObject *model))block {
     
     NSMutableDictionary *dict=[NSMutableDictionary dictionary];
-    [dict setObject:model.phone forKey:@"phone"];
-    [dict setObject:model.code forKey:@"code"];
-    [dict setObject:model.pwd forKey:@"password"];
-    [dict setObject:model.userName forKey:@"username"];
-    [dict setObject:model.cname forKey:@"cname"];
+    [dict setObject:[NSString sq_safeString:model.phone] forKey:@"phone"];
+    [dict setObject:[NSString sq_safeString:model.code] forKey:@"code"];
+    [dict setObject:[NSString sq_safeString:model.pwd] forKey:@"password"];
+    [dict setObject:[NSString sq_safeString:model.userName] forKey:@"username"];
+    [dict setObject:[NSString sq_safeString:model.cname] forKey:@"cname"];
     
     
     [LXHttpRequest POST:@"http://39.103.132.54:1111/accounts/api/app/userRegister" jsonDict:dict succeed:^(id  _Nonnull data) {
@@ -85,8 +85,8 @@
 + (void)addDevice:(LXDeviceModel *)model withBlock:(void(^)(BOOL success,NSString *msg,NSObject *model))block {
     
     NSMutableDictionary *dict=[NSMutableDictionary dictionary];
-    [dict setObject:model.deviceId forKey:@"deviceId"];
-    [dict setObject:model.phone forKey:@"phone"];
+    [dict setObject:[NSString sq_safeString:model.deviceId] forKey:@"deviceId"];
+    [dict setObject:[NSString sq_safeString:model.phone] forKey:@"phone"];
     
     [LXHttpRequest POST:@"http://39.103.132.54:1111/accounts/api/app/addDevice" jsonDict:dict succeed:^(id  _Nonnull data) {
            
@@ -113,11 +113,11 @@
     for (LXTemperatureModel *model in array) {
        
         NSMutableDictionary *dict=[NSMutableDictionary dictionary];
-        [dict setObject:model.deviceId forKey:@"deviceId"];
-        [dict setObject:model.name forKey:@"name"];
-        [dict setObject:model.phone forKey:@"phone"];
-        [dict setObject:model.recordTime forKey:@"recordTime"];
-        [dict setObject:model.temperature forKey:@"temperature"];
+        [dict setObject:[NSString sq_safeString:model.deviceId] forKey:@"deviceId"];
+        [dict setObject:[NSString sq_safeString:model.name] forKey:@"name"];
+        [dict setObject:[NSString sq_safeString:model.phone] forKey:@"phone"];
+        [dict setObject:[NSString sq_safeString:model.recordTime] forKey:@"recordTime"];
+        [dict setObject:[NSString sq_safeString:model.temperature] forKey:@"temperature"];
         [tempArr addObject:dict];
         
     }
@@ -144,7 +144,7 @@
 + (void)getHistoryData:(NSString *)mac page:(NSInteger)page size:(NSInteger)size withBlock:(void(^)(BOOL success,NSString *msg,NSArray *model))block {
     
     NSMutableDictionary *dict=[NSMutableDictionary dictionary];
-    [dict setObject:mac forKey:@"deviceId"];
+    [dict setObject:[NSString sq_safeString:mac] forKey:@"deviceId"];
     [dict setObject:@(page) forKey:@"page"];
     [dict setObject:@(size) forKey:@"size"];
 
@@ -173,9 +173,9 @@
 + (void)findPwdWithModel:(LXUserRegisterModel *)model andBlock:(void(^)(BOOL success,NSString *msg,NSObject *model))block {
     
     NSMutableDictionary *dict=[NSMutableDictionary dictionary];
-    [dict setObject:model.code forKey:@"code"];
-    [dict setObject:model.pwd forKey:@"password"];
-    [dict setObject:model.phone forKey:@"phone"];
+    [dict setObject:[NSString sq_safeString:model.code] forKey:@"code"];
+    [dict setObject:[NSString sq_safeString:model.pwd] forKey:@"password"];
+    [dict setObject:[NSString sq_safeString:model.phone] forKey:@"phone"];
 
     
     [LXHttpRequest POST:@"http://39.103.132.54:1111/accounts/api/app/resetPassword" jsonDict:dict succeed:^(id  _Nonnull data) {
@@ -200,8 +200,8 @@
 + (void)updateNameWithModel:(LXUserRegisterModel *)model andBlock:(void(^)(BOOL success,NSString *msg,NSObject *model))block {
     
     NSMutableDictionary *dict=[NSMutableDictionary dictionary];
-    [dict setObject:model.phone forKey:@"phone"];
-    [dict setObject:model.cname forKey:@"cname"];
+    [dict setObject:[NSString sq_safeString:model.phone] forKey:@"phone"];
+    [dict setObject:[NSString sq_safeString:model.cname] forKey:@"cname"];
 
 
     [LXHttpRequest POST:@"http://39.103.132.54:1111/accounts/api/app/updateCname" jsonDict:dict succeed:^(id  _Nonnull data) {
@@ -227,8 +227,8 @@
     
     LXUserTokenModel *loginModel = [[LXCacheManager shareInstance] unarchiveDataForKey:@"loginuser"];
     NSMutableDictionary *dict=[NSMutableDictionary dictionary];
-    [dict setObject:code forKey:@"code"];
-    [dict setObject:loginModel.user.uid forKey:@"userId"];
+    [dict setObject:[NSString sq_safeString:code] forKey:@"code"];
+    [dict setObject:[NSString sq_safeString:loginModel.user.uid] forKey:@"userId"];
     
     
     [LXHttpRequest POST:@"http://39.103.132.54:1111/accounts/api/inAppGroup" jsonDict:dict succeed:^(id  _Nonnull data) {
@@ -254,7 +254,7 @@
     
     LXUserTokenModel *loginModel = [[LXCacheManager shareInstance] unarchiveDataForKey:@"loginuser"];
     NSMutableDictionary *dict=[NSMutableDictionary dictionary];
-    [dict setObject:loginModel.user.uid forKey:@"userId"];
+    [dict setObject:[NSString sq_safeString:loginModel.user.uid] forKey:@"userId"];
     
     [LXHttpRequest GET:@"http://39.103.132.54:1111/accounts/api/app/getDevice" dict:dict succeed:^(id  _Nonnull data) {
         NSString *code = [data valueForKey:@"code"];
@@ -280,8 +280,8 @@
     
     LXUserTokenModel *loginModel = [[LXCacheManager shareInstance] unarchiveDataForKey:@"loginuser"];
     NSMutableDictionary *dict=[NSMutableDictionary dictionary];
-    [dict setObject:loginModel.user.phone forKey:@"phone"];
-    [dict setObject:model.deviceId forKey:@"deviceId"];
+    [dict setObject:[NSString sq_safeString:loginModel.user.phone] forKey:@"phone"];
+    [dict setObject:[NSString sq_safeString:model.deviceId] forKey:@"deviceId"];
     
     
     [LXHttpRequest POST:@"http://39.103.132.54:1111/accounts/api/app/removeDevice" jsonDict:dict succeed:^(id  _Nonnull data) {

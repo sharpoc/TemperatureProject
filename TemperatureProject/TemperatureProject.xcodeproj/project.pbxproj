@@ -45,6 +45,32 @@
 		84DDC1E924B497F6004F5C57 /* LXDeviceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DDC1E824B497F6004F5C57 /* LXDeviceModel.m */; };
 		84DDC1EC24B4A413004F5C57 /* LXDeviceListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DDC1EB24B4A413004F5C57 /* LXDeviceListTableViewCell.m */; };
 		84DDC1EF24B5C262004F5C57 /* LXWelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DDC1EE24B5C262004F5C57 /* LXWelcomeViewController.m */; };
+		84DDC23324B803F5004F5C57 /* UIScreen+SQAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DDC1FC24B803F5004F5C57 /* UIScreen+SQAdd.m */; };
+		84DDC23424B803F5004F5C57 /* UIApplication+SQAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DDC20024B803F5004F5C57 /* UIApplication+SQAdd.m */; };
+		84DDC23524B803F5004F5C57 /* UIDevice+SQAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DDC20124B803F5004F5C57 /* UIDevice+SQAdd.m */; };
+		84DDC23624B803F5004F5C57 /* UIGestureRecognizer+SQAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DDC20224B803F5004F5C57 /* UIGestureRecognizer+SQAdd.m */; };
+		84DDC23724B803F5004F5C57 /* UIView+SQAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DDC20324B803F5004F5C57 /* UIView+SQAdd.m */; };
+		84DDC23824B803F5004F5C57 /* UITextField+SQAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DDC20524B803F5004F5C57 /* UITextField+SQAdd.m */; };
+		84DDC23924B803F5004F5C57 /* UIColor+SQAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DDC20624B803F5004F5C57 /* UIColor+SQAdd.m */; };
+		84DDC23A24B803F5004F5C57 /* UIControl+SQAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DDC20924B803F5004F5C57 /* UIControl+SQAdd.m */; };
+		84DDC23B24B803F5004F5C57 /* UIViewController+SQAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DDC20A24B803F5004F5C57 /* UIViewController+SQAdd.m */; };
+		84DDC23C24B803F5004F5C57 /* UITableViewCell+SQAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DDC20B24B803F5004F5C57 /* UITableViewCell+SQAdd.m */; };
+		84DDC23D24B803F5004F5C57 /* UIImage+SQAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DDC20D24B803F5004F5C57 /* UIImage+SQAdd.m */; };
+		84DDC23E24B803F5004F5C57 /* UIFont+SQAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DDC20E24B803F5004F5C57 /* UIFont+SQAdd.m */; };
+		84DDC23F24B803F5004F5C57 /* NSObject+SQAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DDC21524B803F5004F5C57 /* NSObject+SQAdd.m */; };
+		84DDC24024B803F5004F5C57 /* NSBundle+SQAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DDC21624B803F5004F5C57 /* NSBundle+SQAdd.m */; };
+		84DDC24124B803F5004F5C57 /* NSThread+SQAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DDC21824B803F5004F5C57 /* NSThread+SQAdd.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		84DDC24224B803F5004F5C57 /* NSKeyedUnarchiver+SQAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DDC21A24B803F5004F5C57 /* NSKeyedUnarchiver+SQAdd.m */; };
+		84DDC24324B803F5004F5C57 /* NSData+SQAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DDC21B24B803F5004F5C57 /* NSData+SQAdd.m */; };
+		84DDC24424B803F5004F5C57 /* NSArray+SQAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DDC21D24B803F5004F5C57 /* NSArray+SQAdd.m */; };
+		84DDC24524B803F5004F5C57 /* NSNumber+SQAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DDC21E24B803F5004F5C57 /* NSNumber+SQAdd.m */; };
+		84DDC24624B803F5004F5C57 /* NSNotificationCenter+SQAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DDC22024B803F5004F5C57 /* NSNotificationCenter+SQAdd.m */; };
+		84DDC24724B803F5004F5C57 /* NSString+SQAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DDC22224B803F5004F5C57 /* NSString+SQAdd.m */; };
+		84DDC24824B803F5004F5C57 /* NSDictionary+SQAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DDC22624B803F5004F5C57 /* NSDictionary+SQAdd.m */; };
+		84DDC24924B803F5004F5C57 /* NSTimer+SQAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DDC22A24B803F5004F5C57 /* NSTimer+SQAdd.m */; };
+		84DDC24A24B803F5004F5C57 /* NSDate+SQAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DDC22B24B803F5004F5C57 /* NSDate+SQAdd.m */; };
+		84DDC24B24B803F5004F5C57 /* CALayer+SQAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DDC22F24B803F5004F5C57 /* CALayer+SQAdd.m */; };
+		84DDC24C24B803F5004F5C57 /* SQCGUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DDC23024B803F5004F5C57 /* SQCGUtilities.m */; };
 		84E6108224921AEC0019B6BA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E6108124921AEC0019B6BA /* AppDelegate.m */; };
 		84E6108D24921AF20019B6BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84E6108C24921AF20019B6BA /* Assets.xcassets */; };
 		84E6109324921AF20019B6BA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E6109224921AF20019B6BA /* main.m */; };
@@ -143,6 +169,60 @@
 		84DDC1EB24B4A413004F5C57 /* LXDeviceListTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXDeviceListTableViewCell.m; sourceTree = "<group>"; };
 		84DDC1ED24B5C262004F5C57 /* LXWelcomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXWelcomeViewController.h; sourceTree = "<group>"; };
 		84DDC1EE24B5C262004F5C57 /* LXWelcomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXWelcomeViewController.m; sourceTree = "<group>"; };
+		84DDC1FB24B803F5004F5C57 /* UIImage+SQAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+SQAdd.h"; sourceTree = "<group>"; };
+		84DDC1FC24B803F5004F5C57 /* UIScreen+SQAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScreen+SQAdd.m"; sourceTree = "<group>"; };
+		84DDC1FD24B803F5004F5C57 /* UITableViewCell+SQAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+SQAdd.h"; sourceTree = "<group>"; };
+		84DDC1FE24B803F5004F5C57 /* UIViewController+SQAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+SQAdd.h"; sourceTree = "<group>"; };
+		84DDC1FF24B803F5004F5C57 /* UIControl+SQAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+SQAdd.h"; sourceTree = "<group>"; };
+		84DDC20024B803F5004F5C57 /* UIApplication+SQAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+SQAdd.m"; sourceTree = "<group>"; };
+		84DDC20124B803F5004F5C57 /* UIDevice+SQAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+SQAdd.m"; sourceTree = "<group>"; };
+		84DDC20224B803F5004F5C57 /* UIGestureRecognizer+SQAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIGestureRecognizer+SQAdd.m"; sourceTree = "<group>"; };
+		84DDC20324B803F5004F5C57 /* UIView+SQAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SQAdd.m"; sourceTree = "<group>"; };
+		84DDC20424B803F5004F5C57 /* UIFont+SQAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+SQAdd.h"; sourceTree = "<group>"; };
+		84DDC20524B803F5004F5C57 /* UITextField+SQAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+SQAdd.m"; sourceTree = "<group>"; };
+		84DDC20624B803F5004F5C57 /* UIColor+SQAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+SQAdd.m"; sourceTree = "<group>"; };
+		84DDC20724B803F5004F5C57 /* UIApplication+SQAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+SQAdd.h"; sourceTree = "<group>"; };
+		84DDC20824B803F5004F5C57 /* UIDevice+SQAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+SQAdd.h"; sourceTree = "<group>"; };
+		84DDC20924B803F5004F5C57 /* UIControl+SQAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIControl+SQAdd.m"; sourceTree = "<group>"; };
+		84DDC20A24B803F5004F5C57 /* UIViewController+SQAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+SQAdd.m"; sourceTree = "<group>"; };
+		84DDC20B24B803F5004F5C57 /* UITableViewCell+SQAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+SQAdd.m"; sourceTree = "<group>"; };
+		84DDC20C24B803F5004F5C57 /* UIScreen+SQAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScreen+SQAdd.h"; sourceTree = "<group>"; };
+		84DDC20D24B803F5004F5C57 /* UIImage+SQAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+SQAdd.m"; sourceTree = "<group>"; };
+		84DDC20E24B803F5004F5C57 /* UIFont+SQAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+SQAdd.m"; sourceTree = "<group>"; };
+		84DDC20F24B803F5004F5C57 /* UIView+SQAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SQAdd.h"; sourceTree = "<group>"; };
+		84DDC21024B803F5004F5C57 /* UIGestureRecognizer+SQAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIGestureRecognizer+SQAdd.h"; sourceTree = "<group>"; };
+		84DDC21124B803F5004F5C57 /* UITextField+SQAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+SQAdd.h"; sourceTree = "<group>"; };
+		84DDC21224B803F5004F5C57 /* UIColor+SQAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+SQAdd.h"; sourceTree = "<group>"; };
+		84DDC21424B803F5004F5C57 /* NSString+SQAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SQAdd.h"; sourceTree = "<group>"; };
+		84DDC21524B803F5004F5C57 /* NSObject+SQAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SQAdd.m"; sourceTree = "<group>"; };
+		84DDC21624B803F5004F5C57 /* NSBundle+SQAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+SQAdd.m"; sourceTree = "<group>"; };
+		84DDC21724B803F5004F5C57 /* NSNotificationCenter+SQAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNotificationCenter+SQAdd.h"; sourceTree = "<group>"; };
+		84DDC21824B803F5004F5C57 /* NSThread+SQAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSThread+SQAdd.m"; sourceTree = "<group>"; };
+		84DDC21924B803F5004F5C57 /* NSDictionary+SQAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+SQAdd.h"; sourceTree = "<group>"; };
+		84DDC21A24B803F5004F5C57 /* NSKeyedUnarchiver+SQAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSKeyedUnarchiver+SQAdd.m"; sourceTree = "<group>"; };
+		84DDC21B24B803F5004F5C57 /* NSData+SQAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+SQAdd.m"; sourceTree = "<group>"; };
+		84DDC21C24B803F5004F5C57 /* NSTimer+SQAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+SQAdd.h"; sourceTree = "<group>"; };
+		84DDC21D24B803F5004F5C57 /* NSArray+SQAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+SQAdd.m"; sourceTree = "<group>"; };
+		84DDC21E24B803F5004F5C57 /* NSNumber+SQAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+SQAdd.m"; sourceTree = "<group>"; };
+		84DDC21F24B803F5004F5C57 /* NSDate+SQAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+SQAdd.h"; sourceTree = "<group>"; };
+		84DDC22024B803F5004F5C57 /* NSNotificationCenter+SQAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNotificationCenter+SQAdd.m"; sourceTree = "<group>"; };
+		84DDC22124B803F5004F5C57 /* NSBundle+SQAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+SQAdd.h"; sourceTree = "<group>"; };
+		84DDC22224B803F5004F5C57 /* NSString+SQAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SQAdd.m"; sourceTree = "<group>"; };
+		84DDC22324B803F5004F5C57 /* NSObject+SQAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SQAdd.h"; sourceTree = "<group>"; };
+		84DDC22424B803F5004F5C57 /* NSData+SQAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+SQAdd.h"; sourceTree = "<group>"; };
+		84DDC22524B803F5004F5C57 /* NSKeyedUnarchiver+SQAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSKeyedUnarchiver+SQAdd.h"; sourceTree = "<group>"; };
+		84DDC22624B803F5004F5C57 /* NSDictionary+SQAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+SQAdd.m"; sourceTree = "<group>"; };
+		84DDC22724B803F5004F5C57 /* NSThread+SQAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSThread+SQAdd.h"; sourceTree = "<group>"; };
+		84DDC22824B803F5004F5C57 /* NSNumber+SQAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+SQAdd.h"; sourceTree = "<group>"; };
+		84DDC22924B803F5004F5C57 /* NSArray+SQAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+SQAdd.h"; sourceTree = "<group>"; };
+		84DDC22A24B803F5004F5C57 /* NSTimer+SQAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+SQAdd.m"; sourceTree = "<group>"; };
+		84DDC22B24B803F5004F5C57 /* NSDate+SQAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+SQAdd.m"; sourceTree = "<group>"; };
+		84DDC22C24B803F5004F5C57 /* SQCategoriesMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQCategoriesMacro.h; sourceTree = "<group>"; };
+		84DDC22E24B803F5004F5C57 /* SQCGUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQCGUtilities.h; sourceTree = "<group>"; };
+		84DDC22F24B803F5004F5C57 /* CALayer+SQAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+SQAdd.m"; sourceTree = "<group>"; };
+		84DDC23024B803F5004F5C57 /* SQCGUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQCGUtilities.m; sourceTree = "<group>"; };
+		84DDC23124B803F5004F5C57 /* CALayer+SQAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+SQAdd.h"; sourceTree = "<group>"; };
+		84DDC23224B803F5004F5C57 /* SQCategories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQCategories.h; sourceTree = "<group>"; };
 		84E6107D24921AEC0019B6BA /* TemperatureProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TemperatureProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84E6108024921AEC0019B6BA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		84E6108124921AEC0019B6BA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -468,6 +548,91 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		84DDC1F924B803F5004F5C57 /* SQCategories */ = {
+			isa = PBXGroup;
+			children = (
+				84DDC1FA24B803F5004F5C57 /* UIKit */,
+				84DDC21324B803F5004F5C57 /* Foundation */,
+				84DDC22C24B803F5004F5C57 /* SQCategoriesMacro.h */,
+				84DDC22D24B803F5004F5C57 /* Quartz */,
+				84DDC23224B803F5004F5C57 /* SQCategories.h */,
+			);
+			path = SQCategories;
+			sourceTree = "<group>";
+		};
+		84DDC1FA24B803F5004F5C57 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				84DDC1FB24B803F5004F5C57 /* UIImage+SQAdd.h */,
+				84DDC1FC24B803F5004F5C57 /* UIScreen+SQAdd.m */,
+				84DDC1FD24B803F5004F5C57 /* UITableViewCell+SQAdd.h */,
+				84DDC1FE24B803F5004F5C57 /* UIViewController+SQAdd.h */,
+				84DDC1FF24B803F5004F5C57 /* UIControl+SQAdd.h */,
+				84DDC20024B803F5004F5C57 /* UIApplication+SQAdd.m */,
+				84DDC20124B803F5004F5C57 /* UIDevice+SQAdd.m */,
+				84DDC20224B803F5004F5C57 /* UIGestureRecognizer+SQAdd.m */,
+				84DDC20324B803F5004F5C57 /* UIView+SQAdd.m */,
+				84DDC20424B803F5004F5C57 /* UIFont+SQAdd.h */,
+				84DDC20524B803F5004F5C57 /* UITextField+SQAdd.m */,
+				84DDC20624B803F5004F5C57 /* UIColor+SQAdd.m */,
+				84DDC20724B803F5004F5C57 /* UIApplication+SQAdd.h */,
+				84DDC20824B803F5004F5C57 /* UIDevice+SQAdd.h */,
+				84DDC20924B803F5004F5C57 /* UIControl+SQAdd.m */,
+				84DDC20A24B803F5004F5C57 /* UIViewController+SQAdd.m */,
+				84DDC20B24B803F5004F5C57 /* UITableViewCell+SQAdd.m */,
+				84DDC20C24B803F5004F5C57 /* UIScreen+SQAdd.h */,
+				84DDC20D24B803F5004F5C57 /* UIImage+SQAdd.m */,
+				84DDC20E24B803F5004F5C57 /* UIFont+SQAdd.m */,
+				84DDC20F24B803F5004F5C57 /* UIView+SQAdd.h */,
+				84DDC21024B803F5004F5C57 /* UIGestureRecognizer+SQAdd.h */,
+				84DDC21124B803F5004F5C57 /* UITextField+SQAdd.h */,
+				84DDC21224B803F5004F5C57 /* UIColor+SQAdd.h */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		84DDC21324B803F5004F5C57 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				84DDC21424B803F5004F5C57 /* NSString+SQAdd.h */,
+				84DDC21524B803F5004F5C57 /* NSObject+SQAdd.m */,
+				84DDC21624B803F5004F5C57 /* NSBundle+SQAdd.m */,
+				84DDC21724B803F5004F5C57 /* NSNotificationCenter+SQAdd.h */,
+				84DDC21824B803F5004F5C57 /* NSThread+SQAdd.m */,
+				84DDC21924B803F5004F5C57 /* NSDictionary+SQAdd.h */,
+				84DDC21A24B803F5004F5C57 /* NSKeyedUnarchiver+SQAdd.m */,
+				84DDC21B24B803F5004F5C57 /* NSData+SQAdd.m */,
+				84DDC21C24B803F5004F5C57 /* NSTimer+SQAdd.h */,
+				84DDC21D24B803F5004F5C57 /* NSArray+SQAdd.m */,
+				84DDC21E24B803F5004F5C57 /* NSNumber+SQAdd.m */,
+				84DDC21F24B803F5004F5C57 /* NSDate+SQAdd.h */,
+				84DDC22024B803F5004F5C57 /* NSNotificationCenter+SQAdd.m */,
+				84DDC22124B803F5004F5C57 /* NSBundle+SQAdd.h */,
+				84DDC22224B803F5004F5C57 /* NSString+SQAdd.m */,
+				84DDC22324B803F5004F5C57 /* NSObject+SQAdd.h */,
+				84DDC22424B803F5004F5C57 /* NSData+SQAdd.h */,
+				84DDC22524B803F5004F5C57 /* NSKeyedUnarchiver+SQAdd.h */,
+				84DDC22624B803F5004F5C57 /* NSDictionary+SQAdd.m */,
+				84DDC22724B803F5004F5C57 /* NSThread+SQAdd.h */,
+				84DDC22824B803F5004F5C57 /* NSNumber+SQAdd.h */,
+				84DDC22924B803F5004F5C57 /* NSArray+SQAdd.h */,
+				84DDC22A24B803F5004F5C57 /* NSTimer+SQAdd.m */,
+				84DDC22B24B803F5004F5C57 /* NSDate+SQAdd.m */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		84DDC22D24B803F5004F5C57 /* Quartz */ = {
+			isa = PBXGroup;
+			children = (
+				84DDC22E24B803F5004F5C57 /* SQCGUtilities.h */,
+				84DDC22F24B803F5004F5C57 /* CALayer+SQAdd.m */,
+				84DDC23024B803F5004F5C57 /* SQCGUtilities.m */,
+				84DDC23124B803F5004F5C57 /* CALayer+SQAdd.h */,
+			);
+			path = Quartz;
+			sourceTree = "<group>";
+		};
 		84E6107424921AEC0019B6BA = {
 			isa = PBXGroup;
 			children = (
@@ -509,6 +674,7 @@
 		84E61201249319040019B6BA /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				84DDC1F924B803F5004F5C57 /* SQCategories */,
 				84E61213249358540019B6BA /* LXTemperature.pch */,
 				8402F29224A36AAB0039A255 /* PrintBeautifulLog */,
 				84E61264249B82E30019B6BA /* MBProgressHUD */,
@@ -691,23 +857,36 @@
 			buildActionMask = 2147483647;
 			files = (
 				846B1B8724AC876E0002C8B8 /* NSDate+SQAdd.m in Sources */,
+				84DDC23624B803F5004F5C57 /* UIGestureRecognizer+SQAdd.m in Sources */,
 				84E6120F24934DD80019B6BA /* LXPeripheralListView.m in Sources */,
 				8402F28B24A3347D0039A255 /* LXUserRegisterModel.m in Sources */,
 				84DDC1EF24B5C262004F5C57 /* LXWelcomeViewController.m in Sources */,
 				846B1B8A24AC90D60002C8B8 /* LXLoopTemperatureViewModel.m in Sources */,
+				84DDC24824B803F5004F5C57 /* NSDictionary+SQAdd.m in Sources */,
 				8402F27C24A1F8770039A255 /* LXPeripheral.m in Sources */,
+				84DDC24C24B803F5004F5C57 /* SQCGUtilities.m in Sources */,
+				84DDC23F24B803F5004F5C57 /* NSObject+SQAdd.m in Sources */,
+				84DDC24624B803F5004F5C57 /* NSNotificationCenter+SQAdd.m in Sources */,
 				846B1B9924B2D1D70002C8B8 /* LXFindPwdViewModel.m in Sources */,
+				84DDC24B24B803F5004F5C57 /* CALayer+SQAdd.m in Sources */,
 				84E6120824931CA00019B6BA /* LXBluetoothManager.m in Sources */,
 				84DDC1E924B497F6004F5C57 /* LXDeviceModel.m in Sources */,
 				84DDC1E324B490A5004F5C57 /* LXDeviceListViewController.m in Sources */,
 				8402F28524A20EE90039A255 /* LXInputView.m in Sources */,
 				84DDC1EC24B4A413004F5C57 /* LXDeviceListTableViewCell.m in Sources */,
+				84DDC23824B803F5004F5C57 /* UITextField+SQAdd.m in Sources */,
+				84DDC24324B803F5004F5C57 /* NSData+SQAdd.m in Sources */,
+				84DDC23724B803F5004F5C57 /* UIView+SQAdd.m in Sources */,
+				84DDC23D24B803F5004F5C57 /* UIImage+SQAdd.m in Sources */,
 				8402F28E24A365D60039A255 /* NSDictionary+Log.m in Sources */,
 				84DDC1CD24B3283A004F5C57 /* LXSettingItemModel.m in Sources */,
 				8402F29524A36AAB0039A255 /* PrintBeautifulLog.m in Sources */,
 				84DDC1D724B41B41004F5C57 /* LXUpdateUserNameViewModel.m in Sources */,
+				84DDC23324B803F5004F5C57 /* UIScreen+SQAdd.m in Sources */,
 				8402F29124A366040039A255 /* NSArray+Log.m in Sources */,
 				846B1B8124AB5B460002C8B8 /* LXTemperatureModel.m in Sources */,
+				84DDC24224B803F5004F5C57 /* NSKeyedUnarchiver+SQAdd.m in Sources */,
+				84DDC24924B803F5004F5C57 /* NSTimer+SQAdd.m in Sources */,
 				846B1B7E24AB35D40002C8B8 /* LXUserTokenModel.m in Sources */,
 				84E6108224921AEC0019B6BA /* AppDelegate.m in Sources */,
 				846B1B9624ADE50A0002C8B8 /* LXHistoryTemperatureTableViewCell.m in Sources */,
@@ -720,26 +899,39 @@
 				84DDC1DA24B46693004F5C57 /* LXBaseViewController.m in Sources */,
 				84AFA79E24A0AE0600EB57FB /* LXLoginDataService.m in Sources */,
 				8402F28224A20BC00039A255 /* LXRegisterViewController.m in Sources */,
+				84DDC24724B803F5004F5C57 /* NSString+SQAdd.m in Sources */,
 				84DDC1E024B48B86004F5C57 /* LXAddGroupViewModel.m in Sources */,
 				846B1B9024ADD82A0002C8B8 /* LXHistoryTemperatureViewModel.m in Sources */,
+				84DDC23524B803F5004F5C57 /* UIDevice+SQAdd.m in Sources */,
 				84E612042493199F0019B6BA /* LXConstant.m in Sources */,
+				84DDC23424B803F5004F5C57 /* UIApplication+SQAdd.m in Sources */,
 				84E612242498F4570019B6BA /* LXSetAlarmViewController.m in Sources */,
 				84DDC1D124B34EEE004F5C57 /* LXSettingItemTableViewCell.m in Sources */,
 				846B1B8424AC28E90002C8B8 /* LXLoopTemperatureViewController.m in Sources */,
+				84DDC24A24B803F5004F5C57 /* NSDate+SQAdd.m in Sources */,
 				846B1B8D24ADB6040002C8B8 /* LXHistoryTemperatureViewController.m in Sources */,
+				84DDC23B24B803F5004F5C57 /* UIViewController+SQAdd.m in Sources */,
 				84E6109324921AF20019B6BA /* main.m in Sources */,
 				84E61261249A47DB0019B6BA /* LXCacheManager.m in Sources */,
 				8402F30E24AB2E4E0039A255 /* LXShowDetailViewModel.m in Sources */,
 				84DDC1CA24B31BC9004F5C57 /* LXSettingViewController.m in Sources */,
+				84DDC24124B803F5004F5C57 /* NSThread+SQAdd.m in Sources */,
 				8402F2FC24AB11E50039A255 /* LXTostHUD.m in Sources */,
 				846B1B9324ADDF7D0002C8B8 /* LXHistoryTemperatureModel.m in Sources */,
 				84E612212498BB1D0019B6BA /* Tool.m in Sources */,
 				84E6126A249B82E30019B6BA /* LoadingHUDManager.m in Sources */,
+				84DDC23A24B803F5004F5C57 /* UIControl+SQAdd.m in Sources */,
 				84E6121C2497771C0019B6BA /* LXShowDetailViewController.m in Sources */,
 				84DDC1DD24B48592004F5C57 /* LXAddGroupViewController.m in Sources */,
+				84DDC23C24B803F5004F5C57 /* UITableViewCell+SQAdd.m in Sources */,
 				84DDC1D424B41AF4004F5C57 /* LXUpdateUserNameViewController.m in Sources */,
+				84DDC24424B803F5004F5C57 /* NSArray+SQAdd.m in Sources */,
 				84DDC1E624B4917D004F5C57 /* LXDeviceListViewModel.m in Sources */,
+				84DDC24524B803F5004F5C57 /* NSNumber+SQAdd.m in Sources */,
 				84E610C0249227F00019B6BA /* LXHomeViewController.m in Sources */,
+				84DDC23E24B803F5004F5C57 /* UIFont+SQAdd.m in Sources */,
+				84DDC24024B803F5004F5C57 /* NSBundle+SQAdd.m in Sources */,
+				84DDC23924B803F5004F5C57 /* UIColor+SQAdd.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
