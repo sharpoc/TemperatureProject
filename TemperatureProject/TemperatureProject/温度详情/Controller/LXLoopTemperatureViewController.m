@@ -51,7 +51,7 @@
     UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithCustomView:settingButton];
     self.navigationItem.rightBarButtonItem = rightItem;
      
-    self.minJG = 5;
+    self.minJG = 5*60;
     NSArray *array = [self createTimeData:self.minJG];
     [self showChartData:array];
     [self timerStart];
@@ -203,15 +203,18 @@
     
     NSLog(@"测试");
     if (sender.selectedSegmentIndex == 0) {
-        self.minJG = 1;
+        self.minJG = 1 * 60;
     }else if (sender.selectedSegmentIndex == 1){
-        self.minJG = 5;
+        self.minJG = 5 * 60;
     }else if (sender.selectedSegmentIndex == 2){
-        self.minJG = 10;
+        self.minJG = 10 * 60;
     }
     
     NSArray *array = [self createTimeData:self.minJG];
     [self showChartData:array];
+    [self timerStop];
+    [self timerStart];
+    [[LXBluetoothManager shareInstance] connect:self.peripheral.peripheral];
     
 }
 
@@ -238,7 +241,7 @@
 {
     [self timerStop];
     if (_timer == nil) {
-        _timer =[NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(timeScheduled) userInfo:nil repeats:YES];
+        _timer =[NSTimer scheduledTimerWithTimeInterval:self.minJG target:self selector:@selector(timeScheduled) userInfo:nil repeats:YES];
     }
 }
 //销毁定时器
