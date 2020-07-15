@@ -52,6 +52,11 @@ dispatch_async(dispatch_get_main_queue(), block);\
 #define KScreenWidth  [UIScreen mainScreen].bounds.size.width
 #define KScreenHeight [UIScreen mainScreen].bounds.size.height
 
+//读取本地化字符串
+#define SQLocalizationString(key) SQLanguageName ? ([[NSBundle bundleWithPath:[[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%@", SQLanguageName] ofType:@"lproj"]] localizedStringForKey:(key) value:nil table:nil] ?: NSLocalizedString(key, nil)) : NSLocalizedString(key, nil)
+
+#define SQLanguageName [[[NSUserDefaults standardUserDefaults] valueForKey:SQAppleLanguages] sq_objectAtIndex:0]
+
 static inline BOOL isIPhoneX() {
     BOOL iPhoneX = NO;
     if (UIDevice.currentDevice.userInterfaceIdiom != UIUserInterfaceIdiomPhone) {

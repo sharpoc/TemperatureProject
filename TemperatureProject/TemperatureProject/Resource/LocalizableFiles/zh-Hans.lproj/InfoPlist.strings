@@ -1,0 +1,23 @@
+/* 
+  InfoPlist.strings
+  GuoBinTeam
+
+  Created by Jianpeng Dong on 2018/5/17.
+  Copyright © 2018年 首汽约车. All rights reserved.
+*/
+
+"CFBundleDisplayName" = "首汽约车";
+"CFBundleDevelopmentRegion" = "China";
+"NSCalendarsUsageDescription" = "是否允许此App使用日历？";
+"NSCameraUsageDescription" = "首汽约车需要使用相机，以便您拍摄照片反馈问题或验证信用卡信息";
+"NSContactsUsageDescription" = "为保障体验，首汽约车将在您的通讯录写入首汽约车官方司机号码，以便于您识别司机师傅的来电。";
+"NSLocationAlwaysAndWhenInUseUsageDescription" = "首汽约车需要获取您的位置信息，以便司机师傅能准确接您上车";
+"NSLocationAlwaysUsageDescription" = "首汽约车需要获取您的位置信息，以便司机师傅能准确接您上车";
+"NSLocationUsageDescription" = "首汽约车需要获取您的位置信息，以便司机师傅能准确接您上车";
+"NSLocationWhenInUseUsageDescription" = "首汽约车需要获取您的位置信息，以便司机师傅能准确接您上车";
+"NSMicrophoneUsageDescription" = "首汽约车需要使用麦克风权限，以方便您联系司机";
+"NSPhotoLibraryUsageDescription" = "首汽约车需要使用媒体资料库，以便您上传照片反馈问题";
+"NSPhotoLibraryAddUsageDescription" = "首汽约车需要保存图片到您的相册";
+"NSSiriUsageDescription" = "Siri可以更方便的帮你叫车";
+"NSSpeechRecognitionUsageDescription" = "是否允许此App使用语音识别？";
+"NSFaceIDUsageDescription" = "是否允许此App使用Face ID,以便您使用度小满Face ID支付？";

@@ -217,7 +217,7 @@ static void completionCallback(SystemSoundID mySSID)
         _tipLabel = [[UILabel alloc] init];
         _tipLabel.font = [UIFont systemFontOfSize:18];
         _tipLabel.textColor = KSQColor(255, 255, 255);
-        _tipLabel.text = @"  正在寻找设备请稍等  ";
+        _tipLabel.text = SQLocalizationString(LXScanningDescText);
         _tipLabel.backgroundColor = KSQColor(94, 219, 189);
         _tipLabel.layer.cornerRadius = 10;
         _tipLabel.layer.masksToBounds = YES;

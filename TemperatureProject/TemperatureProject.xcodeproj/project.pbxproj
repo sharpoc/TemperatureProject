@@ -86,6 +86,9 @@
 		84E61261249A47DB0019B6BA /* LXCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E61260249A47DA0019B6BA /* LXCacheManager.m */; };
 		84E61263249B465A0019B6BA /* alarm_d_d.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 84E61262249B46590019B6BA /* alarm_d_d.mp3 */; };
 		84E6126A249B82E30019B6BA /* LoadingHUDManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E61267249B82E30019B6BA /* LoadingHUDManager.m */; };
+		84F8516424BEA3BE006AC50A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 84F8515E24BEA3BE006AC50A /* Localizable.strings */; };
+		84F8516524BEA3BE006AC50A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 84F8516024BEA3BE006AC50A /* InfoPlist.strings */; };
+		84F8516924BEA5DA006AC50A /* LXLocalizationServiceModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F8516824BEA5DA006AC50A /* LXLocalizationServiceModule.m */; };
 		97A232560325C2D0BBA4FF5C /* libPods-TemperatureProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 425AF8C8F268A312023961ED /* libPods-TemperatureProject.a */; };
 /* End PBXBuildFile section */
 
@@ -253,6 +256,12 @@
 		84E61262249B46590019B6BA /* alarm_d_d.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = alarm_d_d.mp3; sourceTree = "<group>"; };
 		84E61265249B82E30019B6BA /* LoadingHUDManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingHUDManager.h; sourceTree = "<group>"; };
 		84E61267249B82E30019B6BA /* LoadingHUDManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingHUDManager.m; sourceTree = "<group>"; };
+		84F8515F24BEA3BE006AC50A /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		84F8516124BEA3BE006AC50A /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		84F8516224BEA3BE006AC50A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		84F8516324BEA3BE006AC50A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		84F8516724BEA5A3006AC50A /* LXLocalizationServiceModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXLocalizationServiceModule.h; sourceTree = "<group>"; };
+		84F8516824BEA5DA006AC50A /* LXLocalizationServiceModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXLocalizationServiceModule.m; sourceTree = "<group>"; };
 		9000B6F833968DAECE5BCAE9 /* Pods-TemperatureProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TemperatureProject.debug.xcconfig"; path = "Target Support Files/Pods-TemperatureProject/Pods-TemperatureProject.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -674,6 +683,7 @@
 		84E61201249319040019B6BA /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				84F8516624BEA561006AC50A /* Localization */,
 				84DDC1F924B803F5004F5C57 /* SQCategories */,
 				84E61213249358540019B6BA /* LXTemperature.pch */,
 				8402F29224A36AAB0039A255 /* PrintBeautifulLog */,
@@ -716,6 +726,7 @@
 		84E6121724975B330019B6BA /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				84F8515D24BEA3BE006AC50A /* LocalizableFiles */,
 				84E6121D24978E940019B6BA /* load.gif */,
 				84E61262249B46590019B6BA /* alarm_d_d.mp3 */,
 			);
@@ -731,6 +742,24 @@
 				8402F2FB24AB11E50039A255 /* LXTostHUD.m */,
 			);
 			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
+		84F8515D24BEA3BE006AC50A /* LocalizableFiles */ = {
+			isa = PBXGroup;
+			children = (
+				84F8515E24BEA3BE006AC50A /* Localizable.strings */,
+				84F8516024BEA3BE006AC50A /* InfoPlist.strings */,
+			);
+			path = LocalizableFiles;
+			sourceTree = "<group>";
+		};
+		84F8516624BEA561006AC50A /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				84F8516724BEA5A3006AC50A /* LXLocalizationServiceModule.h */,
+				84F8516824BEA5DA006AC50A /* LXLocalizationServiceModule.m */,
+			);
+			path = Localization;
 			sourceTree = "<group>";
 		};
 		CC99E4C990F2F50ADEEB33CF /* Pods */ = {
@@ -785,6 +814,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 84E6107424921AEC0019B6BA;
 			productRefGroup = 84E6107E24921AEC0019B6BA /* Products */;
@@ -802,8 +832,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				84E61263249B465A0019B6BA /* alarm_d_d.mp3 in Resources */,
+				84F8516424BEA3BE006AC50A /* Localizable.strings in Resources */,
 				84E6121E24978E940019B6BA /* load.gif in Resources */,
 				84E6108D24921AF20019B6BA /* Assets.xcassets in Resources */,
+				84F8516524BEA3BE006AC50A /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -876,6 +908,7 @@
 				84DDC1EC24B4A413004F5C57 /* LXDeviceListTableViewCell.m in Sources */,
 				84DDC23824B803F5004F5C57 /* UITextField+SQAdd.m in Sources */,
 				84DDC24324B803F5004F5C57 /* NSData+SQAdd.m in Sources */,
+				84F8516924BEA5DA006AC50A /* LXLocalizationServiceModule.m in Sources */,
 				84DDC23724B803F5004F5C57 /* UIView+SQAdd.m in Sources */,
 				84DDC23D24B803F5004F5C57 /* UIImage+SQAdd.m in Sources */,
 				8402F28E24A365D60039A255 /* NSDictionary+Log.m in Sources */,
@@ -936,6 +969,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		84F8515E24BEA3BE006AC50A /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84F8515F24BEA3BE006AC50A /* zh-Hans */,
+				84F8516224BEA3BE006AC50A /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		84F8516024BEA3BE006AC50A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84F8516124BEA3BE006AC50A /* zh-Hans */,
+				84F8516324BEA3BE006AC50A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		84E6109424921AF20019B6BA /* Debug */ = {

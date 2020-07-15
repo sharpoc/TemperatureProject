@@ -1,0 +1,23 @@
+/* 
+  InfoPlist.strings
+  GuoBinTeam
+
+  Created by Jianpeng Dong on 2018/5/17.
+  Copyright © 2018年 首汽约车. All rights reserved.
+*/
+
+"CFBundleDisplayName" = "ShouYue";
+"CFBundleDevelopmentRegion" = "en";
+"NSCalendarsUsageDescription" = "\"ShouYue\" would like to access the clendar";
+"NSCameraUsageDescription" = "This allows \"ShouYue\" to use your camera so that you can send feedback photos or verify credit cards";
+"NSContactsUsageDescription" = "为保障体验，首汽约车将在您的通讯录写入首汽约车官方司机号码，以便于您识别司机师傅的来电。";
+"NSLocationAlwaysAndWhenInUseUsageDescription" = "Please allow \"ShouYue\" to access your location. Drivers need location information to find you.";
+"NSLocationAlwaysUsageDescription" = "Please allow \"ShouYue\" to access your location. Drivers need location information to find you.";
+"NSLocationUsageDescription" = "Please allow \"ShouYue\" to access your location. Drivers need location information to find you.";
+"NSLocationWhenInUseUsageDescription" = "Please allow \"ShouYue\" to access your location. Drivers need location information to find you.";
+"NSMicrophoneUsageDescription" = "This allows \"ShouYue\" to use your microphone to let you contact the driver";
+"NSPhotoLibraryUsageDescription" = "This allows \"ShouYue\" to access your media so that you can send feedback photos";
+"NSPhotoLibraryAddUsageDescription" = "Please allow \"ShouYue\" to save pictures to your photo album";
+"NSSiriUsageDescription" = "Siri can help you call a car";
+"NSSpeechRecognitionUsageDescription" = "\"ShouYue\" would like to use speech recognition";
+"NSFaceIDUsageDescription" = "Would you like to allow this app to use the face id ?";

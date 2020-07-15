@@ -26,5 +26,6 @@
 #import "LXEnum.h"
 #import "LXBaseViewController.h"
 #import "SQCategories.h"
+#import "LXLocalizationServiceModule.h"
 
 #endif /* LXTemperature_pch */
