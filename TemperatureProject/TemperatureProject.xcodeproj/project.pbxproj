@@ -522,6 +522,8 @@
 				84DDC1DC24B48592004F5C57 /* LXAddGroupViewController.m */,
 				84DDC1E124B490A5004F5C57 /* LXDeviceListViewController.h */,
 				84DDC1E224B490A5004F5C57 /* LXDeviceListViewController.m */,
+				84E612222498F4560019B6BA /* LXSetAlarmViewController.h */,
+				84E612232498F4560019B6BA /* LXSetAlarmViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -544,8 +546,6 @@
 				84DDC1D024B34EEE004F5C57 /* LXSettingItemTableViewCell.m */,
 				84DDC1EA24B4A413004F5C57 /* LXDeviceListTableViewCell.h */,
 				84DDC1EB24B4A413004F5C57 /* LXDeviceListTableViewCell.m */,
-				84E612222498F4560019B6BA /* LXSetAlarmViewController.h */,
-				84E612232498F4560019B6BA /* LXSetAlarmViewController.m */,
 			);
 			path = View;
 			sourceTree = "<group>";

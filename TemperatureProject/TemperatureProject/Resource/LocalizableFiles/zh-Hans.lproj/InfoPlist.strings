@@ -6,7 +6,7 @@
   Copyright © 2018年 首汽约车. All rights reserved.
 */
 
-"CFBundleDisplayName" = "首汽约车";
+"CFBundleDisplayName" = "温度APP";
 "CFBundleDevelopmentRegion" = "China";
 "NSCalendarsUsageDescription" = "是否允许此App使用日历？";
 "NSCameraUsageDescription" = "首汽约车需要使用相机，以便您拍摄照片反馈问题或验证信用卡信息";

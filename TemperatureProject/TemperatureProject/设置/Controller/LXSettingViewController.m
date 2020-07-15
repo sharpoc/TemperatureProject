@@ -13,6 +13,7 @@
 #import "LXFindPwdViewController.h"
 #import "LXAddGroupViewController.h"
 #import "LXDeviceListViewController.h"
+#import "LXSetAlarmViewController.h"
 
 @interface LXSettingViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong) UITableView *tableView;
@@ -115,6 +116,10 @@
         
         LXDeviceListViewController *deviceVC = [[LXDeviceListViewController alloc] init];
         [self.navigationController pushViewController:deviceVC animated:YES];
+    } else if (model.itemType == SQSettingItemTypePoliceAdmin) {//温度管理
+        
+        LXSetAlarmViewController *alarmVc = [[LXSetAlarmViewController alloc] init];
+        [self.navigationController pushViewController:alarmVc animated:YES];
     }
 }
 
