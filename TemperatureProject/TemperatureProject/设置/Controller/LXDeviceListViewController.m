@@ -126,6 +126,7 @@
         _tableView = [[UITableView alloc] init];
         _tableView.dataSource = self;
         _tableView.delegate = self;
+        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     }
     
     return _tableView;

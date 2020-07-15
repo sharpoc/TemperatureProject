@@ -14,7 +14,6 @@
 @interface LXUpdateUserNameViewController ()
 
 @property (nonatomic,strong) LXUpdateUserNameViewModel *viewModel;
-@property (nonatomic,strong) UIView *topBgView;
 @property (nonatomic,strong) UIButton *backButton;
 @property (nonatomic,strong) UIButton *commitButton;
 @property (nonatomic,strong) UITextField *textField;
@@ -31,45 +30,15 @@
     [self createLayout];
 }
 
-- (void)viewWillAppear:(BOOL)animated{
-    
-    [super viewWillAppear:animated];
-    self.navigationController.navigationBarHidden = YES;
-    
-}
-
-- (void)viewWillDisappear:(BOOL)animated{
-    
-    [super viewWillDisappear:animated];
-    self.navigationController.navigationBarHidden = NO;
-}
-
 
 - (void)createUI {
     
-    [self.view addSubview:self.topBgView];
     [self.view addSubview:self.textField];
-    [self.topBgView addSubview:self.backButton];
-    [self.topBgView addSubview:self.commitButton];
+    [self.navView addSubview:self.commitButton];
 }
 
 - (void)createLayout {
     
-    [self.topBgView mas_makeConstraints:^(MASConstraintMaker *make) {
-       
-        make.left.mas_equalTo(0);
-        make.top.mas_equalTo(0);
-        make.right.mas_equalTo(0);
-        make.height.mas_equalTo(kNavigationBarHeight);
-    }];
-    
-    [self.backButton mas_makeConstraints:^(MASConstraintMaker *make) {
-       
-        make.left.mas_equalTo(0);
-        make.top.mas_equalTo(STATUS_BAR_HEIGHT);
-        make.width.mas_equalTo(100);
-        make.bottom.mas_equalTo(0);
-    }];
     
     [self.commitButton mas_makeConstraints:^(MASConstraintMaker *make) {
        
@@ -82,7 +51,7 @@
     [self.textField mas_makeConstraints:^(MASConstraintMaker *make) {
        
         make.left.mas_equalTo(30);
-        make.top.mas_equalTo(self.topBgView.mas_bottom).offset(20);
+        make.top.mas_equalTo(self.navView.mas_bottom).offset(20);
         make.right.mas_equalTo(-30);
         make.height.mas_equalTo(50);
     }];
@@ -114,17 +83,6 @@
     return _viewModel;
 }
 
-- (UIView *)topBgView {
-    
-    if (!_topBgView) {
-        
-        _topBgView = [[UIView alloc] init];
-        _topBgView.backgroundColor = KSQColor(49, 197, 159);
-    }
-    
-    return _topBgView;
-}
-
 
 - (UITextField *)textField {
     
@@ -137,19 +95,6 @@
     }
     
     return _textField;
-}
-
-- (UIButton *)backButton {
-    
-    if (!_backButton) {
-        
-        _backButton = [[UIButton alloc] init];
-        [_backButton setImage:[UIImage imageNamed:@"navBackIcon_white"] forState:UIControlStateNormal];
-        [_backButton setTitle:@"返回" forState:UIControlStateNormal];
-        [_backButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    }
-    
-    return _backButton;
 }
 
 - (UIButton *)commitButton {
