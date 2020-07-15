@@ -22,7 +22,7 @@
     [dict setObject:[NSString sq_safeString:model.phone]  forKey:@"phone"];
     [dict setObject:[NSString sq_safeString:model.pwd] forKey:@"password"];
     
-    [LXHttpRequest POST:@"http://39.103.132.54:1111/accounts/api/app/login" jsonDict:dict succeed:^(id  _Nonnull data) {
+    [LXHttpRequest POST:@"http://81.70.27.165:1111/accounts/api/app/login" jsonDict:dict succeed:^(id  _Nonnull data) {
         
         NSDictionary *dict = [data valueForKey:@"data"];
         LXUserTokenModel *userModel = [LXUserTokenModel yy_modelWithJSON:dict];
@@ -37,7 +37,7 @@
     NSMutableDictionary *dict=[NSMutableDictionary dictionary];
     [dict setObject:[NSString sq_safeString:phone] forKey:@"phone"];
     
-    [LXHttpRequest POST:@"http://39.103.132.54:1111/accounts/api/app/sendCode" jsonDict:dict succeed:^(id  _Nonnull data) {
+    [LXHttpRequest POST:@"http://81.70.27.165:1111/accounts/api/app/sendCode" jsonDict:dict succeed:^(id  _Nonnull data) {
         
         NSString *code = [data valueForKey:@"code"];
         NSString *msg = [data valueForKey:@"message"];
@@ -64,7 +64,7 @@
     [dict setObject:[NSString sq_safeString:model.cname] forKey:@"cname"];
     
     
-    [LXHttpRequest POST:@"http://39.103.132.54:1111/accounts/api/app/userRegister" jsonDict:dict succeed:^(id  _Nonnull data) {
+    [LXHttpRequest POST:@"http://81.70.27.165:1111/accounts/api/app/userRegister" jsonDict:dict succeed:^(id  _Nonnull data) {
         
         NSString *code = [data valueForKey:@"code"];
         NSString *msg = [data valueForKey:@"message"];
@@ -88,7 +88,7 @@
     [dict setObject:[NSString sq_safeString:model.deviceId] forKey:@"deviceId"];
     [dict setObject:[NSString sq_safeString:model.phone] forKey:@"phone"];
     
-    [LXHttpRequest POST:@"http://39.103.132.54:1111/accounts/api/app/addDevice" jsonDict:dict succeed:^(id  _Nonnull data) {
+    [LXHttpRequest POST:@"http://81.70.27.165:1111/accounts/api/app/addDevice" jsonDict:dict succeed:^(id  _Nonnull data) {
            
            NSString *code = [data valueForKey:@"code"];
            NSString *msg = [data valueForKey:@"message"];
@@ -123,7 +123,7 @@
     }
 
     
-    [LXHttpRequest POST:@"http://39.103.132.54:1111/accounts/api/app/uploadTemperature" jsonDict:tempArr succeed:^(id  _Nonnull data) {
+    [LXHttpRequest POST:@"http://81.70.27.165:1111/accounts/api/app/uploadTemperature" jsonDict:tempArr succeed:^(id  _Nonnull data) {
            
            NSString *code = [data valueForKey:@"code"];
            NSString *msg = [data valueForKey:@"message"];
@@ -149,7 +149,7 @@
     [dict setObject:@(size) forKey:@"size"];
 
     
-    [LXHttpRequest POST:@"http://39.103.132.54:1111/accounts/api/app/temperature" jsonDict:dict succeed:^(id  _Nonnull data) {
+    [LXHttpRequest POST:@"http://81.70.27.165:1111/accounts/api/app/temperature" jsonDict:dict succeed:^(id  _Nonnull data) {
            
         NSString *code = [data valueForKey:@"code"];
         NSString *msg = [data valueForKey:@"message"];
@@ -178,7 +178,7 @@
     [dict setObject:[NSString sq_safeString:model.phone] forKey:@"phone"];
 
     
-    [LXHttpRequest POST:@"http://39.103.132.54:1111/accounts/api/app/resetPassword" jsonDict:dict succeed:^(id  _Nonnull data) {
+    [LXHttpRequest POST:@"http://81.70.27.165:1111/accounts/api/app/resetPassword" jsonDict:dict succeed:^(id  _Nonnull data) {
            
         NSString *code = [data valueForKey:@"code"];
         NSString *msg = [data valueForKey:@"message"];
@@ -204,7 +204,7 @@
     [dict setObject:[NSString sq_safeString:model.cname] forKey:@"cname"];
 
 
-    [LXHttpRequest POST:@"http://39.103.132.54:1111/accounts/api/app/updateCname" jsonDict:dict succeed:^(id  _Nonnull data) {
+    [LXHttpRequest POST:@"http://81.70.27.165:1111/accounts/api/app/updateCname" jsonDict:dict succeed:^(id  _Nonnull data) {
 
         NSString *code = [data valueForKey:@"code"];
         NSString *msg = [data valueForKey:@"message"];
@@ -231,7 +231,7 @@
     [dict setObject:[NSString sq_safeString:loginModel.user.uid] forKey:@"userId"];
     
     
-    [LXHttpRequest POST:@"http://39.103.132.54:1111/accounts/api/inAppGroup" jsonDict:dict succeed:^(id  _Nonnull data) {
+    [LXHttpRequest POST:@"http://81.70.27.165:1111/accounts/api/inAppGroup" jsonDict:dict succeed:^(id  _Nonnull data) {
         
         NSString *code = [data valueForKey:@"code"];
         NSString *msg = [data valueForKey:@"message"];
@@ -256,7 +256,7 @@
     NSMutableDictionary *dict=[NSMutableDictionary dictionary];
     [dict setObject:[NSString sq_safeString:loginModel.user.uid] forKey:@"userId"];
     
-    [LXHttpRequest GET:@"http://39.103.132.54:1111/accounts/api/app/getDevice" dict:dict succeed:^(id  _Nonnull data) {
+    [LXHttpRequest GET:@"http://81.70.27.165:1111/accounts/api/app/getDevice" dict:dict succeed:^(id  _Nonnull data) {
         NSString *code = [data valueForKey:@"code"];
         NSString *msg = [data valueForKey:@"message"];
         NSDictionary *dict = [data valueForKey:@"data"];
@@ -284,7 +284,7 @@
     [dict setObject:[NSString sq_safeString:model.deviceId] forKey:@"deviceId"];
     
     
-    [LXHttpRequest POST:@"http://39.103.132.54:1111/accounts/api/app/removeDevice" jsonDict:dict succeed:^(id  _Nonnull data) {
+    [LXHttpRequest POST:@"http://81.70.27.165:1111/accounts/api/app/removeDevice" jsonDict:dict succeed:^(id  _Nonnull data) {
         
         NSString *code = [data valueForKey:@"code"];
         NSString *msg = [data valueForKey:@"message"];
