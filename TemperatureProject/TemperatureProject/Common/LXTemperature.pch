@@ -27,5 +27,8 @@
 #import "LXBaseViewController.h"
 #import "SQCategories.h"
 #import "LXLocalizationServiceModule.h"
+#import "LXAPI.h"
+#import "LXURLHandler.h"
+
 
 #endif /* LXTemperature_pch */

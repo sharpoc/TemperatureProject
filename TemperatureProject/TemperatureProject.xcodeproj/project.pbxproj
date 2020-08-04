@@ -18,6 +18,8 @@
 		8402F29824A9E5120039A255 /* LXFindPwdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8402F29724A9E5110039A255 /* LXFindPwdViewController.m */; };
 		8402F2FC24AB11E50039A255 /* LXTostHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 8402F2FB24AB11E50039A255 /* LXTostHUD.m */; };
 		8402F30E24AB2E4E0039A255 /* LXShowDetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8402F30D24AB2E4E0039A255 /* LXShowDetailViewModel.m */; };
+		8451FA4124D950720003810D /* LXURLHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 8451FA4024D950720003810D /* LXURLHandler.m */; };
+		8451FA4424D9522B0003810D /* LXAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 8451FA4324D9522B0003810D /* LXAPI.m */; };
 		846B1B7E24AB35D40002C8B8 /* LXUserTokenModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B1B7D24AB35D40002C8B8 /* LXUserTokenModel.m */; };
 		846B1B8124AB5B460002C8B8 /* LXTemperatureModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B1B8024AB5B460002C8B8 /* LXTemperatureModel.m */; };
 		846B1B8424AC28E90002C8B8 /* LXLoopTemperatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B1B8324AC28E80002C8B8 /* LXLoopTemperatureViewController.m */; };
@@ -117,6 +119,10 @@
 		8402F2FB24AB11E50039A255 /* LXTostHUD.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXTostHUD.m; sourceTree = "<group>"; };
 		8402F30C24AB2E4E0039A255 /* LXShowDetailViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXShowDetailViewModel.h; sourceTree = "<group>"; };
 		8402F30D24AB2E4E0039A255 /* LXShowDetailViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXShowDetailViewModel.m; sourceTree = "<group>"; };
+		8451FA3F24D950720003810D /* LXURLHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXURLHandler.h; sourceTree = "<group>"; };
+		8451FA4024D950720003810D /* LXURLHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXURLHandler.m; sourceTree = "<group>"; };
+		8451FA4224D9522B0003810D /* LXAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXAPI.h; sourceTree = "<group>"; };
+		8451FA4324D9522B0003810D /* LXAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXAPI.m; sourceTree = "<group>"; };
 		846B1B7C24AB35D40002C8B8 /* LXUserTokenModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXUserTokenModel.h; sourceTree = "<group>"; };
 		846B1B7D24AB35D40002C8B8 /* LXUserTokenModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXUserTokenModel.m; sourceTree = "<group>"; };
 		846B1B7F24AB5B460002C8B8 /* LXTemperatureModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXTemperatureModel.h; sourceTree = "<group>"; };
@@ -708,6 +714,10 @@
 				84DDC1CE24B328FF004F5C57 /* LXEnum.h */,
 				84DDC1D824B46693004F5C57 /* LXBaseViewController.h */,
 				84DDC1D924B46693004F5C57 /* LXBaseViewController.m */,
+				8451FA3F24D950720003810D /* LXURLHandler.h */,
+				8451FA4024D950720003810D /* LXURLHandler.m */,
+				8451FA4224D9522B0003810D /* LXAPI.h */,
+				8451FA4324D9522B0003810D /* LXAPI.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -930,6 +940,7 @@
 				84E6121624935DF60019B6BA /* LXPeripheralCollectionViewCell.m in Sources */,
 				8402F28824A32B760039A255 /* LXRegisterViewModel.m in Sources */,
 				84DDC1DA24B46693004F5C57 /* LXBaseViewController.m in Sources */,
+				8451FA4124D950720003810D /* LXURLHandler.m in Sources */,
 				84AFA79E24A0AE0600EB57FB /* LXLoginDataService.m in Sources */,
 				8402F28224A20BC00039A255 /* LXRegisterViewController.m in Sources */,
 				84DDC24724B803F5004F5C57 /* NSString+SQAdd.m in Sources */,
@@ -955,6 +966,7 @@
 				84E6126A249B82E30019B6BA /* LoadingHUDManager.m in Sources */,
 				84DDC23A24B803F5004F5C57 /* UIControl+SQAdd.m in Sources */,
 				84E6121C2497771C0019B6BA /* LXShowDetailViewController.m in Sources */,
+				8451FA4424D9522B0003810D /* LXAPI.m in Sources */,
 				84DDC1DD24B48592004F5C57 /* LXAddGroupViewController.m in Sources */,
 				84DDC23C24B803F5004F5C57 /* UITableViewCell+SQAdd.m in Sources */,
 				84DDC1D424B41AF4004F5C57 /* LXUpdateUserNameViewController.m in Sources */,
@@ -1109,7 +1121,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = P23V9BVWQD;
+				DEVELOPMENT_TEAM = 82YZ6WUAB5;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/TemperatureProject/Common/LXTemperature.pch";
 				INFOPLIST_FILE = TemperatureProject/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -1117,7 +1129,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sq.lx.TemperatureProject;
+				PRODUCT_BUNDLE_IDENTIFIER = rb.lx.RunbaoTemperature;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1130,7 +1142,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = P23V9BVWQD;
+				DEVELOPMENT_TEAM = 82YZ6WUAB5;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/TemperatureProject/Common/LXTemperature.pch";
 				INFOPLIST_FILE = TemperatureProject/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -1138,7 +1150,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sq.lx.TemperatureProject;
+				PRODUCT_BUNDLE_IDENTIFIER = rb.lx.RunbaoTemperature;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};

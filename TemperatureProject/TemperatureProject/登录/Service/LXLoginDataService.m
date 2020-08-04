@@ -22,11 +22,20 @@
     [dict setObject:[NSString sq_safeString:model.phone]  forKey:@"phone"];
     [dict setObject:[NSString sq_safeString:model.pwd] forKey:@"password"];
     
-    [LXHttpRequest POST:@"http://81.70.27.165:1111/accounts/api/app/login" jsonDict:dict succeed:^(id  _Nonnull data) {
+    [LXHttpRequest POST:GetURL(URL_login) jsonDict:dict succeed:^(id  _Nonnull data) {
         
         NSDictionary *dict = [data valueForKey:@"data"];
-        LXUserTokenModel *userModel = [LXUserTokenModel yy_modelWithJSON:dict];
-        SQSafeBlock(block,YES,@"",userModel);
+        NSString *code = [data valueForKey:@"code"];
+        if ([code isEqualToString:@"0"]) {
+            
+            LXUserTokenModel *userModel = [LXUserTokenModel yy_modelWithJSON:dict];
+             SQSafeBlock(block,YES,@"",userModel);
+        } else {
+            
+             SQSafeBlock(block,NO,@"",nil);
+        }
+    
+       
     } failure:^(NSError * _Nonnull error) {
         SQSafeBlock(block,NO,@"",nil);
     }];
