@@ -14,8 +14,13 @@
 
 
 UIKIT_EXTERN NSString *const URL_login;
-//UIKIT_EXTERN NSString *const URL_BASE_DC;
-//UIKIT_EXTERN NSString *const URL_BASE_Main;
-//UIKIT_EXTERN NSString *const URL_BASE_IM_FILE;
-//UIKIT_EXTERN NSString *const URL_BASE_UPLOADIMAGE;
-//UIKIT_EXTERN NSString *const URL_BASE_WEB;
+UIKIT_EXTERN NSString *const URL_sendCode;
+UIKIT_EXTERN NSString *const URL_userRegister;
+UIKIT_EXTERN NSString *const URL_addDevice;
+UIKIT_EXTERN NSString *const URL_uploadTemperature;
+UIKIT_EXTERN NSString *const URL_temperature;
+UIKIT_EXTERN NSString *const URL_resetPassword;
+UIKIT_EXTERN NSString *const URL_updateCname;
+UIKIT_EXTERN NSString *const URL_inAppGroup;
+UIKIT_EXTERN NSString *const URL_getDevice;
+UIKIT_EXTERN NSString *const URL_removeDevice;

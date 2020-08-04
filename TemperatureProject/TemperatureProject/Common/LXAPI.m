@@ -9,6 +9,14 @@
 #import "LXAPI.h"
 
 NSString *const URL_login = @"accounts/api/app/login"; //登录接口
-//NSString *const DZZJH5Config = @"gw-passenger/config/api/v1/config/list"; //短租自驾配置
-//NSString *const MaYipayMentService = @"gw-passenger/zhuanche-passengerController/payMentService/user/agent";       //蚂蚁金服
-//NSString *const GuideToPayOrdersAPI = @"gw-passenger/zhuanche-passengerController/order/getCurrentTrip"; //登录用户启动 App 之后引导后支付
+NSString *const URL_sendCode = @"accounts/api/app/sendCode"; //发送验证码
+NSString *const URL_userRegister = @"accounts/api/app/userRegister";       //注册
+NSString *const URL_addDevice = @"accounts/api/app/addDevice";
+NSString *const URL_uploadTemperature = @"accounts/api/app/uploadTemperature";
+NSString *const URL_temperature = @"accounts/api/app/temperature";
+NSString *const URL_resetPassword = @"accounts/api/app/resetPassword";
+NSString *const URL_updateCname = @"accounts/api/app/updateCname";
+NSString *const URL_inAppGroup = @"accounts/api/inAppGroup";
+NSString *const URL_getDevice = @"accounts/api/app/getDevice";
+NSString *const URL_removeDevice = @"accounts/api/app/removeDevice";
+
