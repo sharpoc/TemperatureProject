@@ -86,7 +86,7 @@
         
     }];
     
-    [self.userNameInputView mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.phoneInputView mas_makeConstraints:^(MASConstraintMaker *make) {
        
         make.left.mas_equalTo(20);
         make.right.mas_equalTo(-20);
@@ -94,35 +94,35 @@
         make.height.mas_equalTo(43);
     }];
     
-    [self.phoneInputView mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.userNameInputView mas_makeConstraints:^(MASConstraintMaker *make) {
        
-        make.left.mas_equalTo(self.userNameInputView.mas_left);
-        make.right.mas_equalTo(self.userNameInputView.mas_right);
-        make.height.mas_equalTo(self.userNameInputView.mas_height);
-        make.top.mas_equalTo(self.userNameInputView.mas_bottom).offset(12);
+        make.left.mas_equalTo(self.phoneInputView.mas_left);
+        make.right.mas_equalTo(self.phoneInputView.mas_right);
+        make.height.mas_equalTo(self.phoneInputView.mas_height);
+        make.top.mas_equalTo(self.phoneInputView.mas_bottom).offset(12);
     }];
     
     [self.codeInputView mas_makeConstraints:^(MASConstraintMaker *make) {
        
-        make.left.mas_equalTo(self.userNameInputView.mas_left);
-        make.right.mas_equalTo(self.userNameInputView.mas_right);
-        make.height.mas_equalTo(self.userNameInputView.mas_height);
-        make.top.mas_equalTo(self.phoneInputView.mas_bottom).offset(12);
+        make.left.mas_equalTo(self.phoneInputView.mas_left);
+        make.right.mas_equalTo(self.phoneInputView.mas_right);
+        make.height.mas_equalTo(self.phoneInputView.mas_height);
+        make.top.mas_equalTo(self.userNameInputView.mas_bottom).offset(12);
     }];
     
     [self.pwdInputView mas_makeConstraints:^(MASConstraintMaker *make) {
        
-        make.left.mas_equalTo(self.userNameInputView.mas_left);
-        make.right.mas_equalTo(self.userNameInputView.mas_right);
-        make.height.mas_equalTo(self.userNameInputView.mas_height);
+        make.left.mas_equalTo(self.phoneInputView.mas_left);
+        make.right.mas_equalTo(self.phoneInputView.mas_right);
+        make.height.mas_equalTo(self.phoneInputView.mas_height);
         make.top.mas_equalTo(self.codeInputView.mas_bottom).offset(12);
     }];
     
     [self.confirmPwdInputView mas_makeConstraints:^(MASConstraintMaker *make) {
        
-        make.left.mas_equalTo(self.userNameInputView.mas_left);
-        make.right.mas_equalTo(self.userNameInputView.mas_right);
-        make.height.mas_equalTo(self.userNameInputView.mas_height);
+        make.left.mas_equalTo(self.phoneInputView.mas_left);
+        make.right.mas_equalTo(self.phoneInputView.mas_right);
+        make.height.mas_equalTo(self.phoneInputView.mas_height);
         make.top.mas_equalTo(self.pwdInputView.mas_bottom).offset(12);
     }];
     
