@@ -14,6 +14,8 @@
 #import "LXPeripheral.h"
 #import "LXSettingViewController.h"
 #import "LXSettingItemModel.h"
+#import "LXUserTokenModel.h"
+#import "LXWelcomeViewController.h"
 
 
 
@@ -122,50 +124,73 @@ static void completionCallback(SystemSoundID mySSID)
 
 - (void)leftTopButtonClick {
     
-    LXSettingItemModel *groupManagerModel = [[LXSettingItemModel alloc] init];
-    groupManagerModel.titleText = @"群组管理";
-    groupManagerModel.iconText = @"group";
-    groupManagerModel.itemType = SQSettingItemTypeGroupAdmin;
+    LXUserTokenModel *loginModel = [[LXCacheManager shareInstance] unarchiveDataForKey:@"loginuser"];
+    if (loginModel) {
+           
+        LXSettingItemModel *groupManagerModel = [[LXSettingItemModel alloc] init];
+        groupManagerModel.titleText = @"群组管理";
+        groupManagerModel.iconText = @"group";
+        groupManagerModel.itemType = SQSettingItemTypeGroupAdmin;
+        
+        LXSettingItemModel *deviceManagerModel = [[LXSettingItemModel alloc] init];
+        deviceManagerModel.titleText = @"设备管理";
+        deviceManagerModel.iconText = @"setting";
+        deviceManagerModel.itemType = SQSettingItemTypeDeviceAdmin;
+        
+        LXSettingItemModel *wdManagerModel = [[LXSettingItemModel alloc] init];
+        wdManagerModel.titleText = @"温度管理";
+        wdManagerModel.iconText = @"police";
+        wdManagerModel.itemType = SQSettingItemTypePoliceAdmin;
+        
+        NSMutableArray *array = [[NSMutableArray alloc] init];
+        [array addObject:groupManagerModel];
+        [array addObject:deviceManagerModel];
+        [array addObject:wdManagerModel];
+        
+        LXSettingViewController *settingVC = [[LXSettingViewController alloc] init];
+        settingVC.lists = array;
+        [self.navigationController pushViewController:settingVC animated:YES];
+    } else {
+           
+        LXWelcomeViewController *welcomeVC = [[LXWelcomeViewController alloc] init];
+        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:welcomeVC];
+        UIWindow *window = [UIApplication sharedApplication].keyWindow;
+        window.rootViewController = nav;
+    }
     
-    LXSettingItemModel *deviceManagerModel = [[LXSettingItemModel alloc] init];
-    deviceManagerModel.titleText = @"设备管理";
-    deviceManagerModel.iconText = @"setting";
-    deviceManagerModel.itemType = SQSettingItemTypeDeviceAdmin;
     
-    LXSettingItemModel *wdManagerModel = [[LXSettingItemModel alloc] init];
-    wdManagerModel.titleText = @"温度管理";
-    wdManagerModel.iconText = @"police";
-    wdManagerModel.itemType = SQSettingItemTypePoliceAdmin;
-    
-    NSMutableArray *array = [[NSMutableArray alloc] init];
-    [array addObject:groupManagerModel];
-    [array addObject:deviceManagerModel];
-    [array addObject:wdManagerModel];
-    
-    LXSettingViewController *settingVC = [[LXSettingViewController alloc] init];
-    settingVC.lists = array;
-    [self.navigationController pushViewController:settingVC animated:YES];
 }
 
 - (void)rightTopButtonClick {
     
-    LXSettingItemModel *adminManagerModel = [[LXSettingItemModel alloc] init];
-    adminManagerModel.iconText = @"personcenter";
-    adminManagerModel.titleText = @"账户管理";
-    adminManagerModel.itemType = SQSettingItemTypeAdmin;
+    LXUserTokenModel *loginModel = [[LXCacheManager shareInstance] unarchiveDataForKey:@"loginuser"];
+    if (loginModel) {
+        
+        LXSettingItemModel *adminManagerModel = [[LXSettingItemModel alloc] init];
+        adminManagerModel.iconText = @"personcenter";
+        adminManagerModel.titleText = @"账户管理";
+        adminManagerModel.itemType = SQSettingItemTypeAdmin;
+        
+        LXSettingItemModel *helpModel = [[LXSettingItemModel alloc] init];
+        helpModel.iconText = @"help";
+        helpModel.titleText = @"帮助";
+        helpModel.itemType = SQSettingItemTypeHelp;
+        
+        NSMutableArray *array = [[NSMutableArray alloc] init];
+        [array addObject:adminManagerModel];
+        [array addObject:helpModel];
+        
+        LXSettingViewController *settingVC = [[LXSettingViewController alloc] init];
+        settingVC.lists = array;
+        [self.navigationController pushViewController:settingVC animated:YES];
+    } else {
+        
+        LXWelcomeViewController *welcomeVC = [[LXWelcomeViewController alloc] init];
+        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:welcomeVC];
+        UIWindow *window = [UIApplication sharedApplication].keyWindow;
+        window.rootViewController = nav;
+    }
     
-    LXSettingItemModel *helpModel = [[LXSettingItemModel alloc] init];
-    helpModel.iconText = @"help";
-    helpModel.titleText = @"帮助";
-    helpModel.itemType = SQSettingItemTypeHelp;
-    
-    NSMutableArray *array = [[NSMutableArray alloc] init];
-    [array addObject:adminManagerModel];
-    [array addObject:helpModel];
-    
-    LXSettingViewController *settingVC = [[LXSettingViewController alloc] init];
-    settingVC.lists = array;
-    [self.navigationController pushViewController:settingVC animated:YES];
 }
 
 #pragma mark LXPeripheralListViewDelegate
