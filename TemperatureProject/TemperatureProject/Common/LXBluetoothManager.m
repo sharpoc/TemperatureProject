@@ -14,7 +14,7 @@
 @interface LXBluetoothManager ()<CBCentralManagerDelegate,CBPeripheralDelegate>
 
 @property (nonatomic,strong) CBCentralManager *centralManager;
-@property (nonatomic,copy) NSMutableDictionary *deviceDic;
+
 @property (nonatomic,strong) CBPeripheral *peripheral;
 @property (nonatomic,strong) CBCharacteristic *characteristic;
 

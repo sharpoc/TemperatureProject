@@ -34,6 +34,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)connect:(CBPeripheral *)peripheral;
 
+@property (nonatomic,copy) NSMutableDictionary *deviceDic;
+
 @end
 
 NS_ASSUME_NONNULL_END

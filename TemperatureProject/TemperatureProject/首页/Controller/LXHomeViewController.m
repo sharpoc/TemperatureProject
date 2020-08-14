@@ -58,7 +58,8 @@ static void completionCallback(SystemSoundID mySSID)
     [LXBluetoothManager shareInstance].delegate = self;
     [[LXBluetoothManager shareInstance] start];
     
-
+    self.peripheralArray = [[LXBluetoothManager shareInstance].deviceDic allValues];
+    self.peripheralListView.peripheralArray = self.peripheralArray;
 }
 
 
@@ -324,7 +325,7 @@ static void completionCallback(SystemSoundID mySSID)
     if (!_iconImageView) {
         
         _iconImageView = [[UIImageView alloc] init];
-        _iconImageView.image = [UIImage imageNamed:@"ic_check_mark"]; 
+        _iconImageView.image = [UIImage imageNamed:@"ic_check_mark"];
     }
     
     return _iconImageView;
