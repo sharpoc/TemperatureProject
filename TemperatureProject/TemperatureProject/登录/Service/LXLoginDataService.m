@@ -26,13 +26,14 @@
         
         NSDictionary *dict = [data valueForKey:@"data"];
         NSString *code = [data valueForKey:@"code"];
+        NSString *msg = [data valueForKey:@"message"];
         if ([code isEqualToString:@"0"]) {
             
             LXUserTokenModel *userModel = [LXUserTokenModel yy_modelWithJSON:dict];
-             SQSafeBlock(block,YES,@"",userModel);
+             SQSafeBlock(block,YES,msg,userModel);
         } else {
             
-             SQSafeBlock(block,NO,@"",nil);
+             SQSafeBlock(block,NO,msg,nil);
         }
     
        
