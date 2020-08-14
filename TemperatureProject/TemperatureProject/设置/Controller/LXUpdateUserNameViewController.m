@@ -30,7 +30,7 @@
     [self createUI];
     [self createLayout];
     LXUserTokenModel *loginModel = [[LXCacheManager shareInstance] unarchiveDataForKey:@"loginuser"];
-    self.textField.text = loginModel.user.cname;
+    self.textField.text = loginModel.user.username;
 
 }
 
