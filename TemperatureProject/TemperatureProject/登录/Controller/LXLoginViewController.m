@@ -251,7 +251,7 @@
         
         _phoneTextField = [[UITextField alloc] init];
         _phoneTextField.keyboardType = UIKeyboardTypeNumberPad;
-        _phoneTextField.text = @"18501302581";
+        _phoneTextField.placeholder = @"请输入手机号";
 
     }
     
@@ -276,7 +276,7 @@
         
         _pwdTextField = [[UITextField alloc] init];
         _pwdTextField.secureTextEntry = YES;
-        _pwdTextField.text = @"111111";
+        _pwdTextField.placeholder = @"请输入密码";
     }
     
     return _pwdTextField;
