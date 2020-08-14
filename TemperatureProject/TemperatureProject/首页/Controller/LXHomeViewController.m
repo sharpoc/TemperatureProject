@@ -25,6 +25,10 @@
 @property (nonatomic,strong) UIButton *leftTopButton;
 @property (nonatomic,strong) UIButton *rightTopButton;
 
+@property (nonatomic,strong) UIView *centerView;
+@property (nonatomic,strong) UIImageView *iconImageView;
+@property (nonatomic,strong) UILabel *descLabel;
+
 @property (nonatomic,strong) FLAnimatedImageView *loadImageView;//gif图
 @property (nonatomic,strong) UILabel *tipLabel;//正在寻找设备请稍等
 //@property (nonatomic,strong) LXBluetoothManager *bluetoothManager;
@@ -63,6 +67,9 @@ static void completionCallback(SystemSoundID mySSID)
     [self.view addSubview:self.bgImageView];
     [self.view addSubview:self.loadImageView];
     [self.view addSubview:self.tipLabel];
+    [self.view addSubview:self.centerView];
+    [self.centerView addSubview:self.iconImageView];
+    [self.centerView addSubview:self.descLabel];
     [self.view addSubview:self.peripheralListView];
     
    
@@ -112,6 +119,29 @@ static void completionCallback(SystemSoundID mySSID)
         make.top.mas_equalTo(self.loadImageView.mas_bottom).offset(15);
         make.height.mas_equalTo(35);
         make.centerX.mas_equalTo(self.view.mas_centerX);
+    }];
+    
+    [self.centerView mas_makeConstraints:^(MASConstraintMaker *make) {
+       
+        make.centerX.mas_equalTo(self.view.mas_centerX);
+        make.height.mas_equalTo(36);
+        make.bottom.mas_equalTo(self.peripheralListView.mas_top).offset(-20);
+    }];
+    
+    [self.iconImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+       
+        make.left.mas_equalTo(0);
+        make.top.mas_equalTo(0);
+        make.bottom.mas_equalTo(0);
+        make.width.mas_equalTo(36);
+    }];
+    
+    [self.descLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+       
+        make.left.mas_equalTo(self.iconImageView.mas_right);
+        make.right.mas_equalTo(0);
+        make.top.mas_equalTo(0);
+        make.bottom.mas_equalTo(0);
     }];
     
     [self.peripheralListView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -277,6 +307,40 @@ static void completionCallback(SystemSoundID mySSID)
     }
     
     return _bgImageView;
+}
+
+- (UIView *)centerView {
+    
+    if (!_centerView) {
+        
+        _centerView = [[UIView alloc] init];
+    }
+    
+    return _centerView;
+}
+
+- (UIImageView *)iconImageView {
+    
+    if (!_iconImageView) {
+        
+        _iconImageView = [[UIImageView alloc] init];
+        _iconImageView.image = [UIImage imageNamed:@"ic_check_mark"]; 
+    }
+    
+    return _iconImageView;
+}
+
+- (UILabel *)descLabel {
+    
+    if (!_descLabel) {
+        
+        _descLabel = [[UILabel alloc] init];
+        _descLabel.text = @"点击设备进行测量";
+        _descLabel.textColor = KSQColor(48, 48, 48);
+        _descLabel.font = [UIFont boldSystemFontOfSize:24];
+    }
+    
+    return _descLabel;
 }
 
 - (LXPeripheralListView *)peripheralListView {
