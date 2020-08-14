@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,copy) NSString *uid;
 @property (nonatomic,copy) NSString *phone;
 @property (nonatomic,copy) NSString *username;
+@property (nonatomic,copy) NSString *cname;
 @end
 
 @interface LXUserTokenModel : NSObject

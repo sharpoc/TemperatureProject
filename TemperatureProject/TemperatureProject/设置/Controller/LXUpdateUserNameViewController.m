@@ -10,6 +10,7 @@
 #import "LXUpdateUserNameViewModel.h"
 #import "LXUserTokenModel.h"
 #import "LXUserRegisterModel.h"
+#import "LXUserTokenModel.h"
 
 @interface LXUpdateUserNameViewController ()
 
@@ -28,6 +29,9 @@
     // Do any additional setup after loading the view.
     [self createUI];
     [self createLayout];
+    LXUserTokenModel *loginModel = [[LXCacheManager shareInstance] unarchiveDataForKey:@"loginuser"];
+    self.textField.text = loginModel.user.cname;
+
 }
 
 
