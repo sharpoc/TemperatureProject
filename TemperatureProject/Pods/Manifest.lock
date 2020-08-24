@@ -20,6 +20,8 @@ PODS:
     - FMDB/standard (= 2.7.5)
   - FMDB/standard (2.7.5)
   - IQKeyboardManager (6.5.5)
+  - JQFMDB (1.1.6):
+    - FMDB
   - Masonry (1.1.0)
   - MBProgressHUD (1.2.0)
   - MJRefresh (3.4.3)
@@ -36,6 +38,7 @@ DEPENDENCIES:
   - AFNetworking
   - FMDB
   - IQKeyboardManager
+  - JQFMDB
   - Masonry
   - MBProgressHUD
   - MJRefresh
@@ -49,6 +52,7 @@ SPEC REPOS:
     - FLAnimatedImage
     - FMDB
     - IQKeyboardManager
+    - JQFMDB
     - Masonry
     - MBProgressHUD
     - MJRefresh
@@ -70,12 +74,13 @@ SPEC CHECKSUMS:
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   IQKeyboardManager: 3a8b9e603f8b0eeaf5f096a1f2b2cfcf121992ef
+  JQFMDB: 39ab0d6d7c26fd30e51c4dd92edcb27506a34c3a
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   MJRefresh: 53e3e3219f204425ee6d3e62e8733d3295944cd6
   SDWebImage: 783af2c3fa36291a250030c4752ee370a9a51d13
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 9f79e9715dfdcc6fc6cb67e460374cebb80c1ed9
+PODFILE CHECKSUM: 86507ee6a535184828d4b3c9f90570dec92f92c4
 
 COCOAPODS: 1.9.1
