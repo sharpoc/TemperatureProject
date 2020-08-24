@@ -24,3 +24,4 @@ UIKIT_EXTERN NSString *const URL_updateCname;
 UIKIT_EXTERN NSString *const URL_inAppGroup;
 UIKIT_EXTERN NSString *const URL_getDevice;
 UIKIT_EXTERN NSString *const URL_removeDevice;
+UIKIT_EXTERN NSString *const URL_updateDevice;

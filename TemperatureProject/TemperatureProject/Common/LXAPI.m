@@ -19,4 +19,5 @@ NSString *const URL_updateCname = @"accounts/api/app/updateCname";
 NSString *const URL_inAppGroup = @"accounts/api/inAppGroup";
 NSString *const URL_getDevice = @"accounts/api/app/getDevice";
 NSString *const URL_removeDevice = @"accounts/api/app/removeDevice";
+NSString *const URL_updateDevice = @"accounts/api/app/updateDevice";
 

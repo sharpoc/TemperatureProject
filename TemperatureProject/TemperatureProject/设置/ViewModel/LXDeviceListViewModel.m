@@ -26,4 +26,15 @@
         SQSafeBlock(block,success,msg,model);
     }];
 }
+
+- (void)updateDeviceWithMac:(LXDeviceModel *)model andBlock:(void(^)(BOOL success,NSString *msg,NSArray *model))block{
+    
+    [LXLoginDataService updateDeviceWithMac:model andBlock:^(BOOL success, NSString * _Nonnull msg, NSArray * _Nonnull model) {
+        
+        SQSafeBlock(block,success,msg,model);
+
+    }];
+}
+
+
 @end

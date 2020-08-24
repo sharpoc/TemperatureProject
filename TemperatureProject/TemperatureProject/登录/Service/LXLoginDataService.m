@@ -313,5 +313,31 @@
     }];
 }
 
++ (void)updateDeviceWithMac:(LXDeviceModel *)model andBlock:(void(^)(BOOL success,NSString *msg,NSArray *model))block {
+    
+    NSMutableDictionary *dict=[NSMutableDictionary dictionary];
+    [dict setObject:[NSString sq_safeString:model.name] forKey:@"name"];
+    [dict setObject:[NSString sq_safeString:model.deviceId] forKey:@"deviceId"];
+    
+    
+    [LXHttpRequest POST:GetURL(URL_updateDevice) jsonDict:dict succeed:^(id  _Nonnull data) {
+        
+        NSString *code = [data valueForKey:@"code"];
+        NSString *msg = [data valueForKey:@"message"];
+        
+        
+        if ([code isEqualToString:@"0"]) {
+            
+            SQSafeBlock(block,YES,msg,nil);
+        } else {
+            
+            SQSafeBlock(block,NO,msg,nil);
+        }
+    } failure:^(NSError * _Nonnull error) {
+
+        SQSafeBlock(block,YES,@"",nil);
+    }];
+}
+
 
 @end

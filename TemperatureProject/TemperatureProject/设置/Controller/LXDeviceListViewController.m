@@ -66,15 +66,41 @@
 
 - (void)controlClick:(LXDeviceModel *)model {
     
-    LXSetAlarmViewController *alarmVc = [[LXSetAlarmViewController alloc] init];
-    [self.navigationController pushViewController:alarmVc animated:YES];
+    LXHistoryTemperatureViewController *historyVC = [[LXHistoryTemperatureViewController alloc] init];
+    historyVC.mac = model.deviceId;
+    [self.navigationController pushViewController:historyVC animated:YES];
+   
 }
 
 - (void)infoClick:(LXDeviceModel *)model {
     
-    LXHistoryTemperatureViewController *historyVC = [[LXHistoryTemperatureViewController alloc] init];
-    historyVC.mac = model.deviceId;
-    [self.navigationController pushViewController:historyVC animated:YES];
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"提示" message:@"请输入设备名称" preferredStyle:UIAlertControllerStyleAlert];
+    //增加确定按钮；
+    [alertController addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        //获取第1个输入框；
+        UITextField *deviceNameTextField = alertController.textFields.firstObject;
+        model.name = deviceNameTextField.text;
+        [self.viewModel updateDeviceWithMac:model andBlock:^(BOOL success, NSString * _Nonnull msg, NSArray * _Nonnull model) {
+            
+            if (success) {
+                [LXTostHUD showTitle:@"修改成功"];
+            }
+            
+        }];
+      
+    }]];
+    
+    //增加取消按钮；
+    [alertController addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:nil]];
+    
+    //定义第一个输入框；
+    [alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+      textField.placeholder = @"请输入设备名称";
+    }];
+    
+    [self presentViewController:alertController animated:true completion:nil];
+    
+
 }
 
 - (void)delClick:(LXDeviceModel *)model {
