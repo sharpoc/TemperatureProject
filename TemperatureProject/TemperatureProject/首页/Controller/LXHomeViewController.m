@@ -79,21 +79,18 @@ static void completionCallback(SystemSoundID mySSID)
             }];
         }
         
-        //获取所有设备信息
-        [self.viewModel getDeviceListWithBlock:^(BOOL success, NSString * _Nonnull msg, NSArray * _Nonnull model) {
-            
-            if (success) {
-                
-                self.peripheralArray = [[LXBluetoothManager shareInstance].deviceDic allValues];
-                self.peripheralListView.deviceArray = model;
-                self.peripheralListView.peripheralArray = self.peripheralArray;
-            }
-        }];
+        [self createData];
 
     }
 
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    
+    [super viewWillAppear:animated];
+    [self createData];
+    
+}
 
 - (void)createUI {
     
@@ -182,6 +179,20 @@ static void completionCallback(SystemSoundID mySSID)
         make.left.right.mas_equalTo(0);
         make.bottom.mas_equalTo(0);
         make.height.mas_equalTo(350);
+    }];
+}
+
+- (void)createData {
+    
+    //获取所有设备信息
+    [self.viewModel getDeviceListWithBlock:^(BOOL success, NSString * _Nonnull msg, NSArray * _Nonnull model) {
+        
+        if (success) {
+            
+            self.peripheralArray = [[LXBluetoothManager shareInstance].deviceDic allValues];
+            self.peripheralListView.deviceArray = model;
+            self.peripheralListView.peripheralArray = self.peripheralArray;
+        }
     }];
 }
 

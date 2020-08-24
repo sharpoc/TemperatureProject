@@ -72,6 +72,7 @@
    
 }
 
+//修改设备名称
 - (void)infoClick:(LXDeviceModel *)model {
     
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"提示" message:@"请输入设备名称" preferredStyle:UIAlertControllerStyleAlert];
@@ -84,6 +85,7 @@
             
             if (success) {
                 [LXTostHUD showTitle:@"修改成功"];
+                [self createData];
             }
             
         }];
