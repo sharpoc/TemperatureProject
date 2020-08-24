@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @class CBPeripheral;
+@class LXDeviceModel;
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol LXPeripheralListViewDelegate <NSObject>
@@ -20,7 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface LXPeripheralListView : UIView
 
 @property (nonatomic,copy) NSArray *peripheralArray;
-
+@property (nonatomic,copy) NSArray<LXDeviceModel *> *deviceArray;
 @property (nonatomic,weak) id<LXPeripheralListViewDelegate> delegate;
 
 @end

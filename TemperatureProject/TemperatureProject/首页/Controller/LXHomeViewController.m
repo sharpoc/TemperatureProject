@@ -60,19 +60,34 @@ static void completionCallback(SystemSoundID mySSID)
     [LXBluetoothManager shareInstance].delegate = self;
     [[LXBluetoothManager shareInstance] start];
     
-    self.peripheralArray = [[LXBluetoothManager shareInstance].deviceDic allValues];
-    self.peripheralListView.peripheralArray = self.peripheralArray;
+
     
     LXUserTokenModel *loginModel = [[LXCacheManager shareInstance] unarchiveDataForKey:@"loginuser"];
     if (loginModel) {
         
+        //如果有未登录数据 先上传
         NSArray *temperatureArr = [[LXDBTool sharedInstance].db jq_lookupTable:@"Temperature" dicOrModel:[LXTemperatureModel class] whereFormat:nil];
-        for (LXTemperatureModel *model in temperatureArr) {
-            model.phone = loginModel.user.phone;
-            model.name = loginModel.user.username;
-        }
-        [self.viewModel uploadTemperature:temperatureArr withBlock:^(BOOL success, NSString * _Nonnull msg, NSObject * _Nonnull model) {
+        if (temperatureArr.count > 0) {
             
+            for (LXTemperatureModel *model in temperatureArr) {
+                model.phone = loginModel.user.phone;
+                model.name = loginModel.user.username;
+            }
+            [self.viewModel uploadTemperature:temperatureArr withBlock:^(BOOL success, NSString * _Nonnull msg, NSObject * _Nonnull model) {
+                
+                [[LXDBTool sharedInstance].db jq_deleteAllDataFromTable:@"Temperature"];
+            }];
+        }
+        
+        //获取所有设备信息
+        [self.viewModel getDeviceListWithBlock:^(BOOL success, NSString * _Nonnull msg, NSArray * _Nonnull model) {
+            
+            if (success) {
+                
+                self.peripheralArray = [[LXBluetoothManager shareInstance].deviceDic allValues];
+                self.peripheralListView.deviceArray = model;
+                self.peripheralListView.peripheralArray = self.peripheralArray;
+            }
         }];
 
     }

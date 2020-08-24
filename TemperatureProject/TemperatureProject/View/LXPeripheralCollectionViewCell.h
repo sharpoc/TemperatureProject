@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface LXPeripheralCollectionViewCell : UICollectionViewCell
 
 @property (nonatomic,strong) LXPeripheral *peripheral;
+@property (nonatomic,copy) NSString *name;
 
 @end
 

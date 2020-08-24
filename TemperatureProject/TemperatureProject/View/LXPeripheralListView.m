@@ -9,6 +9,7 @@
 #import "LXPeripheralListView.h"
 #import "LXPeripheralCollectionViewCell.h"
 #import "LxPeripheral.h"
+#import "LXDeviceModel.h"
 
 #define collectinViewCellID @"LXPeripheralCollectionViewCell"
 
@@ -68,6 +69,13 @@
     NSInteger row = indexPath.row;
     LXPeripheral *peripheral = self.peripheralArray[row];
     cell.peripheral = peripheral;
+    for (LXDeviceModel *dModel in self.deviceArray) {
+        
+        if ([dModel.deviceId isEqualToString:peripheral.mac]) {
+            
+            cell.name = dModel.name;
+        }
+    }
     return cell;
     
 }

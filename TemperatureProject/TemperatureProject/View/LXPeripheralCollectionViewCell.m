@@ -63,6 +63,15 @@
     self.idLabel.text = peripheral.mac;
 }
 
+- (void)setName:(NSString *)name {
+    
+    _name = name;
+    if (![NSString sq_isEmpty:name]) {
+        
+        self.idLabel.text = name;
+    }
+}
+
 - (UILabel *)nameLabel {
     
     if (!_nameLabel) {

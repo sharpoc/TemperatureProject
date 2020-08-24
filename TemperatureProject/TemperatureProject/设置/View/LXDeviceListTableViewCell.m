@@ -111,7 +111,7 @@
 - (void)setModel:(LXDeviceModel *)model {
     
     _model = model;
-    self.deviceNameLabel.text = [NSString stringWithFormat:@"设备名称:%@",model.name];
+    self.deviceNameLabel.text = [NSString stringWithFormat:@"设备名称:%@",[NSString sq_safeString:model.name]];
     self.deviceIDLabel.text = [NSString stringWithFormat:@"设备ID:%@",model.d_id];
 }
 

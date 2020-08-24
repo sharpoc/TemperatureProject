@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)uploadTemperature:(NSArray *)array withBlock:(void(^)(BOOL success,NSString *msg,NSObject *model))block;
 
+- (void)getDeviceListWithBlock:(void(^)(BOOL success,NSString *msg,NSArray *model))block;
+
 @end
 
 NS_ASSUME_NONNULL_END
