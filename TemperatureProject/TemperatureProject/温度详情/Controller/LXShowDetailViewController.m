@@ -223,10 +223,15 @@
     NSMutableArray *array = [NSMutableArray array];
     [array addObject:temperatureModel];
     
-    
-    [self.viewModel uploadTemperature:array withBlock:^(BOOL success, NSString * _Nonnull msg, NSObject * _Nonnull model) {
+    if (loginModel) {
+        [self.viewModel uploadTemperature:array withBlock:^(BOOL success, NSString * _Nonnull msg, NSObject * _Nonnull model) {
+            
+        }];
+    } else {
         
-    }];
+        
+    }
+    
 }
 
 - (LXShowDetailViewModel *)viewModel {

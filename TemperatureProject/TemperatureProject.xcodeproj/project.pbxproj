@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8400592224F35E95002C1542 /* LXDBTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 8400592124F35E95002C1542 /* LXDBTool.m */; };
 		8402F27C24A1F8770039A255 /* LXPeripheral.m in Sources */ = {isa = PBXBuildFile; fileRef = 8402F27B24A1F8770039A255 /* LXPeripheral.m */; };
 		8402F28224A20BC00039A255 /* LXRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8402F28124A20BC00039A255 /* LXRegisterViewController.m */; };
 		8402F28524A20EE90039A255 /* LXInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8402F28424A20EE90039A255 /* LXInputView.m */; };
@@ -97,6 +98,8 @@
 /* Begin PBXFileReference section */
 		425AF8C8F268A312023961ED /* libPods-TemperatureProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TemperatureProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		582345F093EB901C6CBF0236 /* Pods-TemperatureProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TemperatureProject.release.xcconfig"; path = "Target Support Files/Pods-TemperatureProject/Pods-TemperatureProject.release.xcconfig"; sourceTree = "<group>"; };
+		8400592024F35E95002C1542 /* LXDBTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXDBTool.h; sourceTree = "<group>"; };
+		8400592124F35E95002C1542 /* LXDBTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXDBTool.m; sourceTree = "<group>"; };
 		8402F27A24A1F8770039A255 /* LXPeripheral.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXPeripheral.h; sourceTree = "<group>"; };
 		8402F27B24A1F8770039A255 /* LXPeripheral.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXPeripheral.m; sourceTree = "<group>"; };
 		8402F28024A20BC00039A255 /* LXRegisterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXRegisterViewController.h; sourceTree = "<group>"; };
@@ -718,6 +721,8 @@
 				8451FA4024D950720003810D /* LXURLHandler.m */,
 				8451FA4224D9522B0003810D /* LXAPI.h */,
 				8451FA4324D9522B0003810D /* LXAPI.m */,
+				8400592024F35E95002C1542 /* LXDBTool.h */,
+				8400592124F35E95002C1542 /* LXDBTool.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -943,6 +948,7 @@
 				8451FA4124D950720003810D /* LXURLHandler.m in Sources */,
 				84AFA79E24A0AE0600EB57FB /* LXLoginDataService.m in Sources */,
 				8402F28224A20BC00039A255 /* LXRegisterViewController.m in Sources */,
+				8400592224F35E95002C1542 /* LXDBTool.m in Sources */,
 				84DDC24724B803F5004F5C57 /* NSString+SQAdd.m in Sources */,
 				84DDC1E024B48B86004F5C57 /* LXAddGroupViewModel.m in Sources */,
 				846B1B9024ADD82A0002C8B8 /* LXHistoryTemperatureViewModel.m in Sources */,
