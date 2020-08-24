@@ -1,5 +1,5 @@
 //
-//  LXDBTool.h
+//  LXHomeViewModel.h
 //  TemperatureProject
 //
 //  Created by admin on 2020/8/24.
@@ -10,11 +10,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface LXDBTool : NSObject
+@interface LXHomeViewModel : NSObject
 
-+ (LXDBTool *)sharedInstance;
-
-@property (nonatomic,strong) JQFMDB *db;
+- (void)uploadTemperature:(NSArray *)array withBlock:(void(^)(BOOL success,NSString *msg,NSObject *model))block;
 
 @end
 

@@ -16,7 +16,8 @@
 #import "LXSettingItemModel.h"
 #import "LXUserTokenModel.h"
 #import "LXWelcomeViewController.h"
-
+#import "LXTemperatureModel.h"
+#import "LXHomeViewModel.h"
 
 
 @interface LXHomeViewController ()<LXBluetoothManagerDelegate,LXPeripheralListViewDelegate>
@@ -34,6 +35,7 @@
 //@property (nonatomic,strong) LXBluetoothManager *bluetoothManager;
 @property (nonatomic,copy) NSArray *peripheralArray;
 @property (nonatomic,strong) LXPeripheralListView *peripheralListView;
+@property (nonatomic,strong) LXHomeViewModel *viewModel;
 
 
 
@@ -60,6 +62,21 @@ static void completionCallback(SystemSoundID mySSID)
     
     self.peripheralArray = [[LXBluetoothManager shareInstance].deviceDic allValues];
     self.peripheralListView.peripheralArray = self.peripheralArray;
+    
+    LXUserTokenModel *loginModel = [[LXCacheManager shareInstance] unarchiveDataForKey:@"loginuser"];
+    if (loginModel) {
+        
+        NSArray *temperatureArr = [[LXDBTool sharedInstance].db jq_lookupTable:@"Temperature" dicOrModel:[LXTemperatureModel class] whereFormat:nil];
+        for (LXTemperatureModel *model in temperatureArr) {
+            model.phone = loginModel.user.phone;
+            model.name = loginModel.user.username;
+        }
+        [self.viewModel uploadTemperature:temperatureArr withBlock:^(BOOL success, NSString * _Nonnull msg, NSObject * _Nonnull model) {
+            
+        }];
+
+    }
+
 }
 
 
@@ -353,6 +370,16 @@ static void completionCallback(SystemSoundID mySSID)
     }
     
     return _peripheralListView;
+}
+
+- (LXHomeViewModel *)viewModel {
+    
+    if (!_viewModel) {
+        
+        _viewModel = [[LXHomeViewModel alloc] init];
+    }
+    
+    return _viewModel;
 }
 
 @end

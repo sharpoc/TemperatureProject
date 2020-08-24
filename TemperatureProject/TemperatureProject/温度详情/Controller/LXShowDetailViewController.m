@@ -16,6 +16,7 @@
 #import "LXTemperatureModel.h"
 #import "LXLoopTemperatureViewController.h"
 #import "LXHistoryTemperatureViewController.h"
+#import "LXDBTool.h"
 
 @interface LXShowDetailViewController ()<LXBluetoothManagerDelegate>
 
@@ -229,7 +230,14 @@
         }];
     } else {
         
-        
+        BOOL flag = [[LXDBTool sharedInstance].db jq_insertTable:@"Temperature" dicOrModel:temperatureModel];
+        if (flag) {
+            
+            [LXTostHUD showTitle:@"保存成功"];
+        } else {
+            
+            [LXTostHUD showTitle:@"保存失败"];
+        }
     }
     
 }

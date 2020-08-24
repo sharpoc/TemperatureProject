@@ -29,6 +29,8 @@
 #import "LXLocalizationServiceModule.h"
 #import "LXAPI.h"
 #import "LXURLHandler.h"
+#import <JQFMDB/JQFMDB.h>
+#import "LXDBTool.h"
 
 
 #endif /* LXTemperature_pch */
