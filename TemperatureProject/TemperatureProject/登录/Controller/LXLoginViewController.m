@@ -12,6 +12,7 @@
 #import "LXUserRegisterModel.h"
 #import "LXHomeViewController.h"
 #import "LXFindPwdViewController.h"
+#import "LXUserTokenModel.h"
 
 @interface LXLoginViewController ()
 
@@ -160,6 +161,7 @@
         
         if (success) {
             
+            model.user.pwd = registermodel.pwd;
             [[LXCacheManager shareInstance] saveCacheWithArchiveForKey:@"loginuser" withObject:model];
             LXHomeViewController *homeVc = [[LXHomeViewController alloc] init];
             UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:homeVc];
@@ -170,7 +172,6 @@
             [LXTostHUD showTitle:msg];
         }
         
-
     }];
 }
 

@@ -11,9 +11,12 @@
 #import "LXWelcomeViewController.h"
 #import "LXLoginViewController.h"
 #import "LXUserTokenModel.h"
+#import "LXLoginViewModel.h"
+#import "LXUserRegisterModel.h"
 
 @interface AppDelegate ()
 
+@property (nonatomic,strong) LXLoginViewModel *viewModel;
 @end
 
 @implementation AppDelegate
@@ -33,6 +36,25 @@
     LXUserTokenModel *loginModel = [[LXCacheManager shareInstance] unarchiveDataForKey:@"loginuser"];
     if (loginModel) {
         
+        LXUserRegisterModel *registermodel = [[LXUserRegisterModel alloc] init];
+        registermodel.phone = loginModel.user.phone;
+        registermodel.pwd = loginModel.user.pwd;
+        [self.viewModel loginWithModel:registermodel withBlock:^(BOOL success, NSString * _Nonnull msg, LXUserTokenModel * _Nonnull model) {
+               
+               if (success) {
+                   
+                   loginModel.user.pwd = registermodel.pwd;
+                   [[LXCacheManager shareInstance] saveCacheWithArchiveForKey:@"loginuser" withObject:model];
+                   LXHomeViewController *homeVc = [[LXHomeViewController alloc] init];
+                   UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:homeVc];
+                   UIWindow *window = [UIApplication sharedApplication].keyWindow;
+                   window.rootViewController = nav;
+               } else {
+                   
+                   [LXTostHUD showTitle:msg];
+               }
+               
+           }];
         nav = [[UINavigationController alloc] initWithRootViewController:controller];
     } else {
         
@@ -45,5 +67,15 @@
     self.window.rootViewController = nav;
     [self.window makeKeyAndVisible];
     return YES;
+}
+
+- (LXLoginViewModel *)viewModel {
+    
+    if (!_viewModel) {
+        
+        _viewModel = [[LXLoginViewModel alloc] init];
+    }
+    
+    return _viewModel;
 }
 @end
