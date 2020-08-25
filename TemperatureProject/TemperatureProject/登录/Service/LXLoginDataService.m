@@ -30,6 +30,7 @@
         if ([code isEqualToString:@"0"]) {
             
             LXUserTokenModel *userModel = [LXUserTokenModel yy_modelWithJSON:dict];
+            userModel.user.pwd = model.pwd;
              SQSafeBlock(block,YES,msg,userModel);
         } else {
             

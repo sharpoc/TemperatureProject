@@ -43,7 +43,6 @@
                
                if (success) {
                    
-                   loginModel.user.pwd = registermodel.pwd;
                    [[LXCacheManager shareInstance] saveCacheWithArchiveForKey:@"loginuser" withObject:model];
                    LXHomeViewController *homeVc = [[LXHomeViewController alloc] init];
                    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:homeVc];
@@ -51,7 +50,10 @@
                    window.rootViewController = nav;
                } else {
                    
-                   [LXTostHUD showTitle:msg];
+                    LXWelcomeViewController *welcomeVc = [[LXWelcomeViewController alloc] init];
+                    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:welcomeVc];
+                    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+                    window.rootViewController = nav;
                }
                
            }];
