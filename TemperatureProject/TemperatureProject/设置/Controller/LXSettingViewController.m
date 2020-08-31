@@ -14,6 +14,7 @@
 #import "LXAddGroupViewController.h"
 #import "LXDeviceListViewController.h"
 #import "LXSetAlarmViewController.h"
+#import "LXGroupListViewController.h"
 
 @interface LXSettingViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong) UITableView *tableView;
@@ -110,8 +111,10 @@
         [self.navigationController pushViewController:findPwdVC animated:YES];
     } else if (model.itemType == SQSettingItemTypeGroupAdmin) {//添加群组
         
-        LXAddGroupViewController *addGroupVC = [[LXAddGroupViewController alloc] init];
-        [self.navigationController pushViewController:addGroupVC animated:YES];
+//        LXAddGroupViewController *addGroupVC = [[LXAddGroupViewController alloc] init];
+//        [self.navigationController pushViewController:addGroupVC animated:YES];
+        LXGroupListViewController *groupListVC = [[LXGroupListViewController alloc] init];
+        [self.navigationController pushViewController:groupListVC animated:YES];
     } else if (model.itemType == SQSettingItemTypeDeviceAdmin) { //设备管理
         
         LXDeviceListViewController *deviceVC = [[LXDeviceListViewController alloc] init];

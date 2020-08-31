@@ -32,6 +32,10 @@
 		846B1B9324ADDF7D0002C8B8 /* LXHistoryTemperatureModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B1B9224ADDF7D0002C8B8 /* LXHistoryTemperatureModel.m */; };
 		846B1B9624ADE50A0002C8B8 /* LXHistoryTemperatureTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B1B9524ADE50A0002C8B8 /* LXHistoryTemperatureTableViewCell.m */; };
 		846B1B9924B2D1D70002C8B8 /* LXFindPwdViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 846B1B9824B2D1D60002C8B8 /* LXFindPwdViewModel.m */; };
+		8494AD5824FCEC0F0024A46A /* LXGroupListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8494AD5724FCEC0F0024A46A /* LXGroupListViewController.m */; };
+		8494AD5B24FCF6490024A46A /* LXGroupListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8494AD5A24FCF6490024A46A /* LXGroupListViewModel.m */; };
+		8494AD5E24FCF9780024A46A /* LXGroupItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8494AD5D24FCF9780024A46A /* LXGroupItemModel.m */; };
+		8494AD6124FCFD6B0024A46A /* LXGroupItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8494AD6024FCFD6B0024A46A /* LXGroupItemTableViewCell.m */; };
 		84AFA78F24A0A9DB00EB57FB /* LXHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AFA78E24A0A9DB00EB57FB /* LXHttpRequest.m */; };
 		84AFA79224A0AC7600EB57FB /* LXLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AFA79124A0AC7600EB57FB /* LXLoginViewController.m */; };
 		84AFA79B24A0AD9D00EB57FB /* LXLoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AFA79A24A0AD9D00EB57FB /* LXLoginViewModel.m */; };
@@ -149,6 +153,14 @@
 		846B1B9524ADE50A0002C8B8 /* LXHistoryTemperatureTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXHistoryTemperatureTableViewCell.m; sourceTree = "<group>"; };
 		846B1B9724B2D1D60002C8B8 /* LXFindPwdViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXFindPwdViewModel.h; sourceTree = "<group>"; };
 		846B1B9824B2D1D60002C8B8 /* LXFindPwdViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXFindPwdViewModel.m; sourceTree = "<group>"; };
+		8494AD5624FCEC0F0024A46A /* LXGroupListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXGroupListViewController.h; sourceTree = "<group>"; };
+		8494AD5724FCEC0F0024A46A /* LXGroupListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXGroupListViewController.m; sourceTree = "<group>"; };
+		8494AD5924FCF6490024A46A /* LXGroupListViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXGroupListViewModel.h; sourceTree = "<group>"; };
+		8494AD5A24FCF6490024A46A /* LXGroupListViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXGroupListViewModel.m; sourceTree = "<group>"; };
+		8494AD5C24FCF9780024A46A /* LXGroupItemModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXGroupItemModel.h; sourceTree = "<group>"; };
+		8494AD5D24FCF9780024A46A /* LXGroupItemModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXGroupItemModel.m; sourceTree = "<group>"; };
+		8494AD5F24FCFD6B0024A46A /* LXGroupItemTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXGroupItemTableViewCell.h; sourceTree = "<group>"; };
+		8494AD6024FCFD6B0024A46A /* LXGroupItemTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXGroupItemTableViewCell.m; sourceTree = "<group>"; };
 		84AFA78D24A0A9DB00EB57FB /* LXHttpRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXHttpRequest.h; sourceTree = "<group>"; };
 		84AFA78E24A0A9DB00EB57FB /* LXHttpRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXHttpRequest.m; sourceTree = "<group>"; };
 		84AFA79024A0AC7600EB57FB /* LXLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXLoginViewController.h; sourceTree = "<group>"; };
@@ -521,6 +533,8 @@
 				84DDC1DF24B48B86004F5C57 /* LXAddGroupViewModel.m */,
 				84DDC1E424B4917D004F5C57 /* LXDeviceListViewModel.h */,
 				84DDC1E524B4917D004F5C57 /* LXDeviceListViewModel.m */,
+				8494AD5924FCF6490024A46A /* LXGroupListViewModel.h */,
+				8494AD5A24FCF6490024A46A /* LXGroupListViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -538,6 +552,8 @@
 				84DDC1E224B490A5004F5C57 /* LXDeviceListViewController.m */,
 				84E612222498F4560019B6BA /* LXSetAlarmViewController.h */,
 				84E612232498F4560019B6BA /* LXSetAlarmViewController.m */,
+				8494AD5624FCEC0F0024A46A /* LXGroupListViewController.h */,
+				8494AD5724FCEC0F0024A46A /* LXGroupListViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -549,6 +565,8 @@
 				84DDC1CC24B3283A004F5C57 /* LXSettingItemModel.m */,
 				84DDC1E724B497F6004F5C57 /* LXDeviceModel.h */,
 				84DDC1E824B497F6004F5C57 /* LXDeviceModel.m */,
+				8494AD5C24FCF9780024A46A /* LXGroupItemModel.h */,
+				8494AD5D24FCF9780024A46A /* LXGroupItemModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -560,6 +578,8 @@
 				84DDC1D024B34EEE004F5C57 /* LXSettingItemTableViewCell.m */,
 				84DDC1EA24B4A413004F5C57 /* LXDeviceListTableViewCell.h */,
 				84DDC1EB24B4A413004F5C57 /* LXDeviceListTableViewCell.m */,
+				8494AD5F24FCFD6B0024A46A /* LXGroupItemTableViewCell.h */,
+				8494AD6024FCFD6B0024A46A /* LXGroupItemTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -926,10 +946,13 @@
 				84DDC1E924B497F6004F5C57 /* LXDeviceModel.m in Sources */,
 				84DDC1E324B490A5004F5C57 /* LXDeviceListViewController.m in Sources */,
 				8402F28524A20EE90039A255 /* LXInputView.m in Sources */,
+				8494AD5E24FCF9780024A46A /* LXGroupItemModel.m in Sources */,
 				84DDC1EC24B4A413004F5C57 /* LXDeviceListTableViewCell.m in Sources */,
 				84DDC23824B803F5004F5C57 /* UITextField+SQAdd.m in Sources */,
+				8494AD6124FCFD6B0024A46A /* LXGroupItemTableViewCell.m in Sources */,
 				84DDC24324B803F5004F5C57 /* NSData+SQAdd.m in Sources */,
 				84F8516924BEA5DA006AC50A /* LXLocalizationServiceModule.m in Sources */,
+				8494AD5824FCEC0F0024A46A /* LXGroupListViewController.m in Sources */,
 				84DDC23724B803F5004F5C57 /* UIView+SQAdd.m in Sources */,
 				84DDC23D24B803F5004F5C57 /* UIImage+SQAdd.m in Sources */,
 				8402F28E24A365D60039A255 /* NSDictionary+Log.m in Sources */,
@@ -963,6 +986,7 @@
 				84DDC23424B803F5004F5C57 /* UIApplication+SQAdd.m in Sources */,
 				84E612242498F4570019B6BA /* LXSetAlarmViewController.m in Sources */,
 				84DDC1D124B34EEE004F5C57 /* LXSettingItemTableViewCell.m in Sources */,
+				8494AD5B24FCF6490024A46A /* LXGroupListViewModel.m in Sources */,
 				846B1B8424AC28E90002C8B8 /* LXLoopTemperatureViewController.m in Sources */,
 				84DDC24A24B803F5004F5C57 /* NSDate+SQAdd.m in Sources */,
 				846B1B8D24ADB6040002C8B8 /* LXHistoryTemperatureViewController.m in Sources */,

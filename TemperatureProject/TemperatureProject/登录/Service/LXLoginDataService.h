@@ -38,6 +38,8 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)delDeviceWithMac:(LXDeviceModel *)model andBlock:(void(^)(BOOL success,NSString *msg,NSArray *model))block;
 
 + (void)updateDeviceWithMac:(LXDeviceModel *)model andBlock:(void(^)(BOOL success,NSString *msg,NSArray *model))block;
+
++ (void)getGroupListWithBlock:(void(^)(BOOL success,NSString *msg,NSArray *list))block;
 @end
 
 NS_ASSUME_NONNULL_END

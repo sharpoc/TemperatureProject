@@ -13,6 +13,7 @@
 #import "LXTemperatureModel.h"
 #import "LXHistoryTemperatureModel.h"
 #import "LXDeviceModel.h"
+#import "LXGroupItemModel.h"
 
 @implementation LXLoginDataService
 
@@ -336,7 +337,30 @@
         }
     } failure:^(NSError * _Nonnull error) {
 
-        SQSafeBlock(block,YES,@"",nil);
+        SQSafeBlock(block,NO,@"",nil);
+    }];
+}
+
++ (void)getGroupListWithBlock:(void(^)(BOOL success,NSString *msg,NSArray *list))block {
+    
+    LXUserTokenModel *loginModel = [[LXCacheManager shareInstance] unarchiveDataForKey:@"loginuser"];
+    NSMutableDictionary *dict=[NSMutableDictionary dictionary];
+    [dict setObject:[NSString sq_safeString:loginModel.user.phone] forKey:@"phone"];
+    [LXHttpRequest GET:GetURL(URL_getGroupList) dict:dict succeed:^(id  _Nonnull data) {
+        
+        NSArray *dicts = [data valueForKey:@"content"];
+        NSArray *array = [NSArray yy_modelArrayWithClass:[LXGroupItemModel class] json:dicts];
+        if (array.count > 0) {
+            
+            SQSafeBlock(block,YES,@"",array);
+        } else {
+            
+            SQSafeBlock(block,NO,@"",nil);
+        }
+        
+    } failure:^(NSError * _Nonnull error) {
+        
+         SQSafeBlock(block,NO,@"",nil);
     }];
 }
 
