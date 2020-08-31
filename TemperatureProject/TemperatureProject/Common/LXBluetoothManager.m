@@ -126,7 +126,7 @@
                         LXPeripheral *lxPeripheral = [[LXPeripheral alloc] init];
                         lxPeripheral.peripheral = peripheral;
                         lxPeripheral.peripheralName = [peripheral name];
-                        lxPeripheral.mac = mac == @""? @"没有mac地址": mac;
+                        lxPeripheral.mac = [mac isEqualToString:@""]? @"没有mac地址": mac;
                         [self.deviceDic setObject:lxPeripheral forKey:mac];
                         if ([self.delegate respondsToSelector:@selector(dataWithBluetoothDic:)]) {
                             [self.delegate dataWithBluetoothDic:_deviceDic];
