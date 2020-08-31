@@ -14,6 +14,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)getGroupListWithBlock:(void(^)(BOOL success,NSString *msg,NSArray *list))block;
 
+- (void)outGroupWithCode:(NSString *)code andBlock:(void(^)(BOOL success,NSString *msg,NSObject *model))block;
+
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -99,7 +99,7 @@
 
 - (void)okBtnClick {
     
-    
+    SQSafeBlock(self.clickBlock,self.model);
 }
 
 - (UIImageView *)iconImageView {

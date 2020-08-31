@@ -364,5 +364,32 @@
     }];
 }
 
++ (void)outGroupWithCode:(NSString *)code andBlock:(void(^)(BOOL success,NSString *msg,NSObject *model))block {
+    
+    LXUserTokenModel *loginModel = [[LXCacheManager shareInstance] unarchiveDataForKey:@"loginuser"];
+    NSMutableDictionary *dict=[NSMutableDictionary dictionary];
+    [dict setObject:[NSString sq_safeString:code] forKey:@"code"];
+    [dict setObject:[NSString sq_safeString:loginModel.user.uid] forKey:@"userId"];
+    
+    
+    [LXHttpRequest POST:GetURL(URL_quitGroup) jsonDict:dict succeed:^(id  _Nonnull data) {
+        
+        NSString *code = [data valueForKey:@"code"];
+        NSString *msg = [data valueForKey:@"message"];
+        
+        
+        if ([code isEqualToString:@"0"]) {
+            
+            SQSafeBlock(block,YES,msg,nil);
+        } else {
+            
+            SQSafeBlock(block,NO,msg,nil);
+        }
+    } failure:^(NSError * _Nonnull error) {
+
+        SQSafeBlock(block,YES,@"",nil);
+    }];
+}
+
 
 @end

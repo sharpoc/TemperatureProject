@@ -19,4 +19,12 @@
     }];
     
 }
+
+- (void)outGroupWithCode:(NSString *)code andBlock:(void(^)(BOOL success,NSString *msg,NSObject *model))block {
+    
+    [LXLoginDataService outGroupWithCode:code andBlock:^(BOOL success, NSString * _Nonnull msg, NSObject * _Nonnull model) {
+       
+        SQSafeBlock(block,success,msg,nil);
+    }];
+}
 @end

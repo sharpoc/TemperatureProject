@@ -9,6 +9,7 @@
 #import "LXGroupListViewController.h"
 #import "LXGroupListViewModel.h"
 #import "LXGroupItemTableViewCell.h"
+#import "LXGroupItemModel.h"
 
 @interface LXGroupListViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -69,7 +70,13 @@
     cell.model = model;
     cell.clickBlock = ^(LXGroupItemModel * _Nonnull model) {
         
-        
+        [self.viewModel outGroupWithCode:model.code andBlock:^(BOOL success, NSString * _Nonnull msg, NSObject * _Nonnull model) {
+           
+            if (success) {
+                
+                [self.groupListTableView reloadData];
+            }
+        }];
     };
     return cell;
 }
