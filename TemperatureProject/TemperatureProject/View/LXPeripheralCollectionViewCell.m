@@ -23,7 +23,9 @@
     self = [super initWithFrame:frame];
     if (self) {
         
-        self.backgroundColor = KSQColor(234, 234, 234);
+        self.backgroundColor = KSQColor(192, 234, 224);
+        self.layer.cornerRadius = 6;
+        self.layer.masksToBounds = YES;
         [self createUI];
         [self createLayout];
     }

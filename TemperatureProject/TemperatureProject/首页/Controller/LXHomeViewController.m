@@ -368,7 +368,7 @@ static void completionCallback(SystemSoundID mySSID)
     if (!_iconImageView) {
         
         _iconImageView = [[UIImageView alloc] init];
-        _iconImageView.image = [UIImage imageNamed:@"ic_check_mark"];
+        _iconImageView.image = [UIImage imageNamed:@"apphomeicon"];
     }
     
     return _iconImageView;
