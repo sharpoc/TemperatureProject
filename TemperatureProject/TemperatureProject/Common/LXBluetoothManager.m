@@ -58,6 +58,11 @@
 
 }
 
+- (void)cancel:(CBPeripheral *)peripheral {
+    
+    [self.centralManager cancelPeripheralConnection:peripheral];
+}
+
 - (void)centralManagerDidUpdateState:(CBCentralManager *)central {
     
     switch (central.state) {
@@ -100,7 +105,7 @@
         if (peripheral!=nil) {
             if ([peripheral name]!=nil) {
                 NSLog(@"Find device:%@--%@", [peripheral name],peripheral.identifier.UUIDString);
-                if ([[peripheral name] hasPrefix:BRAND] || [[peripheral name] hasPrefix:BRAND2]) {
+                if ([[peripheral name] hasPrefix:BRAND] || [[peripheral name] hasPrefix:BRAND2] || [[peripheral name] hasPrefix:BRAND3]) {
                     
                     
                     NSData *data = [advertisementData objectForKey:@"kCBAdvDataManufacturerData"];
@@ -121,7 +126,7 @@
                         }
                         
                     }
-//                    if (![mac isEqualToString:@""]) {
+                    if (![mac isEqualToString:@""]) {
                         
                         LXPeripheral *lxPeripheral = [[LXPeripheral alloc] init];
                         lxPeripheral.peripheral = peripheral;
@@ -131,7 +136,7 @@
                         if ([self.delegate respondsToSelector:@selector(dataWithBluetoothDic:)]) {
                             [self.delegate dataWithBluetoothDic:_deviceDic];
                         }
-//                    }
+                    }
                 }
             }
         }
@@ -141,7 +146,7 @@
 #pragma mark 连接外设--成功
 - (void)centralManager:(CBCentralManager *)central didConnectPeripheral:(CBPeripheral *)peripheral{
     //连接成功后停止扫描，节省内存
-//    [central stopScan];
+    [central stopScan];
     peripheral.delegate = self;
     self.peripheral = peripheral;
     //4.扫描外设的服务

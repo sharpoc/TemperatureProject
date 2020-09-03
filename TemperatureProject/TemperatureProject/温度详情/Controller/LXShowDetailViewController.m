@@ -156,8 +156,15 @@
     self.timeLabel.text = [Tool localTimeZoneStringDate:date andFormatter:@"yyyy-MM-dd HH:mm:ss"];
 }
 
+- (void)backBtnClick {
+    
+    
+    [self disconnectBtnClick];
+}
+
 - (void)disconnectBtnClick {
     
+    [[LXBluetoothManager shareInstance] cancel:self.peripheral.peripheral];
     [self.navigationController popViewControllerAnimated:YES];
 }
 

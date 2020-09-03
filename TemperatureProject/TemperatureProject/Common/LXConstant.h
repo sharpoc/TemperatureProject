@@ -9,6 +9,7 @@
 
 UIKIT_EXTERN NSString *const BRAND;
 UIKIT_EXTERN NSString *const BRAND2;
+UIKIT_EXTERN NSString *const BRAND3;
 UIKIT_EXTERN NSString *const SERVICE_UUID;
 UIKIT_EXTERN NSString *const CHARACTER_UUID;
 UIKIT_EXTERN NSString *const SQAppleLanguages;
