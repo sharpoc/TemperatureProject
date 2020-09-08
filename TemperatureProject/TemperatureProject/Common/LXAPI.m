@@ -20,7 +20,7 @@ NSString *const URL_inAppGroup = @"accounts/api/inAppGroup";
 NSString *const URL_getDevice = @"accounts/api/app/getDevice";
 NSString *const URL_removeDevice = @"accounts/api/app/removeDevice";
 NSString *const URL_updateDevice = @"accounts/api/app/updateDevice";
-NSString *const URL_getGroupList = @"accounts/api/appGroup"; //查询地址
+NSString *const URL_getGroupList = @"accounts/api/appGroup"; //查询群组
 NSString *const URL_quitGroup = @"accounts/api/outAppGroup"; //退出群组
 
 
