@@ -345,10 +345,10 @@
     
     LXUserTokenModel *loginModel = [[LXCacheManager shareInstance] unarchiveDataForKey:@"loginuser"];
     NSMutableDictionary *dict=[NSMutableDictionary dictionary];
-    [dict setObject:[NSString sq_safeString:loginModel.user.phone] forKey:@"phone"];
+    [dict setObject:[NSString sq_safeString:loginModel.user.phone] forKey:@"contact"];
     [LXHttpRequest GET:GetURL(URL_getGroupList) dict:dict succeed:^(id  _Nonnull data) {
         
-        NSArray *dicts = [data valueForKey:@"content"];
+        NSArray *dicts = [data valueForKey:@"data"];
         NSArray *array = [NSArray yy_modelArrayWithClass:[LXGroupItemModel class] json:dicts];
         if (array.count > 0) {
             

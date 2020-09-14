@@ -31,6 +31,12 @@
     [self createData];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    
+    [super viewWillAppear:animated];
+    [self createData];
+}
+
 - (void)createUI {
     
     [self.view addSubview:self.groupListTableView];
@@ -61,12 +67,10 @@
 - (void)createData {
     
     [self.viewModel getGroupListWithBlock:^(BOOL success, NSString * _Nonnull msg, NSArray * _Nonnull list) {
-        
-        if (success) {
-            
-            self.lists = list;
-            [self.groupListTableView reloadData];
-        }
+
+        self.lists = list;
+        [self.groupListTableView reloadData];
+
     }];
 }
 
@@ -89,13 +93,30 @@
     cell.model = model;
     cell.clickBlock = ^(LXGroupItemModel * _Nonnull model) {
         
-        [self.viewModel outGroupWithCode:model.code andBlock:^(BOOL success, NSString * _Nonnull msg, NSObject * _Nonnull model) {
+        UIAlertController *alertVc = [UIAlertController alertControllerWithTitle:@"标题" message:@"确定要退出吗" preferredStyle:UIAlertControllerStyleAlert];
+           //默认只有标题 没有操作的按钮:添加操作的按钮 UIAlertAction
            
-            if (success) {
-                
-                [self.groupListTableView reloadData];
-            }
-        }];
+           UIAlertAction *cancelBtn = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+               NSLog(@"取消");
+           }];
+           //添加确定
+           UIAlertAction *sureBtn = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull   action) {
+               [self.viewModel outGroupWithCode:model.code andBlock:^(BOOL success, NSString * _Nonnull msg, NSObject * _Nonnull model) {
+                  
+                   if (success) {
+                       
+                       [self createData];
+                   }
+               }];
+           }];
+           //设置`确定`按钮的颜色
+           [sureBtn setValue:[UIColor redColor] forKey:@"titleTextColor"];
+           //将action添加到控制器
+           [alertVc addAction:cancelBtn];
+           [alertVc addAction :sureBtn];
+           //展示
+           [self presentViewController:alertVc animated:YES completion:nil];
+        
     };
     return cell;
 }
