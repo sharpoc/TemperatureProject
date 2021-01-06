@@ -18,6 +18,6 @@
 
 + (NSString *)getBaseURL {
     
-    return @"http://81.70.27.165:1111/";
+    return @"http://112.21.182.154/";
 }
 @end
